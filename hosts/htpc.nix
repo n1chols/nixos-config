@@ -4,6 +4,7 @@
   boot = {
     initrd.kernelModules = [ "amdgpu" ];
     kernelModules = [ "kvm-amd" ];
+    kernelParams = [ "amd_iommu=on" ];
   };
 
   hardware.opengl.extraPackages = with pkgs; [
