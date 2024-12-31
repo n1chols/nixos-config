@@ -1,3 +1,4 @@
+{ config, pkgs, ... }: {
 
   # Steam
   programs.steam = {
@@ -7,5 +8,13 @@
   };
 
   users.users.user.extraGroups = [ "input" ];
+
+  # Gamemode
+  programs.gamemode = {
+    enable = true;
+    settings = {};
+  };
+
+  users.users.user.extraGroups = [ "gamemode" ];
 
 };
