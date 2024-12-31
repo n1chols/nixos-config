@@ -6,12 +6,13 @@
     kernelModules = [ "kvm-amd" ];
   };
 
-  services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.opengl.extraPackages = with pkgs; [
     rocm-opencl-icd
     rocm-opencl-runtime
     amdvlk
   ];
+
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   services.hardware.corectrl.enable = true;
 
