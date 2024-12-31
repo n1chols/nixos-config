@@ -17,12 +17,14 @@
 
   services.hardware.corectrl.enable = true;
 
-  # Optimization
-  powerManagement.cpuFreqGovernor = "performance";
-
-  boot.kernel.sysctl = {
-    "vm.swappiness" = 10;
-    "vm.vfs_cache_pressure" = 50;
+  # Modules
+  modules = {
+    wireless.enable = true;
+    audio.enable = true;
+    desktop.enable = true;
+    gaming.enable = true;
+    web.enable = true;
+    virtualization.enable = true;
   };
 
 };
