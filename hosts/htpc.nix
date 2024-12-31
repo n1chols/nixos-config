@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
 
-  # Drivers
+  # Hardware
   boot = {
     initrd.kernelModules = [ "amdgpu" ];
     kernelModules = [ "kvm-amd" ];
@@ -16,6 +16,9 @@
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   services.hardware.corectrl.enable = true;
+
+  # Peripherals
+  # ... mouse kb gamepads etc
 
   # Modules
   modules = {
