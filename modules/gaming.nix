@@ -9,7 +9,7 @@
 
   users.users.user.extraGroups = [ "input" ];
 
-  # Gamemode
+  # GameMode
   programs.gamemode = {
     enable = true;
     settings = {};
