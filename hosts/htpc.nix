@@ -6,6 +6,16 @@
     gpu = "amd";
   };
 
+  # Drivers
+  boot.initrd.availableKernelModules = [
+    "nvme"
+    "xhci_pci"
+    "ahci"
+    "usbhid"
+    "usb_storage"
+    "sd_mod"
+  ];
+
   # Modules
   modules = {
     wireless.enable = true;
