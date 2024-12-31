@@ -1,9 +1,8 @@
 { config, pkgs, ... }: {
 
-  # RTKit
+  # Pipewire
   security.rtkit.enable = true;
 
-  # Pipewire
   services.pipewire = {
     enable = true;
     alsa.enable = true;
