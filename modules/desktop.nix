@@ -13,4 +13,17 @@
 
   users.users.user.extraGroups = [ "video" ];
 
+  # Utilities
+  environment.systemPackages = with pkgs; [
+    kitty
+    waybar
+    wofi
+    mako
+    libnotify
+    wl-clipboard
+    nnn
+    imv
+    mpv
+  ]
+
 };
