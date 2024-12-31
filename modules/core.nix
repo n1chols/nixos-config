@@ -1,5 +1,4 @@
 { config, pkgs, ... }: {
-
   # Boot
   boot.loader = {
     systemd-boot.enable = true;
@@ -25,5 +24,4 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "input" ];
   };
-  
 }
