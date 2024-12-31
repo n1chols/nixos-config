@@ -23,7 +23,7 @@
   # User
   users.users.user = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "input" ];
+    extraGroups = [ "wheel" ];
   };
 
 }
