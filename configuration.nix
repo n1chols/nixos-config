@@ -1,30 +1,37 @@
 [ config, pkgs, ... ]: {
 
   imports = [
-    #"./core/boot.nix"
-    #"./core/hardware.nix"
-    #"./core/network.nix"
-    #"./core/time.nix"
-    #"./core/localization.nix"
-    #"./core/user.nix"
-    #"./extra/audio.nix"
+    # Necessary configs
+    "./core/boot.nix"
+    "./core/hardware.nix"
+    "./core/time.nix"
+    "./core/localization.nix"
+    "./core/user.nix"
+
+    # Optional services
+    "./service/network.nix"
+    "./service/audio.nix"
+
+    # Optional features
     "./extra/virtualization.nix"
     "./extra/hyprland.nix"
+    "./extra/browser.nix"
     "./extra/steam.nix"
-    "./extra/chromium.nix"
   ];
+
+  system.stateVersion = "24.11";
 
   # Boot
   boot = {
     loader = {
-      systemd-boot-enable = true;
+      systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
     kernelParams = [
       "amd_iommu=on"
     ];
     kernelPackages = linuxPackages_zen;
-  }:
+  };
 
   # Hardware
   hardware = {
@@ -38,7 +45,7 @@
 
   # Network
   networking = {
-    hostname = "nixos";
+    hostName = "nixos";
     networkmanager.enable = true;
   };
 
@@ -62,5 +69,5 @@
     alsa.enable = true;
     pulse.enable = true;
   };
-  
+
 };
