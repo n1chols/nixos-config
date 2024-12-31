@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
 
-  # Qemu
+  # QEMU
   virtualisation.libvirtd = {
     enable = true;
     qemu = {
