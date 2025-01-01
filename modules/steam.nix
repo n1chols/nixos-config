@@ -2,19 +2,20 @@
   options = {
     modules.steam = {
       enable = lib.mkEnableOption "";
+      gamepadSupport = lib.mkEnableOption "";
       addSessionEntry = lib.mkEnableOption "";
     };
   };
 
   config = lib.mkIf config.modules.steam.enable {
-    # Enable graphics support
+    # Enable graphics and gamepad support
     hardware = {
       graphics = {
         enable = true;
         enable32Bit = true;
       };
-      steam-hardware.enable = true;
-      xpadneo.enable = true;
+      steam-hardware.enable = config.modules.steam.gamepadSupport;
+      xpadneo.enable = config.modules.steam.gamepadSupport;
     };
     # Enable Steam and session entry
     programs.steam = {
