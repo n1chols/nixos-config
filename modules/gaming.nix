@@ -12,20 +12,6 @@
   users.users.user.extraGroups = [ "gamemode" ];
   
   # Steam
-  programs = {
-    gamescope = {
-      enable = true;
-      capSysNice = true;
-    };
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-      localNetworkGameTransfers.openFirewall = true;
-    };
-  };
-  
   hardware = {
     opengl = {
       enable = true;
@@ -34,6 +20,13 @@
     };
     steam-hardware.enable = true;
     xpadneo.enable = true;
+  };
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
   };
 
   users.users.user.extraGroups = [ "input" ];
