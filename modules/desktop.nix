@@ -27,7 +27,9 @@
     mako
     libnotify
     wl-clipboard
-    nnn
+    swaybg
+    grim
+    slurp
     imv
     mpv
   ];
