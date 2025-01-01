@@ -22,6 +22,15 @@
 
   users.users.user.extraGroups = [ "video" ];
 
+  # Pipewire
+  security.rtkit.enable = true;
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
+
   # Apps
   environment.systemPackages = with pkgs; [
     kitty
