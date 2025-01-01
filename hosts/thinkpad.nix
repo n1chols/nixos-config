@@ -14,10 +14,7 @@
     cpu.intel.updateMicrocode = true;
   };
 
-  boot = {
-    initrd.kernelModules = [ "intel_agp" "i915" ];
-    kernelParams = [ "intel_iommu=on" ];
-  };
+  boot.initrd.kernelModules = [ "intel_agp" "i915" ];
 
   services.xserver.videoDrivers = [ "intel" ];
 
