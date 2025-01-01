@@ -7,6 +7,12 @@
   hardware = {
     enableRedistributableFirmware = true;
     cpu.amd.updateMicrocode = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+    steam-hardware.enable = true;
+    xpadneo.enable = true;
   };
 
   boot.initrd.kernelModules = [ "amdgpu" ];
@@ -39,7 +45,6 @@
     };
     steam = {
       enable = true;
-      gamepadSupport = true;
       addSessionEntry = true;
     };
     kodi = {
