@@ -36,16 +36,16 @@
     myapps = {
       enable = true;
       systemApps = true;
-    }
+    };
     steam = {
       enable = true;
       gamepadSupport = true;
       addSessionEntry = true;
-    }
+    };
     kodi = {
       enable = true;
       addSessionEntry = true;
-    }
+    };
   };
 
 }
