@@ -38,16 +38,14 @@
     imv
     mpv
     zed
-    obsidian
+    firefox
     thunderbird
-    ungoogled-chromium
   ];
 
   xdg.mime.defaultApplications = {
-    "x-scheme-handler/http" = "chromium.desktop";
-    "x-scheme-handler/https" = "chromium.desktop";
+    "x-scheme-handler/http" = "firefox.desktop";
+    "x-scheme-handler/https" = "firefox.desktop";
     "x-scheme-handler/mailto" = "thunderbird.desktop";
-    "x-scheme-handler/obsidian" = "obsidian.desktop";
     "inode/directory" = "pcmanfm.desktop";
     "application/pdf" = "org.pwmt.zathura.desktop";
     "image/*" = "imv.desktop";
