@@ -9,7 +9,7 @@
   
   # CONFIG
   config = lib.mkIf config.modules.devtools.enable {
-    # Basic packages
+    # Add basic packages
     environment.systemPackages = with pkgs; [
       git
       wget
