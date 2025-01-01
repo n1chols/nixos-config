@@ -14,7 +14,10 @@
     cpu.amd.updateMicrocode = true;
   };
 
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot = {
+    initrd.kernelModules = [ "amdgpu" ];
+    kernelParams = [ "amd_iommu=on" ];
+  };
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
