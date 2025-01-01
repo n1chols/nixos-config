@@ -1,20 +1,10 @@
 { config, pkgs, ... }: {
 
-  # Hardware
-  hardware = {
-    cpu = "amd";
-    gpu = "amd";
-  };
+  # Compatibility
+  
 
-  # Drivers
-  boot.initrd.availableKernelModules = [
-    "nvme"
-    "xhci_pci"
-    "ahci"
-    "usbhid"
-    "usb_storage"
-    "sd_mod"
-  ];
+  # Optimization
+  
 
   # Modules
   modules = {
