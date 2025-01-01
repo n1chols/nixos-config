@@ -10,19 +10,14 @@
   };
 
   users.users.user.extraGroups = [ "libvirtd" ];
+  
+  # VFIO
+  boot.kernelModules = [ "vfio_pci" "vfio" "vfio_iommu_type1" ];
 
-  # Looking Glass
+  # Virtual Machine Manager
   environment.systemPackages = with pkgs; [
-    looking-glass-client
     virt-manager
     win-virtio
   ];
-
-  systemd.tmpfiles.rules = [
-    "f /dev/shm/looking-glass 0660 user kvm -"
-  ];
-
-  # VFIO
-  boot.kernelModules = [ "vfio_pci" "vfio" "vfio_iommu_type1" ];
 
 };
