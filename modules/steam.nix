@@ -21,7 +21,7 @@
       xpadneo.enable = config.modules.steam.gamepadSupport;
     };
 
-    # Enable Steam and add session entry
+    # Enable Steam and Wayland session entry
     programs.steam = {
       enable = true;
       remotePlay.openFirewall = true;
