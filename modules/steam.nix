@@ -1,9 +1,8 @@
 { config, lib, pkgs, ... }: {
-
   options = {
     modules.steam = {
-      enable = lib.mkEnableOption "Install Steam";
-      addSessionEntry = lib.mkEnableOption "Add session manager entry";
+      enable = lib.mkEnableOption "";
+      addSessionEntry = lib.mkEnableOption "";
     };
   };
 
@@ -26,5 +25,4 @@
       gamescopeSession.enable = config.modules.steam.addSessionEntry;
     };
   };
-
 }
