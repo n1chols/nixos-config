@@ -1,18 +1,9 @@
 { config, pkgs, ... }: {
 
-  # Modules
-  imports = [
-    ../modules/audio.nix
-    ../modules/bluetooth.nix
-    ../modules/desktop.nix
-    ../modules/development.nix
-    ../modules/gaming.nix
-  ];
-
-  # Hostname
+  # Host name
   networking.hostName = "BEDROOM_HTPC";
-
-  # Hardware
+  
+  # Hardware setup
   hardware = {
     enableRedistributableFirmware = true;
     cpu.amd.updateMicrocode = true;
@@ -22,7 +13,7 @@
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
-  # File Systems
+  # File systems
   fileSystems = {
     "/" = {
       device = "/dev/nvme0n1p2";
@@ -38,5 +29,23 @@
   swapDevices = [
     { device = "/dev/nvme0n1p3"; }
   ];
+
+  # Modules configuration
+  modules = {
+    gnome.enable = true;
+    myapps = {
+      enable = true;
+      systemApps = true;
+    }
+    steam = {
+      enable = true;
+      gamepadSupport = true;
+      addSessionEntry = true;
+    }
+    kodi = {
+      enable = true;
+      addSessionEntry = true;
+    }
+  };
 
 }
