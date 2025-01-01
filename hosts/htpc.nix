@@ -1,5 +1,10 @@
 { config, pkgs, ... }: {
 
+  # Modules
+  imports = [
+    ../modules/desktop.nix
+  ];
+
   # Hostname
   networking.hostName = "BEDROOM_HTPC";
 
@@ -20,12 +25,5 @@
       "mitigations=off"
     ];
   };  
-
-  # Modules
-  modules = {
-    desktop.enable = true;
-    apps.enable = true;
-    virtualization.enable = true;
-  };
 
 };
