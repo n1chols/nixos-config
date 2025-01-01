@@ -19,8 +19,4 @@
 
   users.users.user.extraGroups = [ "input" ];
 
-  # Gamescope
-
-  # MangoHUD
-
-  };
+};
