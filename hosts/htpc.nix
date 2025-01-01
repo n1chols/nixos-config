@@ -18,12 +18,4 @@
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
-  # Optimization
-  boot = {
-    kernelParams = [ 
-      "amd_pstate=active"
-      "mitigations=off"
-    ];
-  };  
-
 };
