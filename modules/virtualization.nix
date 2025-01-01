@@ -1,8 +1,6 @@
 { config, pkgs, ... }: {
 
   # QEMU
-  boot.kernelParams = [ "amd_iommu=on" ];
-
   virtualisation.libvirtd = {
     enable = true;
     qemu = {
