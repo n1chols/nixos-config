@@ -15,3 +15,7 @@ Note to self: Below are some self-imposed rules to reduce headaches using NixOS.
 #### 4. Setup only one user
 - For my purposes, I will never need more than one user account
 - Simplifies modules that need to modify user groups
+
+#### 5. No user specific packages
+- Tying into no. 4, this further simplifies the config
+- Packages should be added only where needed by a module/feature
