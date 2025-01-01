@@ -2,6 +2,8 @@
 
   # Modules
   imports = [
+    ../module/audio.nix
+    ../module/bluetooth.nix
     ../modules/desktop.nix
   ];
 
