@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ config, pkgs, ... }: {
 
   # Zen Kernel
   boot.kernelPackages = linuxPackages_zen;
@@ -6,7 +6,7 @@
   # GameMode
   programs.gamemode.enable = true;
 
-  users.users.user.extraGroups = lib.mkAfter [ "gamemode" ];
+  users.users.user.extraGroups = [ "gamemode" ];
   
   # Steam
   hardware = {
@@ -25,7 +25,5 @@
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
   };
-
-  users.users.user.extraGroups = lib.mkAfter [ "input" ];
 
 }
