@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
 
   # Zen Kernel
-  boot.kernelPackages = linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # GameMode
   programs.gamemode.enable = true;
