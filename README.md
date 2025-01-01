@@ -12,6 +12,6 @@ Note to self: Below are some self-imposed rules to reduce headaches using NixOS.
 - Common convention and easy to maintain
 - Adding a new system is as simple as making a new host file
 
-#### 4. Setup one user
+#### 4. Setup only one user
 - For my purposes, I will never need more than one user account
 - Simplifies modules that need to modify user groups
