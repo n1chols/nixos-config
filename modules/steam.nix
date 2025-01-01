@@ -20,7 +20,8 @@
       steam-hardware.enable = config.modules.steam.gamepadSupport;
       xpadneo.enable = config.modules.steam.gamepadSupport;
     };
-    # Enable Steam and session entry
+
+    # Enable Steam and add session entry
     programs.steam = {
       enable = true;
       remotePlay.openFirewall = true;
