@@ -28,4 +28,4 @@
 
   users.users.user.extraGroups = [ "input" ];
 
-};
+}
