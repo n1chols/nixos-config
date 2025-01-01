@@ -22,7 +22,7 @@
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
-  # File System
+  # File Systems
   fileSystems = {
     "/" = {
       device = "/dev/nvme0n1p2";
