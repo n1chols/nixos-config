@@ -3,8 +3,8 @@
   # OPTIONS
   options = {
     modules.kodi = {
-      enable = lib.mkEnableOption "Kodi media center";
-      addSessionEntry = lib.mkEnableOption "Add Kodi as a session entry";
+      enable = lib.mkEnableOption "";
+      addSessionEntry = lib.mkEnableOption "";
     };
   };
   
