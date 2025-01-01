@@ -11,3 +11,7 @@ Note to self: Below are some self-imposed rules to reduce headaches using NixOS.
 #### 3. Divide by hosts and modules
 - Common convention and easy to maintain
 - Adding a new system is as simple as making a new host file
+
+#### 4. Assume one user
+- For my purposes, I will never need more than one user
+- Simplifies modules that need to modify user groups
