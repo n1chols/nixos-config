@@ -16,7 +16,11 @@
 
   boot = {
     initrd.kernelModules = [ "amdgpu" ];
-    kernelParams = [ "amd_iommu=on" ];
+    kernelParams = [
+      "amd_iommu=on"
+      "iommu=pt"
+      "vfio-pci.ids=10de:1234,10de:5678"
+    ];
   };
 
   services.xserver.videoDrivers = [ "amdgpu" ];
