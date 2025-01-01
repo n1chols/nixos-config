@@ -7,3 +7,7 @@ Note to self: Below are some self-imposed rules to reduce headaches using NixOS.
 #### 2. Don't use Flakes
 - Package-locking makes updating tedious
 - Locking is pointless if I design the system well
+
+#### 3. Divide by hosts and modules
+- Common convention and easy to maintain
+- Adding a new system is as simple as making a new host file
