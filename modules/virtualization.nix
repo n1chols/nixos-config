@@ -22,4 +22,7 @@
     "f /dev/shm/looking-glass 0660 user kvm -"
   ];
 
+  # VFIO
+  boot.kernelModules = [ "vfio_pci" "vfio" "vfio_iommu_type1" ];
+
 };
