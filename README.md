@@ -1,4 +1,4 @@
-Note to self: Below are some self-imposed rules to reduce headaches using NixOS. These are unpopular conclusions but you have already determined that everybody else is wrong so don't change them.
+Note to self: Below are some self-imposed rules to reduce headaches using NixOS. They must be followed to ensure reusability and non-spaghettification of the config.
 
 #### 1. Don't use Home Manager
 - Confusing syntax that forces you to break DRY
