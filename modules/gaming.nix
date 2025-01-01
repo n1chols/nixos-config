@@ -4,10 +4,7 @@
   boot.kernelPackages = linuxPackages_zen;
 
   # GameMode
-  programs.gamemode = {
-    enable = true;
-    settings = {};
-  };
+  programs.gamemode.enable = true;
 
   users.users.user.extraGroups = [ "gamemode" ];
   
