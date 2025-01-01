@@ -10,8 +10,13 @@
   
   # CONFIG
   config = lib.mkIf config.modules.kodi.enable {
-    # Add Kodi package
-    environment.systemPackages = [ pkgs.kodi ];
+    # Enable Kodi with hardware acceleration
+    environment.systemPackages = [ 
+      (pkgs.kodi.override {
+        vaapi = true;
+        vdpau = true;
+      })
+    ];
     
     # Add Wayland session entry
     services.xserver.desktopManager.kodi.enable = config.modules.kodi.addSessionEntry;
