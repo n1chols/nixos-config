@@ -21,4 +21,4 @@
 
   services.xserver.videoDrivers = [ "intel" ];
 
-};
+}
