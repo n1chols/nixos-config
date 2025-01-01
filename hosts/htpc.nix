@@ -2,7 +2,10 @@
 
   # Modules
   imports = [
+    ../module/audio.nix
+    ../module/bluetooth.nix
     ../modules/desktop.nix
+    ../modules/gaming.nix
   ];
 
   # Hostname
@@ -14,14 +17,7 @@
     cpu.amd.updateMicrocode = true;
   };
 
-  boot = {
-    initrd.kernelModules = [ "amdgpu" ];
-    kernelParams = [
-      "amd_iommu=on"
-      "iommu=pt"
-      "vfio-pci.ids=10de:1234,10de:5678"
-    ];
-  };
+  boot.initrd.kernelModules = [ "amdgpu" ];
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
