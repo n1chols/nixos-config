@@ -22,4 +22,4 @@
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
-};
+}
