@@ -11,7 +11,7 @@
   
   # CONFIG
   config = lib.mkIf config.modules.steam.enable {
-    # Enable graphics and gamepad support
+    # Enable hardware support
     hardware = {
       graphics = {
         enable = true;
