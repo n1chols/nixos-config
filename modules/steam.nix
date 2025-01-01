@@ -1,4 +1,6 @@
 { config, lib, pkgs, ... }: {
+
+  # OPTIONS
   options = {
     modules.steam = {
       enable = lib.mkEnableOption "";
@@ -6,7 +8,8 @@
       addSessionEntry = lib.mkEnableOption "";
     };
   };
-
+  
+  # CONFIG
   config = lib.mkIf config.modules.steam.enable {
     # Enable graphics and gamepad support
     hardware = {
@@ -26,4 +29,5 @@
       gamescopeSession.enable = config.modules.steam.addSessionEntry;
     };
   };
+
 }
