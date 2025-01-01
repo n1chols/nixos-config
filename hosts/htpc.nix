@@ -22,4 +22,21 @@
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
+  # File System
+  fileSystems = {
+    "/" = {
+      device = "/dev/nvme0n1p2";
+      fsType = "ext4";
+    };
+    
+    "/boot" = {
+      device = "/dev/nvme0n1p1";
+      fsType = "vfat";
+    };
+  };
+
+  swapDevices = [
+    { device = "/dev/nvme0n1p3"; }
+  ];
+
 }
