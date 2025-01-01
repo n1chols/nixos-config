@@ -18,4 +18,8 @@
     win-virtio
   ];
 
+  systemd.tmpfiles.rules = [
+    "f /dev/shm/looking-glass 0660 user kvm -"
+  ];
+
 };
