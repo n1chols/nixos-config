@@ -11,11 +11,14 @@
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
-  
+
+  # Network
+  networking.networkmanager.enable = true;
+
   # User
   users.users.user = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "networkmanager" ];
   };
 
 };
