@@ -21,6 +21,9 @@
     extraGroups = [ "wheel" "networkmanager" ];
   };
 
+  # Packages
+  nixpkgs.config.allowUnfree = true;
+
   # Version
   system.stateVersion = "24.11";
 
