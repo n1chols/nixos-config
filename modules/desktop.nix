@@ -53,4 +53,4 @@
     "text/*" = "zed.desktop";
   };
 
-};
+}
