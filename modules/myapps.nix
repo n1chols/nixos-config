@@ -16,13 +16,12 @@
       (lib.optionals config.modules.myapps.systemApps (with pkgs; [
         firefox
         thunderbird
-        zed
+        zed-editor
+        loupe
+        celluloid
+        nautilus
         mission-center
-        blackbox
-        nemo
-        mpv
-        imv
-        zathura
+        blackbox-terminal
       ])) ++
       (lib.optionals config.modules.myapps.officeApps (with pkgs; [
         libreoffice
@@ -33,14 +32,14 @@
       (lib.optionalAttrs config.modules.myapps.systemApps {
         "x-scheme-handler/http" = "firefox.desktop";
         "x-scheme-handler/https" = "firefox.desktop";
-        "application/pdf" = "org.pwmt.zathura.desktop";
-        "application/zip" = "nemo.desktop";
-        "application/gzip" = "nemo.desktop";
-        "application/x-rar" = "nemo.desktop";
-        "application/x-7z-compressed" = "nemo.desktop";
+        "application/pdf" = "firefox.desktop";
+        "application/zip" = "nautilus.desktop";
+        "application/gzip" = "nautilus.desktop";
+        "application/x-rar" = "nautilus.desktop";
+        "application/x-7z-compressed" = "nautilus.desktop";
         "text/*" = "zed.desktop";
-        "image/*" = "imv.desktop";
-        "video/*" = "mpv.desktop";
+        "image/*" = "loupe.desktop";
+        "video/*" = "celluloid.desktop";
       }) //
       (lib.optionalAttrs config.modules.myapps.officeApps {
         "application/msword" = "libreoffice-writer.desktop";
