@@ -4,7 +4,6 @@
   options = {
     modules.gnome = {
       enable = lib.mkEnableOption "";
-      autoLogin = lib.mkEnableOption "";
       disableCoreApps = lib.mkEnableOption "";
       disablePowerManager = lib.mkEnableOption "";
     };
