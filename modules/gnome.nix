@@ -12,19 +12,19 @@
     # Enable GNOME and GDM
     services.xserver = {
       enable = true;
-      displayManager = {
-        gdm.enable = true;
-        sessionCommands = ''
-          gsettings set org.gnome.desktop.interface scaling-factor 2
-        '';
-      };
-      desktopManager.gnome = {
-        enable = true;
-        extraGSettingsOverrides = ''
-          [org/gnome/desktop/interface]
-          scaling-factor=2
-        '';
-      };
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
+    };
+
+    # Force GNOME scaling
+    programs.dconf.profiles = {
+      gdm.databases = [{
+        settings = {
+          "org/gnome/desktop/interface" = {
+            scaling-factor = 2;
+          };
+        };
+      }];
     };
 
     # Enable XDG desktop portal
