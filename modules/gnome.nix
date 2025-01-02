@@ -36,8 +36,8 @@
       };
 
       environment.gnome.excludePackages = (with pkgs; [
-        gnome.gnome-tour
-        gnome.gnome-shell-extensions
+        gnome-tour
+        gnome-shell-extensions
       ]);
     })
   ];
