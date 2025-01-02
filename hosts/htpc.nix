@@ -10,13 +10,12 @@
   hardware = {
     enableRedistributableFirmware = true;
     cpu.amd.updateMicrocode = true;
-    steam-hardware.enable = true;
-    xpadneo.enable = true;
-    video.hidpi.enable = true;
     graphics = {
       enable = true;
       enable32Bit = true;
     };
+    steam-hardware.enable = true;
+    xpadneo.enable = true;
   };
 
   services.xserver = {
