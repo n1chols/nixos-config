@@ -2,6 +2,9 @@
 
   # Host name
   networking.hostName = "HTPC";
+
+  # Time zone
+  time.timeZone = "America/Los_Angeles";
   
   # Hardware setup
   hardware = {
