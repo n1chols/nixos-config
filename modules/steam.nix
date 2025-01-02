@@ -14,14 +14,17 @@
     programs = {
       gamescope = {
         enable = true;
-        args = [ "-steamos3" ];
+        #args = [ "-steamos3" ];
       };
       steam = {
         enable = true;
         remotePlay.openFirewall = true;
         dedicatedServer.openFirewall = true;
         localNetworkGameTransfers.openFirewall = true;
-        gamescopeSession.enable = config.modules.steam.addSessionEntry;
+        gamescopeSession = {
+          enable = config.modules.steam.addSessionEntry;
+          args = [ "-steamos3" ];
+        }
       };
     };
 
