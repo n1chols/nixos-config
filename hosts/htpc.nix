@@ -5,6 +5,9 @@
 
   # Time zone
   time.timeZone = "America/Los_Angeles";
+
+  # Auto login
+  services.getty.autologinUser = "user";
   
   # Hardware setup
   hardware = {
