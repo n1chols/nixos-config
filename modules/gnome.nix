@@ -15,7 +15,7 @@
     # Enable GNOME, GDM, XDG desktop portal
     (lib.mkIf config.modules.gnome.enable {
       services = {
-        desktopManager.gnome.enable = true;
+        xserver.desktopManager.gnome.enable = true;
         displayManager.gdm = {
           enable = true;
           autoLogin = {
