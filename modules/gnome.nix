@@ -44,7 +44,10 @@
 
     # Disable power manager
     (lib.mkIf config.modules.gnome.disablePowerManager {
-      services.upower.enable = lib.mkForce false;
+      services = {
+        upower.enable = lib.mkForce false;
+        power-profiles-daemon.enable = lib.mkForce false;
+      };
     })
   ];
 
