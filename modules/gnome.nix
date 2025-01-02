@@ -16,12 +16,9 @@
       services.xserver = {
         enable = true;
         desktopManager.gnome.enable = true;
-        displayManager = {
-          defaultSession = "gnome";
-          gdm = {
-            enable = true;
-            wayland = true;
-          };
+        displayManager.gdm = {
+          enable = true;
+          wayland = true;
         };
       };
 
