@@ -25,7 +25,7 @@
         };
         desktopManager.gnome = {
           enable = true;
-          sessionPath = [];
+          #sessionPath = [];
         };
       };
 
