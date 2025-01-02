@@ -5,6 +5,7 @@
     modules.gnome = {
       enable = lib.mkEnableOption "";
       disableCoreApps = lib.mkEnableOption "";
+      disablePowerManager = lib.mkEnableOption "";
     };
   };
   
@@ -38,6 +39,11 @@
         gnome-tour
         gnome-shell-extensions
       ]);
+    })
+
+    # Disable power manager
+    (lib.mkIf config.modules.gnome.disablePowerManager {
+      services.upower.enable = lib.mkForce false;
     })
   ];
 
