@@ -23,7 +23,7 @@
         mpv
         imv
         zathura
-      ])
+      ]) ++
       (lib.optionals config.modules.myapps.officeApps [
         libreoffice
       ])
@@ -42,7 +42,7 @@
         "text/*" = "zed.desktop";
         "image/*" = "imv.desktop";
         "video/*" = "mpv.desktop";
-      })
+      }) //
       (lib.optionals config.modules.myapps.officeApps {
         "application/msword" = "libreoffice-writer.desktop";
         "application/vnd.ms-excel" = "libreoffice-calc.desktop";
