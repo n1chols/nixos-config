@@ -37,7 +37,9 @@
   ];
 
   # Modules configuration
-  modules = {
+  imports = [ ../modules/* ];
+
+  services = {
     gnome.enable = true;
     myapps = {
       enable = true;
