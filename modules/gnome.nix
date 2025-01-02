@@ -18,7 +18,7 @@
         displayManager.gdm.enable = true;
         desktopManager.gnome = {
           enable = true;
-          xserver.desktopManager.gnome.sessionPath = [];
+          sessionPath = [];
         };
       };
 
