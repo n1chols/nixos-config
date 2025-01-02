@@ -36,13 +36,18 @@
     #  '')
     #];
 
+    # Hack?
+    users.users.steamuser = {
+      isSystemUser = true;
+      uid = config.users.users.user.uid;
+    };
+
     # Install necessary packages
     environment.systemPackages = with pkgs; [
       vulkan-tools
       vulkan-loader
       vulkan-validation-layers
-      (writeScriptBin "steamos-session-select" ''
-        #!${stdenv.shell}
+      (writeShellScriptBin "steamos-session-select" ''
         steam -shutdown
       '')
     ];
