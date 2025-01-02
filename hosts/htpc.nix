@@ -37,10 +37,10 @@
 
   # Modules configuration
   imports = [
-    ./modules/gnome.nix
-    ./modules/myapps.nix
-    ./modules/steam.nix
-    ./modules/kodi.nix
+    ../modules/gnome.nix
+    ../modules/myapps.nix
+    ../modules/steam.nix
+    ../modules/kodi.nix
   ];
 
   services = {
