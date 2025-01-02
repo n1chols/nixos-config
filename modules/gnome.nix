@@ -20,10 +20,6 @@
           desktopManager.gnome.enable = true;
           displayManager.gdm.enable = true;
         };
-        autoLogin = {
-          enable = config.modules.gnome.autoLogin;
-          user = "user";
-        };
       };
 
       xdg.portal = {
