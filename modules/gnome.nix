@@ -19,6 +19,8 @@
         displayManager.gdm.enable = true;
       };
 
+      # displayManager.gdm.autoSuspend = false;
+
       xdg.portal = {
         enable = true;
         extraPortals = with pkgs; [ xdg-desktop-portal-gnome ];
