@@ -14,7 +14,7 @@
     programs = {
       gamescope = {
         enable = true;
-        #args = [ "--exit-after-session" ];
+        args = [ "-steamos3" ];
       };
       steam = {
         enable = true;
@@ -24,6 +24,14 @@
         gamescopeSession.enable = config.modules.steam.addSessionEntry;
       };
     };
+
+    # Fix Steam 'Switch to Desktop'
+    environment.systemPackages = with pkgs; [
+      (writeScriptBin "steamos-session-select" ''
+        #!${stdenv.shell}
+        steam -shutdown
+      '')
+    ];
 
     # Install necessary packages
     environment.systemPackages = with pkgs; [
