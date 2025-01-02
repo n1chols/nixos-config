@@ -14,7 +14,7 @@
     programs = {
       gamescope = {
         enable = true;
-        extraArgs = [ "--exit-after-session" ];
+        args = [ "--exit-after-session" ];
       };
       steam = {
         enable = true;
