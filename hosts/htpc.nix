@@ -43,21 +43,19 @@
     ../modules/kodi.nix
   ];
 
-  services = {
-    modules = {
-      gnome.enable = true;
-      myapps = {
-        enable = true;
-        systemApps = true;
-      };
-      steam = {
-        enable = true;
-        addSessionEntry = true;
-      };
-      kodi = {
-        enable = true;
-        addSessionEntry = true;
-      };
+  modules = {
+    gnome.enable = true;
+    myapps = {
+      enable = true;
+      systemApps = true;
+    };
+    steam = {
+      enable = true;
+      addSessionEntry = true;
+    };
+    kodi = {
+      enable = true;
+      addSessionEntry = true;
     };
   };
 
