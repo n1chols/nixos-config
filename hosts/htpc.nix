@@ -8,15 +8,15 @@
   
   # Hardware setup
   hardware = {
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-    };
     enableRedistributableFirmware = true;
     cpu.amd.updateMicrocode = true;
     steam-hardware.enable = true;
     xpadneo.enable = true;
     video.hidpi.enable = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
   };
 
   services.xserver = {
