@@ -15,8 +15,18 @@
     (lib.mkIf config.modules.gnome.enable {
       services.xserver = {
         enable = true;
-        displayManager.sddm.enable = true;
         desktopManager.gnome.enable = true;
+        displayManager = {
+          lightdm = {
+            enable = true;
+            autoLogin = {
+              enable = true;
+              user = "user";
+              session = [ "gnome" ];  
+            };
+          greeter.enable = true;
+          };
+        };
       };
 
       xdg.portal = {
