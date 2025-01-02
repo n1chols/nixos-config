@@ -18,6 +18,14 @@
       localNetworkGameTransfers.openFirewall = true;
       gamescopeSession.enable = config.modules.steam.addSessionEntry;
     };
+
+    # Install necessary packages
+    environment.systemPackages = with pkgs; [
+      gamescope
+      vulkan-tools
+      vulkan-loader
+      vulkan-validation-layers
+    ];
   };
 
 }
