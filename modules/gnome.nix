@@ -10,7 +10,7 @@
   
   # CONFIG
   config = lib.mkMerge [
-    # Enable GNOME and GDM
+    # Enable GNOME, GDM, XDG desktop portal
     (lib.mkIf config.modules.gnome.enable {
       services.xserver = {
         enable = true;
@@ -19,7 +19,6 @@
         desktopManager.gnome.enable = true;
       };
 
-      # Enable XDG desktop portal
       xdg.portal = {
         enable = true;
         extraPortals = with pkgs; [ xdg-desktop-portal-gnome ];
