@@ -16,6 +16,7 @@
     };
     steam-hardware.enable = true;
     xpadneo.enable = true;
+    video.hidpi.enable = true;
   };
 
   services.xserver = {
