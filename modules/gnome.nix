@@ -4,6 +4,7 @@
   options = {
     modules.gnome = {
       enable = lib.mkEnableOption "";
+      enableCoreApps = lib.mkEnableOption "";
     };
   };
   
@@ -25,7 +26,8 @@
 
     # Disable GNOME apps
     services = {
-      gnome.core-utilities.enable = false;
+      gnome.core-utilities.enable = config.modules.gnome.enableCoreApps;
+      programs.gnome-initial-setup.enable = config.modules.gnome.enableCoreApps;
     };
   };
 
