@@ -20,7 +20,16 @@
 
   boot.initrd.kernelModules = [ "amdgpu" ];
 
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver = {
+    videoDrivers = [ "amdgpu" ];
+    displayManager.gdm.autoSuspend = false;
+    dpi = "120";
+  };
+
+  environment.sessionVariables = {
+    GDK_SCALE = "2";
+    GDK_DPI_SCALE = "0.5";
+  };
 
   # File systems
   fileSystems = {
