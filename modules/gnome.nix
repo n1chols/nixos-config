@@ -9,9 +9,10 @@
   
   # CONFIG
   config = lib.mkIf config.modules.gnome.enable {
-    # Enable GNOME
+    # Enable GNOME and GDM
     services.xserver = {
       enable = true;
+      displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
     };
 
@@ -32,6 +33,18 @@
       gnome-tour
       gnome-shell-extensions
     ]);
+
+    # Force GDM to inherit GNOME settings
+    environment.etc."dconf/db/gdm.d/01-scaling" = {
+      text = ''
+        [org/gnome/desktop/interface]
+        inherit-settings=true
+      '';
+    };
+
+    system.activationScripts.dconfdb.text = ''
+      ${pkgs.dconf}/bin/dconf update
+    '';
   };
 
 }
