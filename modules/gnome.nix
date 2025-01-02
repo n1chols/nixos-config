@@ -20,7 +20,6 @@
           lightdm = {
             enable = true;
             greeter.enable = true;
-            defaultSession = "gnome";
             autoLogin = {
               enable = true;
               user = "user";
