@@ -10,7 +10,7 @@
   
   # CONFIG
   config = lib.mkIf config.modules.gnome.enable {
-    # Enable Gnome and GDM
+    # Enable GNOME and GDM
     services.xserver = {
       enable = true;
       displayManager.gdm.enable = true;
@@ -18,9 +18,14 @@
       desktopManager.gnome.enable = true;
     };
 
+    # Enable XDG desktop portal
+    xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [ xdg-desktop-portal-gnome ];
+    };
+
     # Configure services
     services = {
-      xdg-portal-gnome.enable = true;
       gnome.core-utilities.enable = false;
       upower.enable = config.modules.gnome.powerManagement;
     };
