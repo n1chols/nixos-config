@@ -11,17 +11,22 @@
   # CONFIG
   config = lib.mkIf config.modules.steam.enable {
     # Enable Steam and Wayland session entry
-    programs.steam = {
-      enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-      localNetworkGameTransfers.openFirewall = true;
-      gamescopeSession.enable = config.modules.steam.addSessionEntry;
+    programs = {
+      gamescope = {
+        enable = true;
+        extraArgs = [ "--exit-after-session" ];
+      };
+      steam = {
+        enable = true;
+        remotePlay.openFirewall = true;
+        dedicatedServer.openFirewall = true;
+        localNetworkGameTransfers.openFirewall = true;
+        gamescopeSession.enable = config.modules.steam.addSessionEntry;
+      };
     };
 
     # Install necessary packages
     environment.systemPackages = with pkgs; [
-      gamescope
       vulkan-tools
       vulkan-loader
       vulkan-validation-layers
