@@ -25,19 +25,23 @@
       };
     };
 
-    # Fix Steam 'Switch to Desktop'
-    environment.systemPackages = with pkgs; [
-      (writeScriptBin "steamos-session-select" ''
-        #!${stdenv.shell}
-        steam -shutdown
-      '')
-    ];
+    ## Fix Steam 'Switch to Desktop'
+    #environment.systemPackages = with pkgs; [
+    #  (writeScriptBin "steamos-session-select" ''
+    #    #!${stdenv.shell}
+    #    steam -shutdown
+    #  '')
+    #];
 
     # Install necessary packages
     environment.systemPackages = with pkgs; [
       vulkan-tools
       vulkan-loader
       vulkan-validation-layers
+      (writeScriptBin "steamos-session-select" ''
+        #!${stdenv.shell}
+        steam -shutdown
+      '')
     ];
   };
 
