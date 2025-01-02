@@ -26,7 +26,7 @@
       };
     })
 
-    # Disable GNOME Apps
+    # Disable GNOME apps
     (lib.mkIf config.modules.gnome.disableCoreApps {
       services = {
         gnome = {
