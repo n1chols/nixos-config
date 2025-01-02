@@ -25,9 +25,12 @@
     };
 
     # Disable GNOME apps
-    services.gnome.core-utilities.enable = config.modules.gnome.enableCoreApps;
-
-    programs.gnome-initial-setup.enable = config.modules.gnome.enableCoreApps;
+    services = {
+      gnome = {
+        core-utilities.enable = config.modules.gnome.enableCoreApps;
+        gnome-initial-setup.enable = config.modules.gnome.enableCoreApps;
+      };
+    };
   };
 
 }
