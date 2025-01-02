@@ -15,10 +15,10 @@
     (lib.mkIf config.modules.gnome.enable {
       services.xserver = {
         enable = true;
-        desktopManager.gnome.enable = true;
-        displayManager.gdm = {
+        displayManager.gdm.enable = true;
+        desktopManager.gnome = {
           enable = true;
-          wayland = true;
+          xserver.desktopManager.gnome.sessionPath = [];
         };
       };
 
