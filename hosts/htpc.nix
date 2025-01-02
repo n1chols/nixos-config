@@ -7,7 +7,8 @@
   time.timeZone = "America/Los_Angeles";
 
   # Auto login
-  services.getty.autologinUser = "user";
+  users.users.user.hashedPassword = "";
+  #services.getty.autologinUser = "user";
   
   # Hardware setup
   hardware = {
