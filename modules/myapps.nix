@@ -12,8 +12,8 @@
   # CONFIG
   config = lib.mkIf config.modules.myapps.enable {
     # Add applications
-    environment.systemPackages =
-      (lib.optionals config.modules.myapps.systemApps [
+    environment.systemPackages = 
+      (lib.optionals config.modules.myapps.systemApps (with pkgs; [
         firefox
         thunderbird
         zed
@@ -23,10 +23,10 @@
         mpv
         imv
         zathura
-      ]) ++
-      (lib.optionals config.modules.myapps.officeApps [
+      ])) ++
+      (lib.optionals config.modules.myapps.officeApps (with pkgs; [
         libreoffice
-      ]);
+      ]));
 
     # Setup file associations
     xdg.mime.defaultApplications =
