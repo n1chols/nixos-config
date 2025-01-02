@@ -12,11 +12,10 @@
     # Enable GNOME and GDM
     services.xserver = {
       enable = true;
-      displayManager.gdm = {
-        enable = true;
-        extraConfig = ''
-          [org/gnome/desktop/interface]
-          scaling-factor=2
+      displayManager = {
+        gdm.enable = true;
+        sessionCommands = ''
+          gsettings set org.gnome.desktop.interface scaling-factor 2
         '';
       };
       desktopManager.gnome = {
