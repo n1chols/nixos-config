@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
 
   # Host name
-  networking.hostName = "BEDROOM_HTPC";
+  networking.hostName = "HTPC";
   
   # Hardware setup
   hardware = {
