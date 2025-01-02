@@ -44,7 +44,10 @@
   ];
 
   modules = {
-    gnome.enable = true;
+    gnome = {
+      enable = true;
+      disableCoreApps = true;
+    };
     myapps = {
       enable = true;
       systemApps = true;
