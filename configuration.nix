@@ -3,7 +3,7 @@
   # Host
   imports = [
     # Replace with your host config (e.g., hosts/thinkpad.nix)
-    ./hosts/example.nix
+    ./hosts/htpc.nix
   ];
 
   # Boot
