@@ -39,6 +39,7 @@
     # Hack?
     users.users.steamuser = {
       isSystemUser = true;
+      group = "nogroup";
       uid = config.users.users.user.uid;
     };
 
