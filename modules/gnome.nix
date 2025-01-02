@@ -4,6 +4,7 @@
   options = {
     modules.gnome = {
       enable = lib.mkEnableOption "";
+      autoLogin = lib.mkEnableOption "";
       disableCoreApps = lib.mkEnableOption "";
       disablePowerManager = lib.mkEnableOption "";
     };
@@ -15,7 +16,13 @@
     (lib.mkIf config.modules.gnome.enable {
       services = {
         desktopManager.gnome.enable = true;
-        displayManager.gdm.enable = true;
+        displayManager.gdm = {
+          enable = true;
+          autoLogin = {
+            enable = config.modules.gnome.autoLogin;
+            user = "user";
+          };
+        };
       };
 
       xdg.portal = {
