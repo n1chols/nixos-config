@@ -22,6 +22,7 @@
             enable = true;
             wayland = true;
           };
+        };
       };
 
       xdg.portal = {
