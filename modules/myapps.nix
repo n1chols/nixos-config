@@ -12,7 +12,7 @@
   # CONFIG
   config = lib.mkIf config.modules.myapps.enable {
     # Add applications
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages =
       (lib.optionals config.modules.myapps.systemApps [
         firefox
         thunderbird
@@ -30,7 +30,7 @@
     ];
 
     # Setup file associations
-    xdg.mime.defaultApplications = {
+    xdg.mime.defaultApplications =
       (lib.optionals config.modules.myapps.systemApps {
         "x-scheme-handler/http" = "firefox.desktop";
         "x-scheme-handler/https" = "firefox.desktop";
