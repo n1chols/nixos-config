@@ -34,9 +34,10 @@
           gnome-initial-setup.enable = false;
         };
       };
-      environment.gnome.excludePackages = (with pkgs.gnome; [
-        gnome-tour
-        gnome-shell-extensions
+
+      environment.gnome.excludePackages = (with pkgs; [
+        gnome.gnome-tour
+        gnome.gnome-shell-extensions
       ]);
     })
   ];
