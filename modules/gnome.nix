@@ -15,8 +15,8 @@
     (lib.mkIf config.modules.gnome.enable {
       services.xserver = {
         enable = true;
-        displayManager.gdm = {
-          enable = true;
+        displayManager = {
+          gdm.enable = true;
           session = [{
             name = "gnome";
             type = "wayland";
