@@ -4,7 +4,7 @@
   options = {
     modules.gnome = {
       enable = lib.mkEnableOption "";
-      enableCoreApps = lib.mkEnableOption "";
+      disableCoreApps = lib.mkEnableOption "";
     };
   };
   
@@ -24,13 +24,19 @@
       extraPortals = with pkgs; [ xdg-desktop-portal-gnome ];
     };
 
-    # Disable GNOME apps
+  # Disable GNOME apps
+  } // lib.optionalAttrs config.modules.gnome.disableCoreApps {
     services = {
       gnome = {
-        core-utilities.enable = config.modules.gnome.enableCoreApps;
-        gnome-initial-setup.enable = config.modules.gnome.enableCoreApps;
+        core-utilities.enable = false;
+        gnome-initial-setup.enable = false;
       };
     };
+
+    environment.gnome.excludePackages = (with pkgs.gnome; [
+      gnome-tour
+      gnome-shell-extensions
+    ]);
   };
 
 }
