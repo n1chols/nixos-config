@@ -21,7 +21,6 @@
   services.xserver = {
     videoDrivers = [ "amdgpu" ];
     displayManager.gdm.autoSuspend = false;
-    dpi = 192;
   };
 
   boot.initrd.kernelModules = [ "amdgpu" ];
