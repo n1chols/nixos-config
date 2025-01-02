@@ -18,10 +18,7 @@
     xpadneo.enable = true;
   };
 
-  services.xserver = {
-    videoDrivers = [ "amdgpu" ];
-    displayManager.gdm.autoSuspend = false;
-  };
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   boot.initrd.kernelModules = [ "amdgpu" ];
 
