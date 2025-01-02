@@ -23,7 +23,7 @@
         localNetworkGameTransfers.openFirewall = true;
         gamescopeSession = {
           enable = config.modules.steam.addSessionEntry;
-          args = [ "-steamos3" "-gamepadui" ];
+          #args = [ "-steamos3" "-gamepadui" ];
         };
       };
     };
