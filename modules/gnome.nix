@@ -19,12 +19,12 @@
         displayManager = {
           lightdm = {
             enable = true;
+            greeter.enable = true;
+            defaultSession = "gnome";
             autoLogin = {
               enable = true;
               user = "user";
-              session = [ "gnome" ];  
-            };
-          greeter.enable = true;
+            }; 
           };
         };
       };
