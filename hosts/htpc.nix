@@ -18,17 +18,14 @@
     xpadneo.enable = true;
   };
 
-  boot.initrd.kernelModules = [ "amdgpu" ];
-
   services.xserver = {
     videoDrivers = [ "amdgpu" ];
     displayManager.gdm.autoSuspend = false;
   };
 
-  environment.sessionVariables = {
-    GDK_SCALE = "2";
-    GDK_DPI_SCALE = "0.5";
-  };
+  boot.initrd.kernelModules = [ "amdgpu" ];
+
+  environment.sessionVariables.GDK_SCALE = "2";
 
   # File systems
   fileSystems = {
