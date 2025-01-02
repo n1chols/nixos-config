@@ -34,7 +34,7 @@
       gnome-shell-extensions
     ]);
 
-    # Force GDM to inherit GNOME settings
+    # Force GDM to inherit GNOME scaling
     environment.etc."dconf/db/gdm.d/01-scaling" = {
       text = ''
         [org/gnome/desktop/interface]
