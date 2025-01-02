@@ -24,6 +24,8 @@
   # Packages
   nixpkgs.config.allowUnfree = true;
 
+  services.xserver.excludePackages = [ pkgs.xterm ];
+
   # Documentation
   documentation.nixos.enable = false;
 
