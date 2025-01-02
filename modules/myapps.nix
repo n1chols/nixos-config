@@ -26,8 +26,7 @@
       ]) ++
       (lib.optionals config.modules.myapps.officeApps [
         libreoffice
-      ])
-    ];
+      ]);
 
     # Setup file associations
     xdg.mime.defaultApplications =
@@ -47,8 +46,7 @@
         "application/msword" = "libreoffice-writer.desktop";
         "application/vnd.ms-excel" = "libreoffice-calc.desktop";
         "application/vnd.ms-powerpoint" = "libreoffice-impress.desktop";
-      })
-    };
+      });
   };
 
 }
