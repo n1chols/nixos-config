@@ -24,6 +24,9 @@
   # Packages
   nixpkgs.config.allowUnfree = true;
 
+  # Documentation
+  documentation.nixos.enable = false;
+
   # Version
   system.stateVersion = "24.11";
 
