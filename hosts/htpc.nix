@@ -26,8 +26,6 @@
 
   boot.initrd.kernelModules = [ "amdgpu" ];
 
-  environment.sessionVariables.GDK_SCALE = "2";
-
   # File systems
   fileSystems = {
     "/" = {
