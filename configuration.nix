@@ -24,10 +24,9 @@
   # Packages
   nixpkgs.config.allowUnfree = true;
 
-  services.xserver.excludePackages = [ pkgs.xterm ];
-
-  # Documentation
   documentation.nixos.enable = false;
+
+  services.xserver.excludePackages = [ pkgs.xterm ];
 
   # Version
   system.stateVersion = "24.11";
