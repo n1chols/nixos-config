@@ -16,7 +16,7 @@
       (lib.optionals config.modules.myapps.systemApps (with pkgs; [
         firefox
         thunderbird
-        zed-editor
+        gedit
         loupe
         celluloid
         nautilus
