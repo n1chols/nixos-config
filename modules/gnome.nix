@@ -15,9 +15,12 @@
     (lib.mkIf config.modules.gnome.enable {
       services.xserver = {
         enable = true;
-        displayManager.gdm.enable = true;
-        displayManager.gdm.wayland = true;
         desktopManager.gnome.enable = true;
+        displayManager.gdm = {
+          enable = true;
+          wayland = true;
+          xSession.enable = false;
+        };
       };
 
       xdg.portal = {
