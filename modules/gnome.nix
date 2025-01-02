@@ -4,7 +4,6 @@
   options = {
     modules.gnome = {
       enable = lib.mkEnableOption "";
-      powerManagement = lib.mkEnableOption "";
     };
   };
   
@@ -24,10 +23,9 @@
       extraPortals = with pkgs; [ xdg-desktop-portal-gnome ];
     };
 
-    # Configure services
+    # Disable GNOME apps
     services = {
       gnome.core-utilities.enable = false;
-      upower.enable = config.modules.gnome.powerManagement;
     };
   };
 
