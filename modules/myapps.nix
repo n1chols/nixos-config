@@ -22,6 +22,7 @@
         nautilus
         mission-center
         blackbox-terminal
+        git
       ])) ++
       (lib.optionals config.modules.myapps.officeApps (with pkgs; [
         libreoffice
