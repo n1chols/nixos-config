@@ -23,7 +23,7 @@
   services.xserver = {
     videoDrivers = [ "amdgpu" ];
     displayManager.gdm.autoSuspend = false;
-    dpi = "120";
+    dpi = 120;
   };
 
   environment.sessionVariables = {
