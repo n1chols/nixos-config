@@ -4,48 +4,34 @@
   options = {
     modules.gnome = {
       enable = lib.mkEnableOption "";
-      disableCoreApps = lib.mkEnableOption "";
-      disablePowerManager = lib.mkEnableOption "";
     };
   };
   
   # CONFIG
-  config = lib.mkMerge [
-    # Enable GNOME and XDG desktop portal
-    (lib.mkIf config.modules.gnome.enable {
-      services.xserver = {
-        enable = true;
-        desktopManager.gnome.enable = true;
-      };
+  config = lib.mkIf config.modules.gnome.enable {
+    # Enable GNOME
+    services.xserver = {
+      enable = true;
+      desktopManager.gnome.enable = true;
+    };
 
-      xdg.portal = {
-        enable = true;
-        extraPortals = with pkgs; [ xdg-desktop-portal-gnome ];
-      };
-    })
+    # Enable XDG desktop portal
+    xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [ xdg-desktop-portal-gnome ];
+    };
 
-    # Disable GNOME apps
-    (lib.mkIf config.modules.gnome.disableCoreApps {
-      services = {
-        gnome = {
-          core-utilities.enable = false;
-          gnome-initial-setup.enable = false;
-        };
-      };
+    # Disable GNOME core apps and setup
+    services.gnome = {
+      core-utilities.enable = false;
+      gnome-initial-setup.enable = false;
+    };
 
-      environment.gnome.excludePackages = (with pkgs; [
-        gnome-tour
-        gnome-shell-extensions
-      ]);
-    })
-
-    # Disable power manager
-    (lib.mkIf config.modules.gnome.disablePowerManager {
-      services = {
-        upower.enable = lib.mkForce false;
-        power-profiles-daemon.enable = lib.mkForce false;
-      };
-    })
-  ];
+    # Disable the remaining apps
+    environment.gnome.excludePackages = (with pkgs; [
+      gnome-tour
+      gnome-shell-extensions
+    ]);
+  };
 
 }
