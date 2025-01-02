@@ -12,8 +12,20 @@
     # Enable GNOME and GDM
     services.xserver = {
       enable = true;
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
+      displayManager.gdm = {
+        enable = true;
+        extraConfig = ''
+          [org/gnome/desktop/interface]
+          scaling-factor=2
+        '';
+      };
+      desktopManager.gnome = {
+        enable = true;
+        extraGSettingsOverrides = ''
+          [org/gnome/desktop/interface]
+          scaling-factor=2
+        '';
+      };
     };
 
     # Enable XDG desktop portal
@@ -33,18 +45,6 @@
       gnome-tour
       gnome-shell-extensions
     ]);
-
-    # Force GDM to inherit GNOME scaling
-    environment.etc."dconf/db/gdm.d/01-scaling" = {
-      text = ''
-        [org/gnome/desktop/interface]
-        inherit-settings=true
-      '';
-    };
-
-    system.activationScripts.dconfdb.text = ''
-      ${pkgs.dconf}/bin/dconf update
-    '';
   };
 
 }
