@@ -16,7 +16,6 @@
       (lib.optionals config.modules.myapps.systemApps (with pkgs; [
         firefox
         thunderbird
-        gedit
         loupe
         celluloid
         nautilus
