@@ -50,6 +50,7 @@
     gnome = {
       enable = true;
       disableCoreApps = true;
+      disablePowerManager = true;
     };
     myapps = {
       enable = true;
