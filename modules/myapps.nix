@@ -30,7 +30,7 @@
 
     # Setup file associations
     xdg.mime.defaultApplications =
-      (lib.optionals config.modules.myapps.systemApps {
+      (lib.optionalAttrs config.modules.myapps.systemApps {
         "x-scheme-handler/http" = "firefox.desktop";
         "x-scheme-handler/https" = "firefox.desktop";
         "application/pdf" = "org.pwmt.zathura.desktop";
@@ -42,7 +42,7 @@
         "image/*" = "imv.desktop";
         "video/*" = "mpv.desktop";
       }) //
-      (lib.optionals config.modules.myapps.officeApps {
+      (lib.optionalAttrs config.modules.myapps.officeApps {
         "application/msword" = "libreoffice-writer.desktop";
         "application/vnd.ms-excel" = "libreoffice-calc.desktop";
         "application/vnd.ms-powerpoint" = "libreoffice-impress.desktop";
