@@ -14,7 +14,7 @@
     programs = {
       gamescope = {
         enable = true;
-        #args = [ "-steamos3" "-gamepadui" ];
+        #args = [ "-steamos3" ];
       };
       steam = {
         enable = true;
@@ -23,7 +23,7 @@
         localNetworkGameTransfers.openFirewall = true;
         gamescopeSession = {
           enable = config.modules.steam.addSessionEntry;
-          args = [ "-steamos3" "-gamepadui" ];
+          args = [ "-steamos3" ];
         };
       };
     };
@@ -37,20 +37,20 @@
     #];
 
     # Hack?
-    users.users.steamuser = {
-      isSystemUser = true;
-      group = "nogroup";
-      uid = config.users.users.user.uid;
-    };
+    #users.users.steamuser = {
+    #  isSystemUser = true;
+    #  group = "nogroup";
+    #  uid = config.users.users.user.uid;
+    #};
 
     # Install necessary packages
     environment.systemPackages = with pkgs; [
       vulkan-tools
       vulkan-loader
       vulkan-validation-layers
-      (writeShellScriptBin "steamos-session-select" ''
-        steam -shutdown
-      '')
+      #(writeShellScriptBin "steamos-session-select" ''
+      #  steam -shutdown
+      #'')
     ];
   };
 
