@@ -13,6 +13,10 @@
 
   # CONFIG
   config = lib.mkIf config.modules.greetd.enable {
+    # Enable autologin
+    services.getty.autologinUser = "user"
+
+    # Enable greetd
     services.greetd = {
       enable = true;
       settings = {
