@@ -9,22 +9,10 @@
   
   # CONFIG
   config = lib.mkIf config.modules.gnome.enable {
-    # Enable GNOME and GDM
+    # Enable GNOME
     services.xserver = {
       enable = true;
-      displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
-    };
-
-    # Force GNOME scaling
-    programs.dconf.profiles = {
-      gdm.databases = [{
-        settings = {
-          "org/gnome/desktop/interface" = {
-            scaling-factor = lib.gvariant.mkUint32 2;
-          };
-        };
-      }];
     };
 
     # Enable XDG desktop portal
