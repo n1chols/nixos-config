@@ -28,49 +28,52 @@
     #};
 
     systemd.user.services = {
-      gamescope-steam = {
-        description = "Steam in Gamescope";
-        wantedBy = [ "default.target" ];
-        after = [ "graphical-session-pre.target" ];
-        serviceConfig = {
-          Type = "simple";
-          Environment = [
-            "DISPLAY=:1"
-            "XDG_SESSION_TYPE=x11"
-          ];
-          ExecStart = ''
-            #${pkgs.xorg.xinit}/bin/xinit \
-            ${pkgs.gamescope}/bin/gamescope -- \
-            ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf \
-            -- :1 vt2
-          '';
-          Restart = "on-failure";
-          RestartSec = 1;
-          TimeoutStopSec = 30;
-        };
-      };
-
-      kodi = {
-        description = "Kodi Media Center";
-        wantedBy = [ "default.target" ];
-        after = [ "graphical-session-pre.target" ];
-        serviceConfig = {
-          Type = "simple";
-          Environment = [
-            "DISPLAY=:2"
-            "XDG_SESSION_TYPE=x11"
-          ];
-          ExecStart = ''
-            #${pkgs.xorg.xinit}/bin/xinit \
-            ${pkgs.kodi}/bin/kodi --standalone \
-            -- :2 vt3
-          '';
-          Restart = "on-failure";
-          RestartSec = 1;
-          TimeoutStopSec = 30;
-        };
+    gamescope-steam = {
+      description = "Steam in Gamescope";
+      wantedBy = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        Environment = [
+          "DISPLAY=:1"
+          "XDG_SESSION_TYPE=x11"
+        ];
+        ExecStartPre = "${pkgs.coreutils}/bin/sleep 2";
+        ExecStart = ''
+          ${pkgs.xorg.xinit}/bin/xinit \
+          ${pkgs.gamescope}/bin/gamescope -- \
+          ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf \
+          -- :1 vt2
+        '';
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 30;
       };
     };
+
+    kodi = {
+      description = "Kodi Media Center";
+      wantedBy = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        Environment = [
+          "DISPLAY=:2"
+          "XDG_SESSION_TYPE=x11"
+        ];
+        ExecStartPre = "${pkgs.coreutils}/bin/sleep 3";
+        ExecStart = ''
+          ${pkgs.xorg.xinit}/bin/xinit \
+          ${pkgs.kodi}/bin/kodi --standalone \
+          -- :2 vt3
+        '';
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 30;
+      };
+    };
+  };
+
     # Goofy-ah
     programs.xwayland.enable = true;
 
