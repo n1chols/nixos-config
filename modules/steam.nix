@@ -26,6 +26,9 @@
             "-steampal"
             "-steamdeck"
           ];
+          env = {
+            STEAMCMD = "steam %command%";
+          };
         };
       };
     };
