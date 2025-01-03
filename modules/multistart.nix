@@ -1,6 +1,25 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, ... }:
 
-  # OPTIONS
+let
+  # Helper function to create a systemd unit
+  createSessionService = sessionName: ttyIndex: {
+    # Define the systemd service for the session
+    systemd.services."multistart-session-${sessionName}" = {
+      description = "Start ${sessionName}";
+      after = [ "graphical.target" ];
+      # We define which TTY the session should be associated with
+      serviceConfig = {
+        ExecStart = "${sessionName}";
+        TTYPath = "/dev/tty${ttyIndex}";
+        StandardInput = "tty";
+        StandardOutput = "tty";
+        StandardError = "tty";
+      };
+    };
+  };
+
+in {
+
   options.modules.multistart = {
     enable = lib.mkEnableOption "";
     sessions = lib.mkOption {
@@ -8,50 +27,17 @@
     };
   };
 
-  # CONFIG
   config = lib.mkIf config.modules.multistart.enable {
-    # Create systemd services for each session
-    systemd.services = builtins.listToAttrs (
-      lib.imap0 (idx: session: {
-        name = "multistart-session-${toString idx}";
-        value = {
-          description = "Multistart Session ${toString idx}";
-          
-          after = [ "systemd-logind.service" ];
-          requires = [ "systemd-logind.service" ];
-          
-          environment = {
-            DISPLAY = ":${toString idx}";
-            XAUTHORITY = "/run/user/1000/.Xauthority";
-          };
+    
+    # Iterate over the list of sessions and create a systemd service for each
+    let
+      sessions = config.modules.multistart.sessions;
+    in
+    builtins.listToAttrs (lib.listToAttrs (builtins.listMap (sessionName: 
+      let ttyIndex = builtins.elemAt sessions (builtins.indexOf sessions sessionName);
+      in createSessionService sessionName ttyIndex
+    ) sessions));
 
-          serviceConfig = {
-            User = "user";
-            PAMName = "login";
-            TTYPath = "/dev/tty${toString (1 + idx)}";
-            StandardInput = "tty";
-            StandardOutput = "journal";
-            StandardError = "journal";
-            WorkingDirectory = "~";
-            
-            # Security settings
-            NoNewPrivileges = true;
-            PrivateTmp = true;
-            RestrictNamespaces = true;
-            
-            ExecStart = "${pkgs.bash}/bin/bash -c '${session}'";
-            Restart = "always";
-          };
-
-          wantedBy = [ "multi-user.target" ];
-        };
-      }) config.modules.multistart.sessions
-    );
-
-    # Configure logind to reserve our TTYs
-    services.logind.extraConfig = ''
-      NAutoVTs=${toString (1 + (builtins.length config.modules.multistart.sessions))}
-    '';
   };
-
 }
+
