@@ -40,26 +40,21 @@
   # Modules configuration
   imports = [
     ../modules/gnome.nix
-    ../modules/myapps.nix
     ../modules/steam.nix
     ../modules/kodi.nix
+    ../modules/myapps.nix
   ];
 
   modules = {
-    gnome = {
-      enable = true;
-    };
+    gnome.enable = true;
+    steam.enable = true;
+    kodi.enable = true;
     myapps = {
       enable = true;
       systemApps = true;
     };
-    steam = {
+    autotty = {
       enable = true;
-      addSessionEntry = true;
-    };
-    kodi = {
-      enable = true;
-      addSessionEntry = true;
     };
   };
 
