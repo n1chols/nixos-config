@@ -1,5 +1,6 @@
 { config, lib, pkgs, ... }: {
 
+  # OPTIONS
   options.modules.greetd = {
     enable = lib.mkEnableOption "";
     sessions = lib.mkOption {
