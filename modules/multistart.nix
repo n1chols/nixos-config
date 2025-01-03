@@ -14,7 +14,7 @@
     services.greetd = {
       enable = true;
       settings.default_session = {
-        command = "dbus-run-session ${pkgs.kodi}/bin/kodi --standalone & waitPID=$! && wait $waitPID";
+        command = "pipewire & pipewire-pulse & dbus-run-session ${pkgs.kodi}/bin/kodi --standalone";
         user = "user";
       };
     };
