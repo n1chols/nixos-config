@@ -18,7 +18,6 @@
       enable = true;
       enable32Bit = true;
     };
-    steam-hardware.enable = true;
     xpadneo.enable = true;
   };
 
