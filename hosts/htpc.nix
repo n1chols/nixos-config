@@ -56,7 +56,7 @@
     };
     greetd = {
       enable = true;
-      defaultSession = "${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf";#"${pkgs.gnome-session}/bin/gnome-session --session=gnome";
+      defaultSession = "LIRC_SOCKET_PATH=/run/lirc/lircd ${pkgs.kodi}/bin/kodi --standalone";#"${pkgs.gnome-session}/bin/gnome-session --session=gnome";
       otherSessions = [
         "${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf"
         "LIRC_SOCKET_PATH=/run/lirc/lircd ${pkgs.kodi}/bin/kodi --standalone"
