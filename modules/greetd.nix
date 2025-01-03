@@ -24,7 +24,6 @@
           command = ''
             dbus-run-session env \
             XDG_SESSION_TYPE=wayland \
-            GNOME_SHELL_SESSION_MODE=default \
             gnome-session
           '';
           user = "user";
