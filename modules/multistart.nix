@@ -1,13 +1,11 @@
 { config, lib, pkgs, ... }:
 
+# Helper function to create a systemd service for each session
 let
-  # Helper function to create a systemd unit
   createSessionService = sessionName: ttyIndex: {
-    # Define the systemd service for the session
     systemd.services."multistart-session-${sessionName}" = {
       description = "Start ${sessionName}";
       after = [ "graphical.target" ];
-      # We define which TTY the session should be associated with
       serviceConfig = {
         ExecStart = "${sessionName}";
         TTYPath = "/dev/tty${ttyIndex}";
@@ -17,9 +15,10 @@ let
       };
     };
   };
-
+  
 in {
 
+  # Define the options for the multistart module
   options.modules.multistart = {
     enable = lib.mkEnableOption "";
     sessions = lib.mkOption {
@@ -27,17 +26,18 @@ in {
     };
   };
 
+  # Apply the configuration if multistart is enabled
   config = lib.mkIf config.modules.multistart.enable {
-    
-    # Iterate over the list of sessions and create a systemd service for each
+    # Generate a systemd service for each session
     let
       sessions = config.modules.multistart.sessions;
     in
-    builtins.listToAttrs (lib.listToAttrs (builtins.listMap (sessionName: 
-      let ttyIndex = builtins.elemAt sessions (builtins.indexOf sessions sessionName);
-      in createSessionService sessionName ttyIndex
+    # Dynamically generate a service for each session
+    builtins.listToAttrs (lib.listToAttrs (builtins.map (sessionName: 
+      let
+        ttyIndex = builtins.elemAt sessions (builtins.indexOf sessions sessionName);
+      in
+        createSessionService sessionName ttyIndex
     ) sessions));
-
   };
 }
-
