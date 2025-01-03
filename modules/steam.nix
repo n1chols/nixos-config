@@ -27,15 +27,20 @@
       };
     };
 
+    system.activationScripts.steamosSessionSelect = ''
+      mkdir -p /usr/bin
+      cat > /usr/bin/steamos-session-select << 'EOF'
+      #!/bin/sh
+      steam -shutdown
+      EOF
+      chmod +x /usr/bin/steamos-session-select
+    '';
+
     # Install necessary packages
     environment.systemPackages = with pkgs; [
       vulkan-tools
       vulkan-loader
       vulkan-validation-layers
-      (writeScriptBin "steamos-session-select" ''
-        #!${pkgs.bash}/bin/bash
-        steam -shutdown
-      '')
     ];
   };
 
