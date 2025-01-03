@@ -12,18 +12,16 @@
 
   # CONFIG
   config = lib.mkIf config.modules.multistart.enable {
-    # Configure greetd base service
+    # Configure greetd for multiple sessions
     services.greetd = {
       enable = true;
-      settings = {
-        default_session = {
-          command = builtins.elemAt config.modules.multistart.sessions 0;
-          user = "user";
-        };
+      settings.default_session = {
+        command = config.modules.multistart.sessions.0;
+        user = "user";
       };
     };
 
-    # Configure separate getty+greetd instances for each session
+    # Configure getty+greetd instances for each session
     systemd.services = lib.listToAttrs (lib.imap0 (index: command:
       let
         tty = toString (index + 1);
@@ -32,7 +30,7 @@
           description = "Greeter daemon on tty${tty}";
           after = [ "systemd-user-sessions.service" "plymouth-quit-wait.service" "getty@tty${tty}.service" ];
           wants = [ "getty@tty${tty}.service" ];
-          conflicts = [ "getty@tty${toString (index + 1)}.service" ];
+          conflicts = [ "getty@tty${tty}.service" ];
           wantedBy = [ "multi-user.target" ];
 
           serviceConfig = {
@@ -66,5 +64,4 @@
         }
     ) config.modules.multistart.sessions);
   };
-
 }
