@@ -14,7 +14,7 @@
     services.greetd = {
       enable = true;
       settings.default_session = {
-        command = "dbus-run-session ${pkgs.kodi-wayland}/bin/kodi-standalone";
+        command = "${pkgs.kodi}/bin/kodi --standalone & waitPID=$!";
         user = "user";
       };
     };
