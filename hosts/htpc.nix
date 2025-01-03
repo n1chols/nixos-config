@@ -55,6 +55,20 @@
     };
     autotty = {
       enable = true;
+      services = {
+        gnome = {
+          tty = "tty1";
+          command = "${pkgs.gnome.gnome-session}/bin/gnome-session";
+        };
+        steam = {
+          tty = "tty2";
+          command = "${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf";
+        };
+        kodi = {
+          tty = "tty3";
+          command = "${pkgs.kodi}/bin/kodi-standalone";
+        };
+      };
     };
   };
 
