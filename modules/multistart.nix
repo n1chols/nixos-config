@@ -30,6 +30,9 @@
           [default_session]
           command = "${lib.getAttr name config.modules.greetd.sessions}"
           user = "user"
+          
+          [initial_session_switcher]
+          enabled = false
         '';
       };
     }) (lib.tail (lib.attrNames config.modules.greetd.sessions)));
@@ -42,6 +45,9 @@
           Type = "simple";
           ExecStart = "${pkgs.greetd.greetd}/bin/greetd --config /etc/greetd/${name}-config.toml";
           Restart = "always";
+          RestartSec = "1s";
+          StandardOutput = "journal";
+          StandardError = "journal";
         };
       };
     }) (lib.tail (lib.attrNames config.modules.greetd.sessions)));
