@@ -21,11 +21,7 @@
       enable = true;
       settings = {
         default_session = {
-          command = ''
-            dbus-run-session env \
-            XDG_SESSION_TYPE=wayland \
-            gnome-session
-          '';
+          command = config.modules.greetd.defaultSession;
           user = "user";
         };
       };
