@@ -18,7 +18,13 @@
       lib.imap0 (index: session: {
         name = "session-tty${toString (index + 1)}";
         value = {
+          after = [ "getty@tty${toString (index + 1)}.service" ];
           wantedBy = [ "multi-user.target" ];
+          environment = {
+            XDG_SESSION_TYPE = "tty";
+            XDG_RUNTIME_DIR = "/run/user/1000";
+            DBUS_SESSION_BUS_ADDRESS = "unix:path=/run/user/1000/bus";
+          };
           serviceConfig = {
             Type = "simple";
             User = "user";
@@ -28,7 +34,9 @@
             TTYPath = "/dev/tty${toString (index + 1)}";
             TTYReset = true;
             TTYVHangup = true;
+            TTYVTDisallocate = true;
             WorkingDirectory = "~";
+            ExecStartPre = "${pkgs.coreutils}/bin/mkdir -p /run/user/1000";
             ExecStart = "${pkgs.bash}/bin/bash -l -c '${session}'";
             Restart = "always";
           };
