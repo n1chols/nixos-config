@@ -14,7 +14,7 @@
     services.greetd = {
       enable = true;
       settings.default_session = {
-        command = "pipewire & pipewire-pulse & dbus-run-session ${pkgs.kodi}/bin/kodi --standalone";
+        command = "dbus-run-session env XDG_RUNTIME_DIR=/run/user/$(id -u) ${pkgs.kodi}/bin/kodi --standalone";
         user = "user";
       };
     };
