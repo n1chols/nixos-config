@@ -10,9 +10,6 @@
 
   # CONFIG
   config = lib.mkIf config.modules.multistart.enable {
-    # We need logind for session management
-    services.logind.enable = true;
-
     # Create systemd services for each session
     systemd.services = builtins.listToAttrs (
       lib.imap0 (idx: session: {
