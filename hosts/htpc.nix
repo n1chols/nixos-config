@@ -59,7 +59,7 @@
       services = {
         gnome = {
           tty = "tty1";
-          command = "${pkgs.gnome.gnome-session}/bin/gnome-session";
+          command = "${pkgs.gnome-session}/bin/gnome-session";
         };
         steam = {
           tty = "tty2";
