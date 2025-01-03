@@ -20,14 +20,8 @@
         localNetworkGameTransfers.openFirewall = true;
         gamescopeSession = {
           enable = config.modules.steam.addSessionEntry;
-          args = [
-            "-gamepadui"
-            "-steamos3"
-            "-steampal"
-            "-steamdeck"
-          ];
           env = {
-            STEAMCMD = "steam %command%";
+            STEAMCMD = "steam -gamepadui -steamos3 -steampal -steamdeck";
           };
         };
       };
