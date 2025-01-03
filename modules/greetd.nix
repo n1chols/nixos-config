@@ -29,14 +29,8 @@
           vt = ${toString index}
 
           [default_session]
-          command = "dbus-run-session ${lib.getAttr name config.modules.greetd.sessions}"
+          command = "${lib.getAttr name config.modules.greetd.sessions}"
           user = "user"
-
-          [environment]
-          XDG_SESSION_TYPE = "wayland"
-          XDG_CURRENT_DESKTOP = "GNOME"
-          WAYLAND_DISPLAY = "wayland-1"
-          DISPLAY = ":1"
         '';
       };
     }) (lib.tail (lib.attrNames config.modules.greetd.sessions)));
