@@ -35,6 +35,11 @@
         StandardInput = "tty";
         StandardOutput = "tty";
         TTYPath = "/dev/${service.tty}";
+        TTYReset = true;
+        TTYVHangup = true;
+        TTYVTDisallocate = true;
+        UtmpIdentifier = "%n";
+        UtmpMode = "user";
       };
     }) config.modules.autotty.services;
   };
