@@ -68,7 +68,9 @@
 
   environment.loginShellInit = "
     if [ -z \"$DISPLAY\" ] && [ \"$XDG_VTNR\" = 1 ]; then
-      exec gnome-session
+      export XDG_SESSION_TYPE=wayland
+      export XDG_CURRENT_DESKTOP=GNOME
+      exec dbus-run-session gnome-session
     fi
   ";
 
