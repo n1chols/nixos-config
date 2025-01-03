@@ -19,6 +19,7 @@
         lightdm.enable = true;
         # Create session files in the xsessions directory
         session = lib.imap0 (index: session: {
+          manage = "desktop";
           name = "custom-session-${toString index}";
           start = ''
             ${session}
