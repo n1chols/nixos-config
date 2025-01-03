@@ -56,7 +56,7 @@
     };
     greetd = {
       enable = true;
-      defaultSession = "${pkgs.gnome-session}/bin/gnome-session";
+      defaultSession = "${pkgs.stdenv.shell} -c 'exec ${pkgs.gnome.gnome-session}/bin/gnome-session --session=gnome-xorg'";
       otherSessions = [
         "${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf"
         "LIRC_SOCKET_PATH=/run/lirc/lircd ${pkgs.kodi}/bin/kodi --standalone"
