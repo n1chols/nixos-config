@@ -12,14 +12,20 @@
   config = lib.mkIf config.modules.multistart.enable {
   
     # Generate systemd services for each session
-    systemd.services = lib.concatMapStringsSep "\n" (sessionName: ''
-      [Service]
-      ExecStart=${sessionName}
-      TTYPath=/dev/tty${builtins.indexOf config.modules.multistart.sessions sessionName + 1}
-      StandardInput=tty
-      StandardOutput=tty
-      StandardError=tty
-    '') config.modules.multistart.sessions;
+    systemd.services = lib.mkMerge (lib.mapAttrs (index: sessionName: {
+      # Each service is named based on the session name
+      "multistart-session-${index}" = {
+        description = "Start ${sessionName}";
+        after = [ "graphical.target" ];
+        serviceConfig = {
+          ExecStart = "${sessionName}";
+          TTYPath = "/dev/tty${index + 1}";  # Map the index to tty1, tty2, etc.
+          StandardInput = "tty";
+          StandardOutput = "tty";
+          StandardError = "tty";
+        };
+      };
+    }) (lib.attrNames config.modules.multistart.sessions));
   };
 
 }
