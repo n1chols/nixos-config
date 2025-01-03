@@ -56,11 +56,11 @@
     };
     multistart = {
       enable = true;
-      sessions = [
-        "dbus-run-session env XDG_SESSION_TYPE=wayland gnome-session"
-        "${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf"
-        "env LIRC_SOCKET_PATH=/run/lirc/lircd ${pkgs.kodi}/bin/kodi --standalone"
-      ];
+      sessions = {
+        gnome = "dbus-run-session env XDG_SESSION_TYPE=wayland gnome-session";
+        steam = "${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf";
+        kodi = "${pkgs.kodi}/bin/kodi --standalone";
+      };
     };
   };
 
