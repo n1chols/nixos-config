@@ -56,10 +56,10 @@
     };
     greetd = {
       enable = true;
-      defaultSession = "LIRC_SOCKET_PATH=/run/lirc/lircd ${pkgs.kodi}/bin/kodi --standalone";#"${pkgs.gnome-session}/bin/gnome-session --session=gnome";
+      defaultSession = "dbus-run-session env XDG_SESSION_TYPE=wayland gnome-session";
       otherSessions = [
         "${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf"
-        "LIRC_SOCKET_PATH=/run/lirc/lircd ${pkgs.kodi}/bin/kodi --standalone"
+        "env LIRC_SOCKET_PATH=/run/lirc/lircd ${pkgs.kodi}/bin/kodi --standalone"
       ];
     };
   };
