@@ -18,6 +18,7 @@
       settings = {
         default_session = {
           command = config.modules.greetd.defaultSession;
+          user = "user";
         };
       };
     };
