@@ -28,28 +28,13 @@
 
     # Create login service(s)
     systemd.user.services = lib.mapAttrs (name: service: {
-      description = "Autologin ${name} service on ${service.tty}";
-      after = [ "graphical-session-pre.target" ];
-      wants = [ "graphical-session-pre.target" ];
-      wantedBy = [ "default.target" ];
-      
-      environment = {
-        XDG_SESSION_TYPE = "tty";
-        DISPLAY = ":${builtins.substring 3 1 service.tty}";
-      };
-
+      wantedBy = [ "multi-user.target" ];
       serviceConfig = {
         Type = "simple";
         ExecStart = service.command;
-        TTYPath = "/dev/${service.tty}";
-        TTYReset = true;
-        TTYVTDisallocate = true;
         StandardInput = "tty";
-        StandardOutput = "journal";
-        StandardError = "journal";
-        PAMName = "login";
-        WorkingDirectory = "~";
-        Restart = "always";
+        StandardOutput = "tty";
+        TTYPath = "/dev/${service.tty}";
       };
     }) config.modules.autotty.services;
   };
