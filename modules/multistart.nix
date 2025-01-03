@@ -23,6 +23,8 @@
     # ${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf
     # ${pkgs.kodi-wayland}/bin/kodi-standalone
 
+    users.users.user.extraGroups = [ "video" "input" "render" ];
+
   };
 
 }
