@@ -1,39 +1,21 @@
 { config, lib, pkgs, ... }: {
 
   # OPTIONS
-  options.modules.greetd = {
+  options.modules.multistart = {
     enable = lib.mkEnableOption "";
-    defaultSession = lib.mkOption {
-      type = lib.types.str;
-    };
-    otherSessions = lib.mkOption {
-      default = [];
+    sessions = lib.mkOption {
       type = lib.types.listOf lib.types.str;
     };
   };
 
   # CONFIG
-  config = lib.mkIf config.modules.greetd.enable {
+  config = lib.mkIf config.modules.multistart.enable {
     # Enable autologin
     services.getty.autologinUser = "user";
 
-    # Enable greetd
-    services.greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = config.modules.greetd.defaultSession;
-          user = "user";
-        };
-        terminals = lib.listToAttrs (lib.imap0 (index: session: {
-          name = "terminal${toString index}";
-          value = {
-            command = session;
-            user = "user";
-          };
-        }) config.modules.greetd.otherSessions);
-      };
-    };
+    # Start session(s)
+
+    
   };
 
 }
