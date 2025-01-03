@@ -54,25 +54,12 @@
       enable = true;
       systemApps = true;
     };
-    autotty = {
+    greetd = {
       enable = true;
-      services = {
-        gnome = {
-          tty = "tty1";
-          command = "${pkgs.gnome-session}/bin/gnome-session";
-        };
-        steam = {
-          tty = "tty2";
-          command = "${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf";
-        };
-        kodi = {
-          tty = "tty3";
-          command = "${pkgs.kodi}/bin/kodi-standalone";
-        };
-        findtest = {
-          tty = "tty4";
-          command = "${pkgs.findutils}/bin/find service";
-        };
+      sessions = {
+        gnome = "${pkgs.gnome-session}/bin/gnome-session";
+        steam = "${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf";
+        kodi = "${pkgs.kodi}/bin/kodi-standalone";
       };
     };
   };
