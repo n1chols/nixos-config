@@ -54,7 +54,7 @@
       enable = true;
       systemApps = true;
     };
-    multistart = {
+    greetd = {
       enable = true;
       sessions = {
         gnome = "dbus-run-session env XDG_SESSION_TYPE=wayland gnome-session";
