@@ -43,6 +43,7 @@
     ../modules/steam.nix
     ../modules/kodi.nix
     ../modules/myapps.nix
+    ../modules/autotty.nix
   ];
 
   modules = {
