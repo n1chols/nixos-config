@@ -54,8 +54,10 @@
     }) config.modules.autotty.services;
 
     # Ensure systemd user services start on boot
-    systemd.user.services.systemd-tmpfiles-setup.enable = true;
-    systemd.user.services.systemd-tmpfiles-setup-dev.enable = true;
+    systemd.user.services = {
+      systemd-tmpfiles-setup.enable = true;
+      systemd-tmpfiles-setup-dev.enable = true;
+    };
   };
 
 }
