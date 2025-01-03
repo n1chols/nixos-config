@@ -26,6 +26,11 @@
         };
       };
     };
+
+    environment.systemPackages = with pkgs; [
+      dbus
+      gnome-session
+    ];
   };
 
 }
