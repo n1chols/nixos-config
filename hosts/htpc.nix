@@ -54,10 +54,10 @@
       enable = true;
       systemApps = true;
     };
-    greetd = {
+    multistart = {
       enable = true;
-      defaultSession = "dbus-run-session env XDG_SESSION_TYPE=wayland gnome-session";
-      otherSessions = [
+      sessions = [
+        "dbus-run-session env XDG_SESSION_TYPE=wayland gnome-session"
         "${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf"
         "env LIRC_SOCKET_PATH=/run/lirc/lircd ${pkgs.kodi}/bin/kodi --standalone"
       ];
