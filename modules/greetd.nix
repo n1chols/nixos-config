@@ -30,6 +30,8 @@
     # Goofy-ah
     programs.xwayland.enable = true;
 
+    programs.dconf.enable = true;
+
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
     };
@@ -38,6 +40,7 @@
       dbus
       gnome-session
       gnome-shell
+      gnome.adwaita-icon-theme
     ];
   };
 
