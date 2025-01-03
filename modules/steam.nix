@@ -21,7 +21,7 @@
         gamescopeSession = {
           enable = config.modules.steam.addSessionEntry;
           env = {
-            STEAMCMD = "steam -gamepadui -steamos3 -steampal -steamdeck";
+            STEAMCMD = "steam -gamepadui -steamos3 -steampal -steamdeck %command%";
           };
         };
       };
