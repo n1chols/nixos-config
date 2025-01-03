@@ -9,12 +9,15 @@
   
   # CONFIG
   config = lib.mkIf config.modules.kodi.enable {
-    # Add Kodi package and addons
-    environment.systemPackages = [
-	    (pkgs.kodi.withPackages (kodiPkgs: with kodiPkgs; [
-		    jellyfin
-	    ]))
-    ];
+
+    services.kodi.enable = true;
+    services.kodi.openFirewall = true;
+
+    security.rtkit.enable = true;
+    services.pipewire.enable = true;
+    services.pipewire.pulse.enable = true;
+    services.xserver.enable = true;
+    
   };
 
 }
