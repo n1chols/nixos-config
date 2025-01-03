@@ -30,10 +30,23 @@
     # Goofy-ah
     programs.xwayland.enable = true;
 
+    services.xserver = {
+      enable = true;
+      displayManager = {
+        gdm.enable = false;
+        sessionCommands = ''
+          export XDG_SESSION_TYPE=wayland
+          export GDK_BACKEND=wayland
+          export MOZ_ENABLE_WAYLAND=1
+        '';
+      };
+    };
+
     programs.dconf.enable = true;
 
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
+      GDG_BACKEND = "wayland";
     };
 
     environment.systemPackages = with pkgs; [
