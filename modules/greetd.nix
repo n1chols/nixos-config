@@ -21,7 +21,12 @@
       enable = true;
       settings = {
         default_session = {
-          command = "XDG_SESSION_TYPE=wayland /usr/bin/env GNOME_SHELL_SESSION_MODE=ubuntu dbus-run-session /usr/bin/gnome-session --session=ubuntu";
+          command = ''
+            dbus-run-session env \
+            XDG_SESSION_TYPE=wayland \
+            GNOME_SHELL_SESSION_MODE=default \
+            gnome-session
+          '';
           user = "user";
         };
       };
