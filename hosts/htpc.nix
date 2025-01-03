@@ -56,11 +56,11 @@
     };
     greetd = {
       enable = true;
-      sessions = {
-        gnome = "dbus-run-session ${pkgs.gnome-session}/bin/gnome-session";
-        steam = "${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf";
-        kodi = "LIRC_SOCKET_PATH=/run/lirc/lircd ${pkgs.kodi}/bin/kodi --standalone";
-      };
+      defaultSession = "dbus-run-session ${pkgs.gnome-session}/bin/gnome-session";
+      otherSessions = [
+        "${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf"
+        "LIRC_SOCKET_PATH=/run/lirc/lircd ${pkgs.kodi}/bin/kodi --standalone"
+      ];
     };
   };
 
