@@ -43,7 +43,7 @@
     ../modules/steam.nix
     ../modules/kodi.nix
     ../modules/myapps.nix
-    ../modules/greetd.nix
+    ../modules/multistart.nix
   ];
 
   modules = {
