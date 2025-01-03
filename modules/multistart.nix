@@ -16,7 +16,7 @@
       vt = 1;  # Start on tty1
       settings = {
         default_session = {
-          command = "${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf";#"dbus-run-session env XDG_SESSION_TYPE=wayland gnome-session";
+          command = "${pkgs.kodi}/bin/kodi --standalone";#"dbus-run-session env XDG_SESSION_TYPE=wayland gnome-session";
           user = "user";
         };
       };
