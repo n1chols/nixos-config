@@ -5,10 +5,6 @@
 
   # Time zone
   time.timeZone = "America/Los_Angeles";
-
-  # Auto login
-  users.users.user.hashedPassword = "";
-  #services.getty.autologinUser = "user";
   
   # Hardware setup
   hardware = {
@@ -66,5 +62,21 @@
       addSessionEntry = true;
     };
   };
+
+  # Special HTPC setup
+  services.getty = {
+    autologinUser = "user";
+    extraArgs = [ "--noclear" ];
+  };
+
+  programs.bash.loginShellInit = ''
+    if [ "$(tty)" = "/dev/tty1" ]; then
+      exec startx /usr/share/xsessions/gnome.desktop
+    elif [ "$(tty)" = "/dev/tty2" ]; then
+      exec startx /usr/share/xsessions/gamescope.desktop
+    elif [ "$(tty)" = "/dev/tty3" ]; then
+      exec startx /usr/share/xsessions/kodi.desktop
+    fi
+  '';
 
 }
