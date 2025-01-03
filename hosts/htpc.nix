@@ -64,18 +64,11 @@
   };
 
   # Special HTPC setup
-  services.getty = {
-    autologinUser = "user";
-    extraArgs = [ "--noclear" ];
-  };
+  services.getty.autologinUser = "user";
 
-  programs.bash.loginShellInit = ''
-    if [ "$(tty)" = "/dev/tty1" ]; then
-      exec startx /usr/share/xsessions/gnome.desktop
-    elif [ "$(tty)" = "/dev/tty2" ]; then
-      exec startx /usr/share/xsessions/gamescope.desktop
-    elif [ "$(tty)" = "/dev/tty3" ]; then
-      exec startx /usr/share/xsessions/kodi.desktop
+  environment.loginShellInit = ''
+    if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+      exec gnome-session
     fi
   '';
 
