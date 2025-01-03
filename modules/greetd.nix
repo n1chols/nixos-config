@@ -21,12 +21,12 @@
       };
     };
 
-    environment.etc = lib.listToAttrs (map (name: {
+    environment.etc = lib.listToAttrs (lib.imap1 (index: name: {
       name = "greetd/${name}-config.toml";
       value = {
         text = ''
           [terminal]
-          vt = ${toString (lib.findFirst (n: true) 1 (lib.flip lib.elemAt (lib.attrNames config.modules.greetd.sessions) (lib.findFirst (i: lib.elemAt (lib.attrNames config.modules.greetd.sessions) i == name) 0 (lib.range 0 (lib.length (lib.attrNames config.modules.greetd.sessions))))))}
+          vt = ${toString index}
 
           [default_session]
           command = "${lib.getAttr name config.modules.greetd.sessions}"
