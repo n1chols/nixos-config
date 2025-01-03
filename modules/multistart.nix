@@ -22,7 +22,13 @@
           serviceConfig = {
             Type = "simple";
             User = "user";
+            PAMName = "login";
+            StandardInput = "tty";
+            StandardOutput = "tty";
             TTYPath = "/dev/tty${toString (index + 1)}";
+            TTYReset = true;
+            TTYVHangup = true;
+            WorkingDirectory = "~";
             ExecStart = "${pkgs.bash}/bin/bash -l -c '${session}'";
             Restart = "always";
           };
