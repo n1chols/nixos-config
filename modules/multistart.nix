@@ -45,12 +45,6 @@
 
     # Enable autologin on TTYs 1-3
     services.getty.autologinUser = "user";
-    #services.getty.extraArgs = [ "--noclear" ];  # Prevent screen clearing
-    services.getty.greetingLine = "";  # Remove login message
-
-    # Enable TTYs 1-3
-    services.getty.helpLine = "";
-    services.getty.terminals = [ "tty1" "tty2" "tty3" ];
 
     # Enable required services
     services.xserver.enable = true;
