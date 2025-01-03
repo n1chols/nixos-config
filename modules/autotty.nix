@@ -30,8 +30,11 @@
     systemd.user.services = lib.mapAttrs (name: service: {
       wantedBy = [ "default.target" ];
       serviceConfig = {
+        Type = "simple";
         ExecStart = service.command;
         TTYPath = "/dev/${service.tty}";
+        StandardInput = "tty";
+        Restart = "always";
       };
     }) config.modules.autotty.services;
   };
