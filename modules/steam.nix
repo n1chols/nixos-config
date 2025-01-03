@@ -36,6 +36,10 @@
       chmod +x /usr/bin/steamos-session-select
     '';
 
+    environment.extraInit = ''
+      export PATH="/usr/bin:$PATH"
+    '';
+
     # Install necessary packages
     environment.systemPackages = with pkgs; [
       vulkan-tools
