@@ -21,30 +21,31 @@
       };
     };
 
-    environment.etc = lib.mapAttrs' (name: command: lib.nameValuePair
-      "greetd/${name}-config.toml"
-      { text = ''
+    environment.etc = lib.listToAttrs (map (name: {
+      name = "greetd/${name}-config.toml";
+      value = {
+        text = ''
           [terminal]
           vt = ${toString (lib.findFirst (n: true) 1 (lib.flip lib.elemAt (lib.attrNames config.modules.greetd.sessions) (lib.findFirst (i: lib.elemAt (lib.attrNames config.modules.greetd.sessions) i == name) 0 (lib.range 0 (lib.length (lib.attrNames config.modules.greetd.sessions))))))}
 
           [default_session]
-          command = "${command}"
+          command = "${lib.getAttr name config.modules.greetd.sessions}"
           user = "user"
         '';
-      }
-    ) (lib.tail (lib.mapAttrs (name: value: value) config.modules.greetd.sessions));
+      };
+    }) (lib.tail (lib.attrNames config.modules.greetd.sessions)));
 
-    systemd.services = lib.mapAttrs' (name: command: lib.nameValuePair
-      "greetd-${name}"
-      {
+    systemd.services = lib.listToAttrs (map (name: {
+      name = "greetd-${name}";
+      value = {
         wantedBy = [ "multi-user.target" ];
         serviceConfig = {
           Type = "simple";
           ExecStart = "${pkgs.greetd.greetd}/bin/greetd --config /etc/greetd/${name}-config.toml";
           Restart = "always";
         };
-      }
-    ) (lib.tail (lib.mapAttrs (name: value: value) config.modules.greetd.sessions));
+      };
+    }) (lib.tail (lib.attrNames config.modules.greetd.sessions)));
   };
 
 }
