@@ -17,16 +17,15 @@
     services.getty.autologinUser = "user";
 
     # Enable greetd
-    #services.greetd = {
-    #  enable = true;
-    #  settings = {
-    #    default_session = {
-    #      command = config.modules.greetd.defaultSession;
-    #      user = "user";
-    #    };
-    #  };
-    #};
-
+    services.greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "XDG_SESSION_TYPE=wayland /usr/bin/env GNOME_SHELL_SESSION_MODE=ubuntu dbus-run-session /usr/bin/gnome-session --session=ubuntu";
+          user = "user";
+        };
+      };
+    };
   };
 
 }
