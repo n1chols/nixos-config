@@ -22,7 +22,7 @@
         mission-center
         blackbox-terminal
         git
-        find
+        findutils
       ])) ++
       (lib.optionals config.modules.myapps.officeApps (with pkgs; [
         libreoffice
