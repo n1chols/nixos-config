@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }: {
   options = {
-    modules.multistart = {
+    modules.greetd = {
       enable = lib.mkEnableOption "";
       sessions = lib.mkOption {
         default = {};
@@ -9,12 +9,12 @@
     };
   };
 
-  config = lib.mkIf config.modules.multistart.enable {
+  config = lib.mkIf config.modules.greetd.enable {
     services.greetd = {
       enable = true;
       settings = {
         default_session = {
-          command = builtins.elemAt (lib.attrValues config.modules.multistart.sessions) 0;
+          command = lib.head (lib.attrValues config.modules.greetd.sessions);
           user = "user";
         };
       };
@@ -28,11 +28,11 @@
           vt = ${toString (index + 1)}
 
           [default_session]
-          command = "${lib.getAttr name config.modules.multistart.sessions}"
+          command = "${lib.getAttr name config.modules.greetd.sessions}"
           user = "user"
         '';
       };
-    }) (lib.tail (lib.attrNames config.modules.multistart.sessions)));
+    }) (lib.tail (lib.attrNames config.modules.greetd.sessions)));
 
     systemd.services = lib.listToAttrs (map (name: {
       name = "greetd-${name}";
@@ -44,7 +44,6 @@
           Restart = "always";
         };
       };
-    }) (lib.tail (lib.attrNames config.modules.multistart.sessions)));
+    }) (lib.tail (lib.attrNames config.modules.greetd.sessions)));
   };
-
 }
