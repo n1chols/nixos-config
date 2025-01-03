@@ -69,7 +69,7 @@
           StandardError = "journal";
           UtmpIdentifier = "tty3";
           UtmpMode = "user";
-          ExecStart = "${pkgs.runtimeShell} -c 'env LIRC_SOCKET_PATH=/run/lirc/lircd ${pkgs.kodi}/bin/kodi --standalone'";
+          ExecStart = "${pkgs.runtimeShell} -c '${pkgs.kodi}/bin/kodi --standalone'";
         };
         environment = {
           DISPLAY = ":2";
@@ -81,7 +81,6 @@
     # Enable required services
     services.xserver.enable = true;
     services.dbus.enable = true;
-    services.lirc.enable = true;
   };
 
 }
