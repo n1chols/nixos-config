@@ -81,7 +81,7 @@
     # Enable required services
     services.xserver.enable = true;
     services.dbus.enable = true;
-    hservices.lirc.enable = true;
+    services.lirc.enable = true;
   };
 
 }
