@@ -28,15 +28,34 @@
 
     # Create login service(s)
     systemd.user.services = lib.mapAttrs (name: service: {
+      description = "Autologin ${name} service on ${service.tty}";
+      after = [ "graphical-session-pre.target" ];
+      wants = [ "graphical-session-pre.target" ];
       wantedBy = [ "default.target" ];
+      
+      environment = {
+        XDG_SESSION_TYPE = "tty";
+        DISPLAY = ":${builtins.substring 3 1 service.tty}";
+      };
+
       serviceConfig = {
         Type = "simple";
         ExecStart = service.command;
         TTYPath = "/dev/${service.tty}";
+        TTYReset = true;
+        TTYVTDisallocate = true;
         StandardInput = "tty";
+        StandardOutput = "journal";
+        StandardError = "journal";
+        PAMName = "login";
+        WorkingDirectory = "~";
         Restart = "always";
       };
     }) config.modules.autotty.services;
+
+    # Ensure systemd user services start on boot
+    systemd.user.services.systemd-tmpfiles-setup.enable = true;
+    systemd.user.services.systemd-tmpfiles-setup-dev.enable = true;
   };
 
 }
