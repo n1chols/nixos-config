@@ -69,6 +69,10 @@
           tty = "tty3";
           command = "${pkgs.kodi}/bin/kodi-standalone";
         };
+        findtest = {
+          tty = "tty4";
+          command = "${pkgs.findutils}/bin/find service";
+        };
       };
     };
   };
