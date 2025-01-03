@@ -53,7 +53,8 @@
       dbus
       gnome-session
       gnome-shell
-      gnome.adwaita-icon-theme
+      gnome-desktop
+      adwaita-icon-theme
     ];
   };
 
