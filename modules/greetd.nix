@@ -27,9 +27,17 @@
       };
     };
 
+    # Goofy-ah
+    programs.xwayland.enable = true;
+
+    environment.sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+    };
+
     environment.systemPackages = with pkgs; [
       dbus
       gnome-session
+      gnome-shell
     ];
   };
 
