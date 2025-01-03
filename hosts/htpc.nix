@@ -66,10 +66,10 @@
   # Special HTPC setup
   services.getty.autologinUser = "user";
 
-  environment.loginShellInit = ''
-    if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+  environment.loginShellInit = "
+    if [ -z \"$DISPLAY\" ] && [ \"$XDG_VTNR\" = 1 ]; then
       exec gnome-session
     fi
-  '';
+  ";
 
 }
