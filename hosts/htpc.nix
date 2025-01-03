@@ -57,9 +57,9 @@
     greetd = {
       enable = true;
       sessions = {
-        gnome = "${pkgs.gnome-session}/bin/gnome-session";
+        gnome = "dbus-run-session ${pkgs.gnome-session}/bin/gnome-session;
         steam = "${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf";
-        kodi = "${pkgs.kodi}/bin/kodi-standalone";
+        kodi = "LIRC_SOCKET_PATH=/run/lirc/lircd ${pkgs.kodi}/bin/kodi --standalone";
       };
     };
   };
