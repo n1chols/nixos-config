@@ -15,7 +15,7 @@
       enable = true;
       settings = {
         default_session = {
-          command = lib.head (lib.attrValues config.modules.greetd.sessions);
+          command = builtins.elemAt (lib.attrValues config.modules.greetd.sessions) 0;
           user = "user";
         };
       };
@@ -26,7 +26,7 @@
       value = {
         text = ''
           [terminal]
-          vt = ${toString index}
+          vt = ${toString (index + 1)}
 
           [default_session]
           command = "${lib.getAttr name config.modules.greetd.sessions}"
@@ -34,6 +34,10 @@
         '';
       };
     }) (lib.tail (lib.attrNames config.modules.greetd.sessions)));
+
+    # For Kodi's gvfs access
+    security.pam.services.greetd.enableGnomeKeyring = true;
+    services.gvfs.enable = true;
 
     systemd.services = lib.listToAttrs (map (name: {
       name = "greetd-${name}";
@@ -47,5 +51,6 @@
       };
     }) (lib.tail (lib.attrNames config.modules.greetd.sessions)));
   };
+
 
 }
