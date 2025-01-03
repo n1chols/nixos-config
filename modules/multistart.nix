@@ -1,27 +1,17 @@
 { config, lib, pkgs, ... }: {
 
   # OPTIONS
-  options.modules.greetd = {
+  options.modules.multistart = {
     enable = lib.mkEnableOption "";
     sessions = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule {
-        options = {
-          command = lib.mkOption {
-            type = lib.types.str;
-            description = "Command to start the session";
-          };
-          tty = lib.mkOption {
-            type = lib.types.int;
-            description = "TTY number to run this session on";
-          };
-        };
-      });
-      default = {};
+      type = lib.types.listOf lib.types.str;
+      default = [];
+      description = "List of commands to start in separate TTYs";
     };
   };
 
   # CONFIG
-  config = lib.mkIf config.modules.greetd.enable {
+  config = lib.mkIf config.modules.multistart.enable {
     # Configure greetd for each TTY
     services.greetd = {
       enable = true;
@@ -29,40 +19,43 @@
     };
 
     # Configure separate getty+greetd instances for each session
-    systemd.services = lib.mapAttrs' (name: session: lib.nameValuePair
-      "greetd-${name}" {
-        description = "Greeter daemon on tty${toString session.tty}";
-        after = [ "systemd-user-sessions.service" "plymouth-quit-wait.service" "getty@tty${toString session.tty}.service" ];
-        wants = [ "getty@tty${toString session.tty}.service" ];
-        conflicts = [ "getty@tty${toString session.tty}.service" ];
-        wantedBy = [ "multi-user.target" ];
+    systemd.services = lib.listToAttrs (lib.imap0 (index: command:
+      lib.nameValuePair
+        "greetd-session-${toString (index + 1)}" {
+          description = "Greeter daemon on tty${toString (index + 1)}";
+          after = [ "systemd-user-sessions.service" "plymouth-quit-wait.service" "getty@tty${toString (index + 1)}.service" ];
+          wants = [ "getty@tty${toString (index + 1)}.service" ];
+          conflicts = [ "getty@tty${toString (index + 1)}.service" ];
+          wantedBy = [ "multi-user.target" ];
 
-        serviceConfig = {
-          Type = "idle";
-          ExecStart = "${pkgs.greetd}/bin/greetd --config /etc/greetd/config-${name}.toml";
-          StandardInput = "tty";
-          StandardOutput = "journal";
-          StandardError = "journal";
-          TTYPath = "/dev/tty${toString session.tty}";
-          TTYReset = true;
-          TTYVHangup = true;
-          TTYVTDisallocate = true;
-        };
-      }
-    ) config.modules.greetd.sessions;
+          serviceConfig = {
+            Type = "idle";
+            ExecStart = "${pkgs.greetd}/bin/greetd --config /etc/greetd/config-${toString (index + 1)}.toml";
+            StandardInput = "tty";
+            StandardOutput = "journal";
+            StandardError = "journal";
+            TTYPath = "/dev/tty${toString (index + 1)}";
+            TTYReset = true;
+            TTYVHangup = true;
+            TTYVTDisallocate = true;
+          };
+        }
+    ) config.modules.multistart.sessions);
 
     # Generate config files for each session
-    environment.etc = lib.mapAttrs' (name: session: lib.nameValuePair
-      "greetd/config-${name}.toml" {
-        text = ''
-          [terminal]
-          vt = ${toString session.tty}
+    environment.etc = lib.listToAttrs (lib.imap0 (index: command:
+      lib.nameValuePair
+        "greetd/config-${toString (index + 1)}.toml" {
+          text = ''
+            [terminal]
+            vt = ${toString (index + 1)}
 
-          [default_session]
-          command = "${session.command}"
-          user = "user"
-        '';
-      }
-    ) config.modules.greetd.sessions;
+            [default_session]
+            command = "${command}"
+            user = "user"
+          '';
+        }
+    ) config.modules.multistart.sessions);
+  };
 
 }
