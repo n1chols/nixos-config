@@ -12,6 +12,8 @@
     # Add Kodi package
     environment.systemPackages = with pkgs; [
       kodi-wayland
+      cage
+      wlr-randr
     ];
   };
 
