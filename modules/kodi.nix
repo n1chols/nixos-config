@@ -9,7 +9,7 @@
   
   # CONFIG
   config = lib.mkIf config.modules.kodi.enable {
-    # Add Kodi package, compositor, and addons
+    # Add Kodi package and compositor
     environment.systemPackages = with pkgs; [
       kodi
       cage
