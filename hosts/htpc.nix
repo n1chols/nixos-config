@@ -59,7 +59,7 @@
       sessions = {
         gnome = "dbus-run-session env XDG_SESSION_TYPE=wayland gnome-session";
         steam = "${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf";#"${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf";
-        kodi = "XDG_SESSION_TYPE=wayland SDL_VIDEODRIVER=wayland ${pkgs.kodi}/bin/kodi-standalone";
+        kodi = "SDL_VIDEODRIVER=wayland ${pkgs.kodi}/bin/kodi-standalone";
       };
     };
   };
