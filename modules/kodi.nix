@@ -11,9 +11,8 @@
   config = lib.mkIf config.modules.kodi.enable {
     # Add Kodi package
     environment.systemPackages = with pkgs; [
-      libdrm
-      mesa
-      kodi-gbm
+      kodi
+      cage
     ];
   };
 
