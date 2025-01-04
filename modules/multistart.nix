@@ -20,6 +20,9 @@
       };
     };
 
+    # Add user to necessary groups
+    users.users.user.extraGroups = [ "video" "render" "input" ];
+
     environment.etc = lib.listToAttrs (lib.imap1 (index: name: {
       name = "greetd/${name}-config.toml";
       value = {
@@ -48,6 +51,13 @@
           RestartSec = "1s";
           StandardOutput = "journal";
           StandardError = "journal";
+          # Give access to DRM
+          SupplementaryGroups = [ "video" "render" "input" ];
+          Environment = [
+            "WLR_RENDERER=vulkan"
+            "XDG_SESSION_TYPE=wayland"
+            "WAYLAND_DISPLAY=wayland-1"
+          ];
         };
       };
     }) (lib.tail (lib.attrNames config.modules.greetd.sessions)));
