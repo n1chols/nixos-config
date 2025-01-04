@@ -59,7 +59,7 @@
       sessions = [
         "dbus-run-session env XDG_SESSION_TYPE=wayland gnome-session"
         "${pkgs.gamescope}/bin/gamescope --steam -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf"
-        "${pkgs.cage}/bin/cage -- ${pkgs.kodi-wayland}/bin/kodi --windowing=wayland"
+        "${pkgs.sway}/bin/sway -config /dev/null -c 'exec ${pkgs.kodi-wayland}/bin/kodi --windowing=wayland'"
       ];
     };
   };
