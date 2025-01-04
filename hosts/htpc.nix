@@ -58,7 +58,7 @@
       enable = true;
       sessions = {
         gnome = "dbus-run-session env XDG_SESSION_TYPE=wayland gnome-session";
-        steam = ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf;#"${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf";
+        steam = "${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf";#"${pkgs.gamescope}/bin/gamescope -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf";
         kodi = "${pkgs.kodi}/bin/kodi --standalone";
       };
     };
