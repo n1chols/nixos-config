@@ -43,7 +43,7 @@
     ../modules/steam.nix
     ../modules/kodi.nix
     ../modules/myapps.nix
-    ../modules/multistart.nix
+    ../modules/multilogin.nix
   ];
 
   modules = {
@@ -54,12 +54,12 @@
       enable = true;
       systemApps = true;
     };
-    greetd = {
+    multilogin = {
       enable = true;
-      sessions = {
-        gnome = "dbus-run-session env XDG_SESSION_TYPE=wayland gnome-session";
-        steam = "${pkgs.gamescope}/bin/gamescope --steam -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf";
-        kodi = "SDL_VIDEODRIVER=wayland ${pkgs.kodi}/bin/kodi-standalone";
+      sessions = [
+        "dbus-run-session env XDG_SESSION_TYPE=wayland gnome-session"
+        "${pkgs.gamescope}/bin/gamescope --steam -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf"
+        #"${pkgs.kodi}/bin/kodi --standalone"
       };
     };
   };
