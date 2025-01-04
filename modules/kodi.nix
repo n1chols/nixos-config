@@ -11,9 +11,8 @@
   config = lib.mkIf config.modules.kodi.enable {
     # Add Kodi package, compositor, and addons
     environment.systemPackages = with pkgs; [
-      kodi
       cage
-      kodi.unwrapped.override {
+      kodi.override {
         extraAddons = {
           repository-umbrella = pkgs.fetchzip {
             url = "https://umbrellaplug.github.io/repository.umbrella-2.2.6.zip";
