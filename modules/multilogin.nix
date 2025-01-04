@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }: {
   options = {
-    modules.greetd = {
+    modules.multilogin = {
       enable = lib.mkEnableOption "";
       sessions = lib.mkOption {
         type = with lib.types; listOf str;
@@ -8,12 +8,12 @@
     };
   };
 
-  config = lib.mkIf config.modules.greetd.enable {
+  config = lib.mkIf config.modules.multilogin.enable {
     services.greetd = {
       enable = true;
       settings = {
         default_session = {
-          command = lib.head config.modules.greetd.sessions;
+          command = lib.head config.modules.multilogin.sessions;
           user = "user";
         };
       };
@@ -31,7 +31,7 @@
           user = "user"
         '';
       };
-    }) (lib.tail config.modules.greetd.sessions));
+    }) (lib.tail config.modules.multilogin.sessions));
 
     systemd.services = lib.listToAttrs (lib.imap1 (index: command: {
       name = "greetd-session${toString index}";
@@ -43,7 +43,7 @@
           Restart = "always";
         };
       };
-    }) (lib.tail config.modules.greetd.sessions));
+    }) (lib.tail config.modules.multilogin.sessions));
   };
 
 }
