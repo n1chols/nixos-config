@@ -1,8 +1,7 @@
 { config, lib, pkgs, ... }: {
 
   # OPTIONS
-  options = {
-    modules.steam = {
+  options.modules.steam = {
       enable = lib.mkEnableOption "";
     };
   };
