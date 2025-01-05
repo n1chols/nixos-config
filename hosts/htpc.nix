@@ -41,6 +41,7 @@
   imports = [
     ../modules/gnome.nix
     ../modules/steam.nix
+    ../modules/es-de.nix
     ../modules/kodi.nix
     ../modules/myapps.nix
     ../modules/multilogin.nix
@@ -50,16 +51,15 @@
     gnome.enable = true;
     steam.enable = true;
     kodi.enable = true;
-    myapps = {
-      enable = true;
-      systemApps = true;
-    };
+    es-de.enable = true;
+    myapps.enable = true;
     multilogin = {
       enable = true;
       sessions = [
         "dbus-run-session env XDG_SESSION_TYPE=wayland gnome-session"
         "${pkgs.gamescope}/bin/gamescope --steam -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf"
-        "${pkgs.cage}/bin/cage -s ${pkgs.kodi}/bin/kodi-standalone"#
+        "${pkgs.cage}/bin/cage -s ${pkgs.emulationstation-de}/bin/emulationstation-de"
+        "${pkgs.cage}/bin/cage -s ${pkgs.kodi}/bin/kodi-standalone"
       ];
     };
   };
