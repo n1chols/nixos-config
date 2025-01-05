@@ -10,7 +10,6 @@
     mission-center
     blackbox-terminal
     git
-    cage
   ];
 
   # Setup file associations
