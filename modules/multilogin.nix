@@ -1,12 +1,10 @@
 { config, lib, pkgs, ... }: {
 
   # OPTIONS
-  options = {
-    modules.multilogin = {
-      enable = lib.mkEnableOption "";
-      sessions = lib.mkOption {
-        type = with lib.types; listOf str;
-      };
+  options.modules.multilogin = {
+    enable = lib.mkEnableOption "";
+    sessions = lib.mkOption {
+      type = with lib.types; listOf str;
     };
   };
 
