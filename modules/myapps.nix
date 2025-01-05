@@ -8,7 +8,7 @@
   # CONFIG
   config = lib.mkIf config.modules.myapps.enable {
     # Add applications
-    environment.systemPackages = 
+    environment.systemPackages = [
       firefox
       thunderbird
       loupe
