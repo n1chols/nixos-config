@@ -2,8 +2,7 @@
 
   # OPTIONS
   options.modules.steam = {
-      enable = lib.mkEnableOption "";
-    };
+    enable = lib.mkEnableOption "";
   };
   
   # CONFIG
