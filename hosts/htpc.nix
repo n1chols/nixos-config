@@ -50,15 +50,15 @@
   modules = {
     gnome.enable = true;
     steam.enable = true;
-    kodi.enable = true;
     es-de.enable = true;
+    kodi.enable = true;
     myapps.enable = true;
     multilogin = {
       enable = true;
       sessions = [
-        "dbus-run-session env XDG_SESSION_TYPE=wayland gnome-session"
+        "XDG_SESSION_TYPE=wayland ${pkgs.gnome.gnome-session}/bin/gnome-session"
         "${pkgs.gamescope}/bin/gamescope --steam -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf"
-        "${pkgs.cage}/bin/cage -s ${pkgs.emulationstation-de}/bin/emulationstation-de"
+        "${pkgs.cage}/bin/cage -s ${pkgs.emulationstation-de}/bin/es-de"
         "${pkgs.cage}/bin/cage -s ${pkgs.kodi}/bin/kodi-standalone"
       ];
     };
