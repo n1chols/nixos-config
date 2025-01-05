@@ -1,10 +1,8 @@
 { config, lib, pkgs, ... }: {
 
   # OPTIONS
-  options = {
-    modules.gnome = {
-      enable = lib.mkEnableOption "";
-    };
+  options.modules.gnome = {
+    enable = lib.mkEnableOption "";
   };
   
   # CONFIG
