@@ -1,10 +1,8 @@
 { config, lib, pkgs, ... }: {
 
   # OPTIONS
-  options = {
-    modules.es-de = {
-      enable = lib.mkEnableOption "";
-    };
+  options.modules.es-de = {
+    enable = lib.mkEnableOption "";
   };
   
   # CONFIG
