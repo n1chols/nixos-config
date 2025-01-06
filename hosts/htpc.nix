@@ -54,7 +54,7 @@
     enable = true;
     sessions = [
       "XDG_SESSION_TYPE=wayland ${pkgs.gnome.gnome-session}/bin/gnome-session"
-      "${pkgs.gamescope}/bin/gamescope --steam -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf"
+      "${pkgs.gamescope}/bin/gamescope --backend drm --immediate-flips --rt --steam -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf"
       "${pkgs.cage}/bin/cage -s ${pkgs.emulationstation-de}/bin/es-de"
       "${pkgs.cage}/bin/cage -s ${pkgs.kodi}/bin/kodi-standalone"
     ];
