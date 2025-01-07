@@ -47,7 +47,10 @@
   modules.multilogin = {
     enable = true;
     sessions = [
-      "${pkgs.gamescope}/bin/gamescope -w 3840 -h 2160 -r 120 --rt --fullscreen -- sh -c '${pkgs.steam}/bin/steam -silent & ${pkgs.pegasus-frontend}/bin/pegasus-fe'"
+      #"${pkgs.gamescope}/bin/gamescope -w 3840 -h 2160 -r 120 --rt --fullscreen -- sh -c '${pkgs.steam}/bin/steam -silent & ${pkgs.pegasus-frontend}/bin/pegasus-fe'"
+      "${pkgs.gamescope}/bin/gamescope -w 3840 -h 2160 -r 120 \
+      --rt --fullscreen -- \
+      sh -c '${pkgs.steam}/bin/steam -silent & ${pkgs.pegasus-frontend}/bin/pegasus-fe'"
       #"${pkgs.gamescope}/bin/gamescope -w 3840 -h 2160 -r 120 \
       #--backend drm --immediate-flips --rt --fullscreen --adaptive-sync --hdr-enabled -- \
       #sh -c '${pkgs.steam}/bin/steam -silent & ${pkgs.pegasus-frontend}/bin/pegasus-fe'"
