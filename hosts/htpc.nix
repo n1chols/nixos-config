@@ -34,12 +34,7 @@
     { device = "/dev/nvme0n1p3"; }
   ];
 
-  # PACKAGES
-  environment.systemPackages = with pkgs; [
-    cage
-  ];
-
-  # IMPORTS
+  # IMPORTS / MODULES
   imports = [
     ../bundles/gnome.nix
     ../bundles/steam.nix
@@ -49,7 +44,6 @@
     ../modules/multilogin.nix
   ];
 
-  # MODULES
   modules.multilogin = {
     enable = true;
     sessions = [
