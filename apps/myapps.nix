@@ -2,14 +2,15 @@
   
   # Add applications
   environment.systemPackages = with pkgs; [
-    ungoogled-chromium
     firefox
     thunderbird
     loupe
     celluloid
     nautilus
+    gnome-text-editor
     mission-center
     blackbox-terminal
+    ungoogled-chromium
     git
   ];
 
