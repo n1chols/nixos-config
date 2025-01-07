@@ -2,7 +2,7 @@
 
   # Install ES-DE and emulators
   environment.systemPackages = with pkgs; [
-    (emulationstation-de.override { freeimage = freeimage; })
+    emulationstation-de
     flycast
     mupen64plus
     melonds
@@ -14,6 +14,11 @@
     pcsx2
     rpcs3
     xemu
+  ];
+
+  # Allow insecure dependency
+  nixpkgs.config.permittedInsecurePackages = [
+    "freeimage-unstable-2021-11-01"
   ];
 
 }
