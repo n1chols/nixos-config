@@ -2,6 +2,7 @@
   
   # Add applications
   environment.systemPackages = [
+    ungoogled-chromium
     firefox
     thunderbird
     loupe
