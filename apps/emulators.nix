@@ -2,8 +2,6 @@
 
   # Install Emulators
   environment.systemPackages = with pkgs; [
-    flycast
-    mupen64plus
     melonDS
     lime3ds
     dolphin-emu
