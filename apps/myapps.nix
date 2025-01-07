@@ -23,7 +23,7 @@
     "application/gzip" = "nautilus.desktop";
     "application/x-rar" = "nautilus.desktop";
     "application/x-7z-compressed" = "nautilus.desktop";
-    "text/*" = "zed.desktop";
+    "text/*" = "gnome-text-editor.desktop";
     "image/*" = "loupe.desktop";
     "video/*" = "celluloid.desktop";
   };
