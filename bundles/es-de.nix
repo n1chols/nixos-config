@@ -1,17 +1,8 @@
 { config, lib, pkgs, ... }: {
 
-  # Override vulnerable dependency
-  nixpkgs.overlays = [
-    (final: prev: {
-      emulationstation-de = prev.emulationstation-de.override {
-        freeimage = prev.freeimage;
-      };
-    })
-  ];
-
   # Install ES-DE and emulators
   environment.systemPackages = with pkgs; [
-    emulationstation-de
+    (emulationstation-de.override { freeimage = freeimage; })
     flycast
     mupen64plus
     melonds
