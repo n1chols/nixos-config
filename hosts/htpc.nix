@@ -36,11 +36,11 @@
 
   # IMPORTS / MODULES
   imports = [
-    ../bundles/gnome.nix
-    ../bundles/steam.nix
-    ../bundles/pegasus.nix
-    ../bundles/kodi.nix
-    ../bundles/myapps.nix
+    ../apps/gnome.nix
+    ../apps/steam.nix
+    ../apps/pegasus.nix
+    ../apps/kodi.nix
+    ../apps/myapps.nix
     ../modules/multilogin.nix
   ];
 
