@@ -40,7 +40,6 @@
     ../apps/steam.nix
     ../apps/pegasus.nix
     ../apps/kodi.nix
-    ../apps/emulators.nix
     ../apps/myapps.nix
     ../modules/multilogin.nix
   ];
