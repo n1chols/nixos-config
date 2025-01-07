@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }: {
   
   # Add applications
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     ungoogled-chromium
     firefox
     thunderbird
