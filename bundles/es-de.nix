@@ -5,7 +5,7 @@
     emulationstation-de
     flycast
     mupen64plus
-    melonds
+    melonDS
     lime3ds
     dolphin-emu
     cemu
