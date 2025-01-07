@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, lib, pkgs, ... }: {
 
   # HOST NAME / TIME ZONE
   networking.hostName = "HTPC";
