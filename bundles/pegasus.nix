@@ -2,7 +2,7 @@
 
   # Install ES-DE and emulators
   environment.systemPackages = with pkgs; [
-    emulationstation-de
+    pegasus-frontend
     flycast
     mupen64plus
     melonDS
@@ -14,11 +14,6 @@
     pcsx2
     rpcs3
     xemu
-  ];
-
-  # Allow insecure dependency
-  nixpkgs.config.permittedInsecurePackages = [
-    "freeimage-unstable-2021-11-01"
   ];
 
 }
