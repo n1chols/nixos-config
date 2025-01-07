@@ -35,7 +35,7 @@
   ];
 
   # PACKAGES
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     cage
   ];
 
