@@ -53,7 +53,7 @@
   modules.multilogin = {
     enable = true;
     sessions = [
-      "${pkgs.gamescope}/bin/gamescope --backend drm --immediate-flips --rt --expose-wayland --fullscreen -- ${pkgs.pegasus-frontend}/bin/pegasus-fe"
+      "${pkgs.gamescope}/bin/gamescope --backend drm --immediate-flips --rt --expose-wayland --fullscreen -- sh -c '${pkgs.steam}/bin/steam -silent & sleep 5 && ${pkgs.pegasus-frontend}/bin/pegasus-fe'"
       "${pkgs.cage}/bin/cage -s ${pkgs.kodi}/bin/kodi-standalone"
       "${pkgs.dbus}/bin/dbus-run-session env XDG_SESSION_TYPE=wayland ${pkgs.gnome-session}/bin/gnome-session"
       #"${pkgs.gamescope}/bin/gamescope --backend drm --immediate-flips --rt --steam -- ${pkgs.steam}/bin/steam -tenfoot -pipewire-dmabuf"
