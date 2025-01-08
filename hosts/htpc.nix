@@ -41,6 +41,7 @@
     ../apps/pegasus.nix
     ../apps/kodi.nix
     ../apps/myapps.nix
+    ../apps/bombsquad.nix
     ../apps/emulators.nix
     ../modules/multilogin.nix
   ];
