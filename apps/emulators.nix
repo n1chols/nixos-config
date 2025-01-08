@@ -1,8 +1,9 @@
 { config, lib, pkgs, ... }: {
 
-  # Install Emulators
+  # Install Emulators and Steam ROM Manager
   environment.systemPackages = with pkgs; [
-    lutris
+    steam-rom-manager
+    melonDS
     cemu
     ryujinx
   ];
