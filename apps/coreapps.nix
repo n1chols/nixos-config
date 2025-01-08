@@ -13,6 +13,8 @@
     blackbox-terminal
     ungoogled-chromium
     fragments
+    transmission
+    qbittorrent
     git
     p7zip
   ];
