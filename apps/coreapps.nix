@@ -12,6 +12,7 @@
     mission-center
     blackbox-terminal
     ungoogled-chromium
+    fragments
     git
     p7zip
   ];
