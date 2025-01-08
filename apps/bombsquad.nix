@@ -2,17 +2,13 @@
 
   # Install BombSquad with hash fix
   environment.systemPackages = with pkgs; [
-    (stdenv.mkDerivation rec {
-      name = "bombsquad";
-      src = fetchurl {
+    (pkgs.bombsquad.overrideAttrs (oldAttrs: rec {
+      # Override only the source and hash
+      src = pkgs.fetchurl {
         url = "https://files.ballistica.net/bombsquad/builds/BombSquad_Linux_x86_64_1.7.37.tar.gz";
-        sha256 = "rDbPq/hH40iA57D4vlFX+1heF4USlGCv24IiQDgOdEg=";
+        sha256 = "rDbPq/hH40iA57D4vlFX+1heF4USlGCv24IiQDgOdEg=";  # Updated hash here
       };
-      installPhase = ''
-        mkdir -p $out
-        cp -r $src/* $out/
-      '';
-    })
+    }))
   ];
 
 }
