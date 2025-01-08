@@ -7,6 +7,7 @@
     loupe
     celluloid
     nautilus
+    file-roller
     gnome-text-editor
     mission-center
     blackbox-terminal
