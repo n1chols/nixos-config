@@ -2,7 +2,7 @@
 
   # Install Emulators and Steam ROM Manager
   environment.systemPackages = with pkgs; [
-    sgdboop
+    steam-rom-manager
     melonDS
     cemu
     ryujinx
