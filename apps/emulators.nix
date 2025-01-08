@@ -5,7 +5,6 @@
     steam-rom-manager
     melonDS
     cemu
-    yuzu
     ryujinx
   ];
 
