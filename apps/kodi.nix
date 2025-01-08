@@ -2,7 +2,9 @@
 
   # Install Kodi
   environment.systemPackages = with pkgs; [
-    kodi
+    (kodi.withPackages (p: with p; [
+      p.joystick
+    ]))
   ];
 
 }
