@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }: {
 
-  # Install BombSquad with hash override
+  # Install BombSquad with hash fix
   environment.systemPackages = with pkgs; [
     (stdenv.mkDerivation rec {
       name = "bombsquad";
