@@ -13,7 +13,7 @@
     blackbox-terminal
     ungoogled-chromium
     git
-    7zip
+    p7zip
   ];
 
   # Setup file associations
