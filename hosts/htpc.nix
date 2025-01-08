@@ -37,10 +37,10 @@
   # IMPORTS / MODULES
   imports = [
     ../apps/gnome.nix
+    ../apps/coreapps.nix
     ../apps/steam.nix
     ../apps/pegasus.nix
     ../apps/kodi.nix
-    ../apps/myapps.nix
     ../apps/bombsquad.nix
     ../apps/emulators.nix
     ../modules/multilogin.nix
