@@ -49,7 +49,7 @@
   modules.multilogin = {
     enable = true;
     sessions = [
-      "${pkgs.dbus}/bin/dbus-run-session env WAYLAND_DISPLAY="" XDG_SESSION_TYPE=x11 XDG_CURRENT_DESKTOP=gamescope XDG_SESSION_DESKTOP=gamescope ${pkgs.gamescope}/bin/gamescope -w 3840 -h 2160 -r 120 --backend drm --immediate-flips --rt --fullscreen --adaptive-sync --hdr-enabled -- sh -c '${pkgs.steam}/bin/steam -silent & ${pkgs.pegasus-frontend}/bin/pegasus-fe'"
+      "${pkgs.gamescope}/bin/gamescope -w 3840 -h 2160 -r 120 --backend drm --immediate-flips --rt --fullscreen --adaptive-sync --hdr-enabled -- sh -c '${pkgs.steam}/bin/steam -silent & ${pkgs.pegasus-frontend}/bin/pegasus-fe'"
       "${pkgs.dbus}/bin/dbus-run-session env XDG_SESSION_TYPE=wayland ${pkgs.gnome-session}/bin/gnome-session"
     ];
   };
