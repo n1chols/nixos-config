@@ -14,8 +14,8 @@
     blackbox-terminal
     fragments
     bottles
-    git
     ghex
+    git
   ];
 
   # Setup file associations
