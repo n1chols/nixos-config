@@ -16,6 +16,7 @@
     bottles
     ghex
     git
+    cage
   ];
 
   # Setup file associations
