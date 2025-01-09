@@ -14,9 +14,6 @@
     blackbox-terminal
     fragments
     git
-    p7zip
-    python3
-    wine
   ];
 
   # Setup file associations
