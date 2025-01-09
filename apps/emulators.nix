@@ -6,6 +6,8 @@
     melonDS
     cemu
     ryujinx
+    wine
+    winetricks
   ];
 
 }
