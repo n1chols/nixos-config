@@ -15,6 +15,9 @@
     fragments
     bottles
     git
+    dhex
+    imhex
+    rehex
   ];
 
   # Setup file associations
