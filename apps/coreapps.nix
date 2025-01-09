@@ -13,7 +13,6 @@
     mission-center
     blackbox-terminal
     fragments
-    bottles
     git
   ];
 
