@@ -15,6 +15,7 @@
     fragments
     git
     p7zip
+    python3
   ];
 
   # Setup file associations
