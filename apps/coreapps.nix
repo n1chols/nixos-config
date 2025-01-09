@@ -15,8 +15,8 @@
     fragments
     bottles
     ghex
+    appimage-run
     git
-    cage
   ];
 
   # Setup file associations
