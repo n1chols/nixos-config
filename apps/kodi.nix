@@ -1,8 +1,11 @@
 { config, lib, pkgs, ... }: {
 
-  # Install Kodi with joystick package
+  # Install Kodi
   environment.systemPackages = with pkgs; [
-    (kodi.withPackages (p: [ p.joystick ]))
+    (kodi.withPackages (pkgs: with pkgs; [
+      joystick
+      inputstream-adaptive
+    ])
   ];
 
 }
