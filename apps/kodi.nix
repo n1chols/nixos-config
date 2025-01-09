@@ -5,7 +5,7 @@
     (kodi.withPackages (pkgs: with pkgs; [
       joystick
       inputstream-adaptive
-    ])
+    ]))
   ];
 
 }
