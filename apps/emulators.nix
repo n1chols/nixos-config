@@ -3,10 +3,10 @@
   # Install Emulators and Steam ROM Manager
   environment.systemPackages = with pkgs; [
     steam-rom-manager
+    proton-caller
     melonDS
     cemu
     ryujinx
-    proton-caller
   ];
 
 }
