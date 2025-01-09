@@ -6,9 +6,7 @@
     melonDS
     cemu
     ryujinx
-    wine
-    winetricks
-    python3
+    proton-caller
   ];
 
 }
