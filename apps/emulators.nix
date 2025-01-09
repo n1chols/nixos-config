@@ -8,6 +8,7 @@
     ryujinx
     wine
     winetricks
+    python3
   ];
 
 }
