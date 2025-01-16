@@ -2,7 +2,7 @@
 
   # Install Roon
   environment.systemPackages = with pkgs; [
-    roon-bridge
+    roon-server
   ];
 
 }
