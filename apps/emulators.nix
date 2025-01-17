@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }: {
 
-  # Install Emulators and Steam ROM Manager
+  # Install Emulators
   environment.systemPackages = with pkgs; [
     bottles
     cemu
