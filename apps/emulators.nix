@@ -4,7 +4,6 @@
   environment.systemPackages = with pkgs; [
     steam-rom-manager
     bottles
-    melonDS
     cemu
     ryujinx
   ];
