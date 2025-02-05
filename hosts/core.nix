@@ -1,10 +1,5 @@
 { config, pkgs, ... }: {
 
-  # Host
-  imports = [
-    ./host.nix
-  ];
-
   # Boot
   boot.loader = {
     systemd-boot.enable = true;
