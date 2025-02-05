@@ -3,7 +3,7 @@
   # OPTIONS
   options.modules.sessions = {
     enable = lib.mkEnableOption "";
-    ttys = lib.mkOption {
+    commands = lib.mkOption {
       type = types.listOf str;
     };
   };
@@ -14,7 +14,7 @@
     services.greetd = {
       enable = true;
       settings.default_session = {
-        command = lib.head config.modules.sessions.ttys;
+        command = lib.head config.modules.sessions.commands;
         user = "user";
       };
     };
@@ -29,7 +29,7 @@
         command = "${cmd}"
         user = "user"
       '';
-    }) (lib.tail config.modules.sessions.ttys));
+    }) (lib.tail config.modules.sessions.commands));
 
     # Create start service(s) for remaining session(s)
     systemd.services = lib.listToAttrs (lib.imap1 (i: cmd: {
@@ -42,7 +42,7 @@
           Restart = "always";
         };
       };
-    }) (lib.tail config.modules.sessions.ttys));
+    }) (lib.tail config.modules.sessions.commands));
   };
 
 }
