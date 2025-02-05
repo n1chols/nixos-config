@@ -13,7 +13,7 @@
     # Install git and custom script
     environment.systemPackages = with pkgs; [
       git
-      (pkgs.writeScriptBin "update" ''
+      (pkgs.writeShellScriptBin "update" ''
         #!${pkgs.bash}/bin/bash
         cd /etc/nixos
         sudo git pull || sudo git clone ${config.modules.update.repo} .
