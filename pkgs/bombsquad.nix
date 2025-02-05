@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }: {
 
-  # Install BombSquad with hash override
+  # Install BombSquad 1.7.37
   environment.systemPackages = with pkgs; [
     (pkgs.bombsquad.overrideAttrs (oldAttrs: rec {
       src = pkgs.fetchurl {
