@@ -1,12 +1,7 @@
 { config, lib, pkgs, ... }: {
   
-  # Enable Steam and GameScope
-  programs = {
-    gamescope = {
-      enable = true;
-      capSysNice = true;
-    };
-    steam = {
+  # Enable Steam
+  programs.steam = {
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
