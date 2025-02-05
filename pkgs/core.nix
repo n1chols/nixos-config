@@ -15,13 +15,13 @@
     extraGroups = [ "wheel" "networkmanager" ];
   };
 
-  # Allow proprietary software
-  nixpkgs.config.allowUnfree = true;
-
-  # Disable documentation and xterm
+  # Disable documentation and xterm apps
   documentation.nixos.enable = false;
 
   services.xserver.excludePackages = [ pkgs.xterm ];
+
+  # Allow proprietary software
+  nixpkgs.config.allowUnfree = true;
 
   # NixOS config version
   system.stateVersion = "24.11";
