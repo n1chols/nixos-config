@@ -7,7 +7,7 @@
     dedicatedServer.openFirewall = true;
   };
 
-  # Install necessary packages
+  # Install Vulkan utilities
   environment.systemPackages = with pkgs; [
     vulkan-tools
     vulkan-loader
