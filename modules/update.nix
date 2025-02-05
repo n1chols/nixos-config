@@ -4,7 +4,7 @@
   options.modules.update = {
     enable = lib.mkEnableOption "";
     repo = lib.mkOption {
-      type = types.str;
+      type = lib.types.str;
     };
   };
 
