@@ -15,8 +15,11 @@
       git
       (pkgs.writeShellScriptBin "update" ''
         #!${pkgs.bash}/bin/bash
+        set -e
         cd /etc/nixos
-        sudo git pull || sudo git clone ${config.modules.update.repo} .
+        sudo git clean -fd
+        sudo git fetch origin
+        sudo git reset --hard origin/main
         if [ -n "$1" ]; then
           sudo nixos-rebuild switch --flake .#$1
         else
