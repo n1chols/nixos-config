@@ -10,7 +10,7 @@
 
   # CONFIG
   config = lib.mkIf config.modules.update.enable {
-    # Install git and add shell command
+    # Install git and custom script
     environment.systemPackages = with pkgs; [
       git
       (pkgs.writeScriptBin "update" ''
