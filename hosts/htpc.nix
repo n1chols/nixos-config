@@ -31,27 +31,34 @@
   };
 
   swapDevices = [
-    { device = "/dev/nvme0n1p3"; }
+    {
+      device = "/dev/nvme0n1p3";
+    }
   ];
 
   # IMPORTS / MODULES
   imports = [
-    ../apps/gnome.nix
-    ../apps/coreapps.nix
-    ../apps/steam.nix
-    ../apps/pegasus.nix
-    ../apps/kodi.nix
-    ../apps/bombsquad.nix
-    ../apps/emulators.nix
+    ../pkgs/hyprland.nix
+    ../pkgs/steam.nix
+    ../pkgs/pegasus.nix
+    ../pkgs/kodi.nix
+    ../pkgs/bombsquad.nix
+    ../pkgs/emulators.nix
+    ../modules/reload.nix
     ../modules/multilogin.nix
   ];
 
-  modules.multilogin = {
-    enable = true;
-    sessions = [
-      "${pkgs.gamescope}/bin/gamescope -w 3840 -h 2160 -r 120 --backend drm --immediate-flips --rt --fullscreen --adaptive-sync --hdr-enabled --hdr-itm-enable -- sh -c '${pkgs.steam}/bin/steam -silent & ${pkgs.pegasus-frontend}/bin/pegasus-fe'"
-      "${pkgs.dbus}/bin/dbus-run-session env XDG_SESSION_TYPE=wayland ${pkgs.gnome-session}/bin/gnome-session"
-    ];
+  modules = {
+    reload = {
+      enable = true;
+    };
+    multilogin = {
+      enable = true;
+      sessions = [
+        "${pkgs.gamescope}/bin/gamescope -w 3840 -h 2160 -r 120 --backend drm --immediate-flips --rt --fullscreen --adaptive-sync --hdr-enabled --hdr-itm-enable -- sh -c '${pkgs.steam}/bin/steam -silent & ${pkgs.pegasus-frontend}/bin/pegasus-fe'"
+        "${pkgs.dbus}/bin/dbus-run-session env XDG_SESSION_TYPE=wayland ${pkgs.gnome-session}/bin/gnome-session"
+      ];
+    };
   };
 
 }
