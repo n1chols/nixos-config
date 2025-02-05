@@ -36,8 +36,7 @@
 
   # IMPORTS / MODULES
   imports = [
-    ./core.nix
-    # Packages
+    ../pkgs/core.nix
     ../pkgs/hyprland.nix
     ../pkgs/pegasus.nix
     ../pkgs/es-de.nix
@@ -45,7 +44,6 @@
     ../pkgs/kodi.nix
     ../pkgs/bombsquad.nix
     ../pkgs/emulators.nix
-    # Modules
     ../modules/update.nix
     ../modules/sessions.nix
   ];
