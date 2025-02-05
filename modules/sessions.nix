@@ -1,20 +1,20 @@
 { config, lib, pkgs, ... }: {
 
   # OPTIONS
-  options.modules.multilogin = {
+  options.modules.sessions = {
     enable = lib.mkEnableOption "";
-    sessions = lib.mkOption {
-      type = with lib.types; listOf str;
+    ttys = lib.mkOption {
+      type = types.listOf str;
     };
   };
 
   # CONFIG
-  config = lib.mkIf config.modules.multilogin.enable {
+  config = lib.mkIf config.modules.sessions.enable {
     # Enable greetd and first session
     services.greetd = {
       enable = true;
       settings.default_session = {
-        command = lib.head config.modules.multilogin.sessions;
+        command = lib.head config.modules.sessions.ttys;
         user = "user";
       };
     };
@@ -29,9 +29,9 @@
         command = "${cmd}"
         user = "user"
       '';
-    }) (lib.tail config.modules.multilogin.sessions));
+    }) (lib.tail config.modules.sessions.ttys));
 
-    # Create service(s) for remaining session(s)
+    # Create start service(s) for remaining session(s)
     systemd.services = lib.listToAttrs (lib.imap1 (i: cmd: {
       name = "greetd-session${toString i}";
       value = {
@@ -42,7 +42,7 @@
           Restart = "always";
         };
       };
-    }) (lib.tail config.modules.multilogin.sessions));
+    }) (lib.tail config.modules.sessions.ttys));
   };
 
 }
