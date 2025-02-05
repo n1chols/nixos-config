@@ -6,27 +6,24 @@
     repo = lib.mkOption {
       type = types.str;
     };
-    host = lib.mkOption {
-      type = types.str;
-    };
   };
 
   # CONFIG
   config = lib.mkIf config.modules.update.enable {
-    # Install git
+    # Install git and add shell command
     environment.systemPackages = with pkgs; [
       git
+      (pkgs.writeScriptBin "update" ''
+        #!${pkgs.bash}/bin/bash
+        cd /etc/nixos
+        sudo git pull || sudo git clone ${config.modules.update.repo} .
+        if [ -n "$1" ]; then
+          sudo nixos-rebuild switch --flake .#$1
+        else
+          sudo nixos-rebuild switch --flake .
+        fi
+      '')
     ];
-
-    # Add shell command
-    environment.shellAliases = {
-      "update" = ''
-        cd /etc/nixos && \
-        sudo git pull || \
-        sudo git clone $(config.modules.update.repo) . && \
-        sudo nixos-rebuild switch --flake .#${config.modules.update.host}
-      '';
-    };
   };
 
 }
