@@ -6,6 +6,9 @@
     repo = lib.mkOption {
       type = types.str;
     };
+    host = lib.mkOption {
+      type = types.str;
+    };
   };
 
   # CONFIG
@@ -20,8 +23,8 @@
       "update" = ''
         cd /etc/nixos && \
         sudo git pull || \
-        sudo git clone $(config.system.update.repo) . && \
-        sudo nixos-rebuild switch
+        sudo git clone $(config.modules.update.repo) . && \
+        sudo nixos-rebuild switch --flake .#${config.modules.update.host}
       '';
     };
   };
