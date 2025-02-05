@@ -4,7 +4,7 @@
   options.modules.sessions = {
     enable = lib.mkEnableOption "";
     commands = lib.mkOption {
-      type = types.listOf str;
+      type = lib.types.listOf str;
     };
   };
 
