@@ -17,8 +17,8 @@
         #!${pkgs.bash}/bin/bash
         set -e
         cd /etc/nixos
-        sudo git fetch ${config.modules.update.repo} HEAD
-        sudo git reset --hard FETCH_HEAD
+        sudo git clone --force --no-checkout ${config.modules.update.repo} .
+        sudo git checkout --force HEAD
         if [ -n "$1" ]; then
           sudo nixos-rebuild switch --flake .#$1
         else
