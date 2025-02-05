@@ -17,7 +17,7 @@
 
     # Add shell command
     environment.shellAliases = {
-      "reconfig" = ''
+      "update" = ''
         cd /etc/nixos && \
         sudo git pull || \
         sudo git clone $(config.system.update.repo) . && \
