@@ -39,8 +39,8 @@
   # IMPORTS / MODULES
   imports = [
     ../pkgs/hyprland.nix
-    ../pkgs/steam.nix
     ../pkgs/pegasus.nix
+    ../pkgs/steam.nix
     ../pkgs/kodi.nix
     ../pkgs/bombsquad.nix
     ../pkgs/emulators.nix
