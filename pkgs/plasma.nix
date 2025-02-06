@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }: {
   
   # Enable KDE Plasma
+  services.xserver.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Force adwaita dark theme
