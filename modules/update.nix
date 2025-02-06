@@ -17,7 +17,7 @@
         #!${pkgs.bash}/bin/bash
         set -e
         cd /etc/nixos
-        sudo rm -rf ./*
+        sudo rm -rf *
         sudo git clone ${config.modules.update.repo} .
         if [ -n "$1" ]; then
           sudo nixos-rebuild switch --flake .#$1
