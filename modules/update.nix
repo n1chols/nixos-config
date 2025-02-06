@@ -20,9 +20,9 @@
         sudo find . -mindepth 1 -delete
         sudo git clone ${config.modules.update.repo} .
         if [ -n "$1" ]; then
-          sudo nixos-rebuild switch --flake .#$1
+          sudo nixos-rebuild switch --flake .#$1 --no-write-lock-file
         else
-          sudo nixos-rebuild switch --flake .
+          sudo nixos-rebuild switch --flake . --no-write-lock-file
         fi
       '')
     ];
