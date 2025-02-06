@@ -14,4 +14,11 @@
     };
   };
 
+  # Install desktop utilities
+  environment.systemPackages = with pkgs; [
+    dunst
+    kitty
+    rofi-wayland
+  ];
+
 }
