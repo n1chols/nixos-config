@@ -4,6 +4,10 @@
   services.xserver.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  environment.systemPackages = with pkgs; [
+    plasma-workspace
+  ];
+
   # Enable XDG desktop portal
   xdg.portal = {
     enable = true;
