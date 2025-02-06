@@ -4,6 +4,27 @@
   programs.hyprland = {
     enable = true;
     withUWSM = false;
+    settings = {
+      monitor = [
+        ",preferred,auto,1"
+      ];
+        
+      exec-once = [
+        "waybar"
+        "dunst"
+      ];
+        
+      bind = [
+        "SUPER, T, exec, kitty"
+        "SUPER, Q, exec, rofi --show drun"
+        "SUPER, F, fullscreen"
+      ];
+
+      input = {
+        kb_layout = "us";
+        follow_mouse = 1;
+      };
+    };
   };
 
   # Install desktop utilities
@@ -17,18 +38,5 @@
     networkmanagerapplet
     blueman
   ];
-
-  # Setup Hyprland config
-  environment.etc."hyprland.conf".text = ''
-    monitor=,preferred,auto,1
-
-    exec-once = waybar
-    exec-once = dunst
-
-    bind = SUPER, T, exec, kitty
-    bind = SUPER, Q, exec, rofi --show drun
-    bind = SUPER, X, killactive
-    bind = SUPER, F, fullscreen
-  '';
 
 }
