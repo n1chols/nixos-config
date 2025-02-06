@@ -14,9 +14,14 @@
     };
   };
 
+  # Disable wallpaper splash text
+  services.hyprpaper = {
+    enable = true;
+    settings.splash = false;
+  };
+
   # Install desktop utilities
   environment.systemPackages = with pkgs; [
-    hyprpaper
     dunst
     kitty
     rofi-wayland
