@@ -7,6 +7,9 @@
     nixosConfigurations = let
       hosts = builtins.readDir ./hosts;
       mkHost = name: nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          name = name;
+        };
         modules = [
           ./pkgs/common.nix
           ./hosts/${name}
