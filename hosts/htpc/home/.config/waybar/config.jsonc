@@ -1,12 +1,24 @@
 {
+    // POSITION
     "layer": "top",
-    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["clock"],
+
+    // MODULES
+    "modules-left": [
+      "hyprland/workspaces",
+      "hyprland/submap"
+    ],
+    "modules-center": [
+      "hyprland/window"
+    ],
+    "modules-right": [
+      "clock"
+    ],
+
+    # SETTINGS
     "hyprland/window": {
-        "max-length": 50
+      "max-length": 50
     },
     "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+      "format-alt": "{:%a, %d. %b  %H:%M}"
     }
 }
