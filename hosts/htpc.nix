@@ -47,7 +47,7 @@
     ../pkgs/emulators.nix
     ../modules/update.nix
     ../modules/sessions.nix
-  ];/usr/lib/plasma-dbus-run-session-if-needed
+  ];
 
   modules = {
     update = {
