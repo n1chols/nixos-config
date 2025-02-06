@@ -25,7 +25,7 @@
 
   # Configure common utilities
   imports = [
-    ../utils/sessions.nix
+    ../utils/dotfiles.nix
     ../utils/update.nix
   ];
   
