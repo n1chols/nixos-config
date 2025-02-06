@@ -2,12 +2,20 @@
   
   # Enable KDE Plasma
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+
+  # TESTING STUFF
+  services.displayManager.sddm.enable = true;
 
   services.displayManager.defaultSession = "plasma";
 
   programs.dconf.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    wayland
+    libsForQt5.qt5.qtwayland
+    qt6.qtwayland
+  ];
 
   # Enable XDG desktop portal
   xdg.portal = {
