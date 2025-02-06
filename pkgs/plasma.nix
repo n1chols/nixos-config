@@ -1,25 +1,25 @@
 { config, lib, pkgs, ... }: {
   
   # Enable KDE Plasma
-  services.xserver.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  #services.xserver.enable = true;
+  #services.desktopManager.plasma6.enable = true;
 
   # TESTING STUFF
-  services.displayManager.sddm.enable = true;
+  # Clear out any KDE 5 residuals and ensure Plasma 6
+  services.xserver = {
+    enable = true;
+    displayManager = {
+      sddm.enable = true;
+      defaultSession = "plasma"; # Should be "plasma" not "plasmawayland"
+    };
+    desktopManager.plasma6.enable = true;
+  };
 
-  services.displayManager.defaultSession = "plasma";
-
-  programs.xwayland.enable = true;
-
-  programs.dconf.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    wayland
-    libsForQt5.qt5.qtwayland
-    qt6.qtwayland
-    kdePackages.plasma-workspace
-    kdePackages.kwin
-    kdePackages.plasma-desktop
+  environment.systemPackages = with pkgs.kdePackages; [
+    plasma-workspace
+    plasma-desktop
+    kwin
+    qtwayland
   ];
 
   # Enable XDG desktop portal
