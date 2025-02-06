@@ -5,6 +5,8 @@
   time.timeZone = "America/Los_Angeles";
   
   # HARDWARE / DRIVERS
+  nixpkgs.hostPlatform = "x86_64-linux";
+
   hardware = {
     enableRedistributableFirmware = true;
     cpu.amd.updateMicrocode = true;
