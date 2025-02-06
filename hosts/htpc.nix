@@ -38,7 +38,7 @@
 
   # IMPORTS / MODULES
   imports = [
-    ../pkgs/core.nix
+    ../pkgs/common.nix
     ../pkgs/hyprland.nix
     ../pkgs/pegasus.nix
     ../pkgs/steam.nix
