@@ -27,7 +27,7 @@
   modules = {
     dotfiles = {
       enable = true;
-      host = "";
+      host = name;
     };
     update = {
       enable = true;
