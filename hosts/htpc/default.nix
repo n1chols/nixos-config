@@ -38,14 +38,14 @@
 
   # PACKAGES / UTILITIES
   imports = [
-    ../pkgs/hyprland.nix
-    ../pkgs/pegasus.nix
-    ../pkgs/steam.nix
-    ../pkgs/kodi.nix
-    ../pkgs/bombsquad.nix
-    ../pkgs/emulators.nix
-    ../pkgs/roon-server.nix
-    ../utils/sessions.nix
+    ../../pkgs/hyprland.nix
+    ../../pkgs/pegasus.nix
+    ../../pkgs/steam.nix
+    ../../pkgs/kodi.nix
+    ../../pkgs/bombsquad.nix
+    ../../pkgs/emulators.nix
+    ../../pkgs/roon-server.nix
+    ../../utils/sessions.nix
   ];
 
   modules.sessions = {
