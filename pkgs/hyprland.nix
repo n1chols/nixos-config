@@ -15,8 +15,8 @@
       ];
         
       bind = [
-        "SUPER, T, exec, kitty"
         "SUPER, Q, exec, rofi --show drun"
+        "SUPER, T, exec, kitty"
         "SUPER, F, fullscreen"
       ];
 
