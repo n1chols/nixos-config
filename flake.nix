@@ -6,11 +6,9 @@
   outputs = { self, nixpkgs }: {
     nixosConfigurations = {
       htpc = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         modules = [ ./hosts/htpc.nix ];
       };
       thinkpad = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         modules = [ ./hosts/thinkpad.nix ];
       };
     };
