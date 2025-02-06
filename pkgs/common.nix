@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ name, config, pkgs, ... }: {
 
   # Setup EFI boot loader
   boot.loader = {
