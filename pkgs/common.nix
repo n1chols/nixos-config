@@ -27,7 +27,7 @@
   modules = {
     dotfiles = {
       enable = true;
-      host = name;
+      host = config.networking.hostName;
     };
     update = {
       enable = true;
