@@ -23,7 +23,12 @@
   # Allow proprietary software
   nixpkgs.config.allowUnfree = true;
 
-  # Configure common modules
+  # Configure common utilities
+  imports = [
+    ../utils/sessions.nix
+    ../utils/update.nix
+  ];
+  
   modules = {
     dotfiles = {
       enable = true;
