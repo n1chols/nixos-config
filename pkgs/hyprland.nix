@@ -16,6 +16,7 @@
 
   # Install desktop utilities
   environment.systemPackages = with pkgs; [
+    hyprpaper
     dunst
     kitty
     rofi-wayland
