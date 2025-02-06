@@ -23,6 +23,18 @@
   # Allow proprietary software
   nixpkgs.config.allowUnfree = true;
 
+  # Configure common modules
+  modules = {
+    dotfiles = {
+      enable = true;
+      host = "";
+    };
+    update = {
+      enable = true;
+      repo = "https://github.com/tob4n/nixos-config";
+    };
+  }
+
   # NixOS config version
   system.stateVersion = "24.11";
 
