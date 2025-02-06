@@ -17,6 +17,9 @@
     wayland
     libsForQt5.qt5.qtwayland
     qt6.qtwayland
+    kdePackages.plasma-workspace
+    kdePackages.kwin
+    kdePackages.plasma-desktop
   ];
 
   # Enable XDG desktop portal
