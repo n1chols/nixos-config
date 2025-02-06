@@ -4,13 +4,11 @@
   };
 
   outputs = { self, nixpkgs }: {
-    nixosConfigurations = {
-      htpc = nixpkgs.lib.nixosSystem {
-        modules = [ ./hosts/htpc.nix ];
+    nixosConfigurations = let
+      hosts = builtins.readDir ./hosts;
+      mkHost = name: nixpkgs.lib.nixosSystem {
+        modules = [ ./hosts/${name} ];
       };
-      thinkpad = nixpkgs.lib.nixosSystem {
-        modules = [ ./hosts/thinkpad.nix ];
-      };
-    };
+    in builtins.mapAttrs (name: _: mkHost name) hosts;
   };
 }
