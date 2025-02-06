@@ -15,17 +15,25 @@
     desktopManager.plasma6.enable = true;
   };
 
-  environment.systemPackages = with pkgs.kdePackages; [
+  environment.systemPackages = with pkgs; [
+    wayland
+    qt6.qtwayland
+    qt6.full
+  ] ++ (with pkgs.kdePackages; [
     plasma-workspace
-    plasma-desktop
     kwin
-    qtwayland
-  ];
+    plasma-desktop
+    kdeplasma-addons
+    plasma-integration
+    plasma-pa  # Audio integration
+    kwayland
+    layer-shell-qt
+  ]);
 
   # Enable XDG desktop portal
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-kde ];
+    extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
   };
 
   # Force adwaita dark theme
