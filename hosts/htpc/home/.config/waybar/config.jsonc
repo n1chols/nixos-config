@@ -14,7 +14,7 @@
       "clock"
     ],
 
-    # SETTINGS
+    // SETTINGS
     "hyprland/window": {
       "max-length": 50
     },
