@@ -1,11 +1,15 @@
 { config, lib, pkgs, ... }:
 
 let
-  cosmic = builtins.getFlake "github:lilyinstarlight/nixos-cosmic";
+  cosmicTarball = fetchTarball {
+    url = "https://github.com/lilyinstarlight/nixos-cosmic/archive/main.tar.gz";
+    # You'll want to update this hash periodically
+    sha256 = "sha256:0000000000000000000000000000000000000000000000000000"; # Replace with actual hash
+  };
 in
 {
   imports = [
-    cosmic.nixosModules.default
+    "${cosmicTarball}/modules/cosmic.nix"
   ];
 
   # Enable required services and settings for COSMIC
@@ -24,7 +28,4 @@ in
   environment.sessionVariables = {
     COSMIC_DATA_CONTROL_ENABLED = "1";
   };
-
-  # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
