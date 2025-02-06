@@ -33,7 +33,7 @@
       enable = true;
       repo = "https://github.com/tob4n/nixos-config";
     };
-  }
+  };
 
   # NixOS config version
   system.stateVersion = "24.11";
