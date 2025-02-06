@@ -4,6 +4,12 @@
   services.xserver.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  # Enable XDG desktop portal
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [ xdg-desktop-portal-kde ];
+  };
+
   # Force adwaita dark theme
   qt = {
     enable = true;
