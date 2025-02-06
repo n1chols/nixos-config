@@ -58,7 +58,7 @@
       enable = true;
       commands = [
         "${pkgs.gamescope}/bin/gamescope -w 3840 -h 2160 -r 120 --backend drm --immediate-flips --rt --fullscreen --adaptive-sync --hdr-enabled --hdr-itm-enable -- sh -c '${pkgs.steam}/bin/steam -silent & ${pkgs.pegasus-frontend}/bin/pegasus-fe'"
-        "dbus-run-session env PLASMA_USE_QT_SCALING=1 QT_WAYLAND_DISABLE_WINDOWDECORATION=1 QT_QPA_PLATFORM=wayland WAYLAND_DISPLAY=wayland-1 XDG_SESSION_TYPE=wayland kwin_wayland --drm --no-lockscreen plasma-session"
+        "dbus-launch --exit-with-session startplasma-wayland"
       ];
     };
   };
