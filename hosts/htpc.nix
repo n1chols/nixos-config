@@ -47,7 +47,7 @@
     ../pkgs/emulators.nix
     ../modules/update.nix
     ../modules/sessions.nix
-  ];
+  ];/usr/lib/plasma-dbus-run-session-if-needed
 
   modules = {
     update = {
@@ -58,7 +58,7 @@
       enable = true;
       commands = [
         "${pkgs.gamescope}/bin/gamescope -w 3840 -h 2160 -r 120 --backend drm --immediate-flips --rt --fullscreen --adaptive-sync --hdr-enabled --hdr-itm-enable -- sh -c '${pkgs.steam}/bin/steam -silent & ${pkgs.pegasus-frontend}/bin/pegasus-fe'"
-        "env KWIN_COMPOSE=O WAYLAND_DEBUG=1 XDG_SESSION_TYPE=wayland QT_QPA_PLATFORM=wayland startplasma-wayland --no-kms"
+        "/usr/lib/plasma-dbus-run-session-if-needed env KWIN_COMPOSE=O WAYLAND_DEBUG=1 DESKTOP_SESSION=plasma XDG_SESSION_TYPE=wayland QT_QPA_PLATFORM=wayland startplasma-wayland"
       ];
     };
   };
