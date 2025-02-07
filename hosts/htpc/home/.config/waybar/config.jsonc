@@ -5,20 +5,40 @@
     // MODULES
     "modules-left": [
       "hyprland/workspaces",
-      "hyprland/submap"
+      "tray"
     ],
     "modules-center": [
       "hyprland/window"
     ],
     "modules-right": [
+      "network",
       "clock"
     ],
 
     // SETTINGS
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "format-icons": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "10",
+        "-99": ""
+      }
+    },
     "hyprland/window": {
-      "max-length": 50
+      "format": "{}",
+      "max-length": 80
     },
     "clock": {
-      "format-alt": "{:%a, %d. %b  %H:%M}"
+      "format": "<span color='#eee'> </span>{:%H:%M}",
+      "format-alt": "<span foreground='#eee'> </span><span>{:%I:%M %p %a %d}</span>",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     }
 }
