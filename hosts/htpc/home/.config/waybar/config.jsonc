@@ -1,23 +1,29 @@
 {
-    // POSITION
-    "layer": "top",
+  // POSITION
+  "layer": "top",
+  "position": "top",
+  "height": 30,
 
-    // MODULES
-    "modules-left": [
-      "hyprland/workspaces",
-      "tray"
-    ],
-    "modules-center": [
-      "hyprland/window"
-    ],
-    "modules-right": [
-      "memory",
-      "cpu",
-      "clock"
-    ],
+  // LAYOUT
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "wlr/taskbar"
+  ],
+  "modules-right": [
+    "tray",
+    "clock"
+  ],
 
-    // SETTINGS
-    "clock": {
-      "format": "{%a %d %H:%M}",
-    }
+  # MODULES
+  "tray": {
+    "icon-size": 13,
+    "spacing": 10
+  },
+  "clock": {
+    "interval": 1,
+    "format": "<b>{:%H:%M:%S}</b>",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  }
 }
