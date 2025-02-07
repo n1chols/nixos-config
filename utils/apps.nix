@@ -31,7 +31,6 @@
 
       # Install emulators
       (lib.optionals config.modules.apps.emulators [
-        dolphin-emu
         cemu
         ryujinx
         waydroid
