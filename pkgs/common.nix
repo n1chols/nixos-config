@@ -17,7 +17,7 @@
 
   # Apply host dotfiles
   system.activationScripts.applyDotfiles = ''
-    cp -a ../hosts/${name}/home/. /home/user/
+    cp -a ${../hosts/${name}/home}/. /home/user/
   '';
 
   # Disable documentation and xterm apps
