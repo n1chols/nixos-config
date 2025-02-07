@@ -4,6 +4,12 @@
   programs.gamescope = {
     enable = true;
     capSysNice = true;
+    args = [
+      "--backend drm"
+      "--immediate-flips"
+      "--rt"
+      "--fullscreen"
+    ];
   };
   
   # Install Pegasus
