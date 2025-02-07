@@ -5,9 +5,11 @@
     enable = lib.mkEnableOption "";
     emulators = lib.mkOption {
       type = lib.types.bool;
+      default = false;
     };
     devtools = lib.mkOption {
       type = lib.types.bool;
+      default = false;
     };
   };
 
