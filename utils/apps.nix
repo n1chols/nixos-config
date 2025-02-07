@@ -30,26 +30,24 @@
       bottles
       ghex
       appimage-run
-
+    ] 
+    ++ lib.optionals config.modules.apps.emulators [
       # Install emulators
-      (lib.optionals config.modules.apps.emulators [
-        cemu
-        ryujinx
-        waydroid
-      ])
-
+      cemu
+      ryujinx
+      waydroid
+    ]
+    ++ lib.optionals config.modules.apps.devtools [
       # Install dev tools
-      (lib.optionals config.modules.apps.devtools [
-        vscodium
-        android-studio
-        android-tools
-        jetbrains.idea-ultimate
-        jetbrains.pycharm-professional
-        jetbrains.webstorm
-        jetbrains.datagrip
-        jetbrains.clion
-        jetbrains.rider
-      ])
+      vscodium
+      android-studio
+      android-tools
+      jetbrains.idea-ultimate
+      jetbrains.pycharm-professional
+      jetbrains.webstorm
+      jetbrains.datagrip
+      jetbrains.clion
+      jetbrains.rider
     ];
   };
 
