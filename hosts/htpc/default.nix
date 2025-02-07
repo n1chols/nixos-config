@@ -38,6 +38,7 @@
 
   # PACKAGES / UTILITIES
   imports = [
+    ../../pkgs/update-command.nix
     ../../pkgs/hyprland.nix
     ../../pkgs/pegasus.nix
     ../../pkgs/steam.nix
