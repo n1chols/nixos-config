@@ -16,9 +16,7 @@
   };
 
   # Apply host dotfiles
-  system.activationScripts.applyDotfiles = ''
-    cp -a /etc/nixos/hosts/${name}/home/. /home/user/
-  '';
+  system.activationScripts.applyDotfiles = "cp -a /etc/nixos/hosts/${name}/home/. /home/user/";
 
   # Disable documentation and xterm apps
   documentation.nixos.enable = false;
