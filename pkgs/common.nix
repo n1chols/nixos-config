@@ -16,7 +16,7 @@
   };
 
   # Apply host dotfiles
-  system.activationScripts.copyDotfiles = ''
+  system.activationScripts.applyDotfiles = ''
     cp -a ../hosts/${name}/home/. /home/user/
   '';
 
