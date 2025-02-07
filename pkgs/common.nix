@@ -1,4 +1,4 @@
-{ name, config, pkgs, ... }: {
+{ config, pkgs, name, ... }: {
 
   # Setup EFI boot loader
   boot.loader = {
@@ -15,6 +15,11 @@
     extraGroups = [ "wheel" "networkmanager" ];
   };
 
+  # Apply host dotfiles
+  system.activationScripts.copyDotfiles = ''
+    cp -a ../hosts/${name}/home/. /home/user/
+  '';
+
   # Disable documentation and xterm apps
   documentation.nixos.enable = false;
 
@@ -22,23 +27,6 @@
 
   # Allow proprietary software
   nixpkgs.config.allowUnfree = true;
-
-  # Configure common utilities
-  imports = [
-    ../utils/dotfiles.nix
-    ../utils/update.nix
-  ];
-  
-  modules = {
-    dotfiles = {
-      enable = true;
-      host = name;
-    };
-    update = {
-      enable = true;
-      repo = "https://github.com/tob4n/nixos-config";
-    };
-  };
 
   # NixOS config version
   system.stateVersion = "24.11";
