@@ -16,7 +16,7 @@
     "clock"
   ],
 
-  # MODULES
+  // MODULES
   "tray": {
     "icon-size": 13,
     "spacing": 10
