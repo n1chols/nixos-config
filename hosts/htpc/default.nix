@@ -43,7 +43,6 @@
     ../../pkgs/steam.nix
     ../../pkgs/kodi.nix
     ../../pkgs/bombsquad.nix
-    ../../pkgs/emulators.nix
     ../../pkgs/roon-server.nix
     ../../utils/apps.nix
     ../../utils/sessions.nix
