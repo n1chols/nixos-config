@@ -3,11 +3,13 @@
   # Enable Gamescope
   programs.gamescope = {
     enable = true;
-    args = {
+    args = [
       "--backend drm"
       "--expose-wayland"
       "--fullscreen"
-    };
+      "--immediate-flips"
+      "--rt"
+    ];
   };
 
   # Set capabilities for gamescope
