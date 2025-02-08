@@ -3,7 +3,7 @@
   # Enable OpenGamepadUI
   programs.opengamepadui = {
     enable = true;
-    gamescopeSession.Args = [
+    gamescopeSession.args = [
       "--backend drm"
       "--expose-wayland"
       "--fullscreen"
