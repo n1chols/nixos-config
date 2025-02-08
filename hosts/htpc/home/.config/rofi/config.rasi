@@ -1,3 +1,7 @@
+configuration {
+    show-icons: true;
+}
+
 * {
     background-color: #242424;
     text-color: #ffffff;
@@ -7,10 +11,25 @@ window {
     border: 1px solid #303030;
     border-radius: 12px;
     width: 600px;
+}
+
+mainbox {
     padding: 12px;
+}
+
+listview {
+    padding: 8px 0;
+}
+
+element {
+    padding: 4px;
 }
 
 element selected {
     background-color: #78aeed;
     text-color: #ffffff;
+}
+
+inputbar {
+    padding: 8px;
 }
