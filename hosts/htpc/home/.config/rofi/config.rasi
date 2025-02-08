@@ -41,6 +41,7 @@ entry {
 }
 
 listview {
+   border: 0;
    columns: 2;
    lines: 8;
    spacing: 5px;
@@ -51,6 +52,7 @@ listview {
 scrollbar {
    handle-color: #505050;
    background-color: #454545;
+   border-radius: 12px;
 }
 
 element {
