@@ -63,7 +63,7 @@
     sessions = {
       enable = true;
       commands = [
-        "${pkgs.gamescope}/bin/gamescope -w 3840 -h 2160 -- ${pkgs.pegasus-frontend}/bin/pegasus-fe"
+        "${pkgs.gamescope}/bin/gamescope -w 3840 -h 2160 -r 120 --adaptive-sync --hdr-enabled --hdr-itm-enable -- ${pkgs.pegasus-frontend}/bin/pegasus-fe"
       ];
     };
   };
