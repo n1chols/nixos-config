@@ -18,7 +18,7 @@
   environment.systemPackages = with pkgs; [
     dunst
     rofi-wayland
-    font-awesome
+    font-awesome_6
   ];
 
 }
