@@ -1,75 +1,77 @@
 configuration {
-   modi: "drun";
-   show-icons: true;
-   display-drun: "";
-   drun-display-format: "{name}";
-   font: "Cantarell 10";
-   icon-theme: "Font Awesome 6 Free Solid";
+    modi: "drun";
+    show-icons: true;
+    display-drun: "";
+    drun-display-format: "{name}";
+    font: "Cantarell 10";
+    icon-theme: "Font Awesome 6 Free Solid";
 }
 
 window {
-   location: center;
-   width: 700px;
-   border-radius: 12px;
-   background-color: #282828;
+    location: center;
+    width: 700px;
+    border-radius: 12px;
+    background-color: #282828;
 }
 
 mainbox {
-   spacing: 10px;
-   padding: 20px;
-   children: [ "inputbar", "listview" ];
+    spacing: 10px;
+    padding: 20px;
+    children: [ "inputbar", "listview" ];
 }
 
 inputbar {
-   spacing: 10px;
-   padding: 15px;
-   border-radius: 12px;
-   background-color: #464646;
-   text-color: #ffffff;
-   children: [ "prompt", "entry" ];
+    spacing: 10px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #464646;
+    text-color: #ffffff;
+    children: [ "prompt", "entry" ];
 }
 
 prompt {
-   str: "";
+    str: "";
 }
 
 entry {
-   placeholder: " Search...";
+    placeholder: "Search...";
+    placeholder-color: #b9b9b9;
+    text-color: #ffffff;
 }
 
 listview {
-   columns: 2;
-   lines: 8;
-   spacing: 5px;
-   cycle: true;
-   dynamic: true;
-   layout: vertical;
-   fixed-height: true;
-   fixed-columns: true;
+    columns: 2;
+    lines: 8;
+    spacing: 5px;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+    fixed-height: true;
+    fixed-columns: true;
 }
 
 element {
-   spacing: 10px;
-   padding: 5px;
-   border-radius: 12px;
-   cursor: pointer;
+    spacing: 10px;
+    padding: 5px;
+    border-radius: 12px;
+    cursor: pointer;
 }
 
 element normal.normal,
 element alternate.normal {
-   background-color: #282828;
-   text-color: #ffffff;
+    background-color: #282828;
+    text-color: #ffffff;
 }
 
 element selected.normal {
-   background-color: #3584e4;
-   text-color: #ffffff;
+    background-color: #3584e4;
+    text-color: #ffffff;
 }
 
 element-icon {
-   size: 32px;
+    size: 32px;
 }
 
 element-text {
-   vertical-align: 0.5;
+    vertical-align: 0.5;
 }
