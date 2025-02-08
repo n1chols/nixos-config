@@ -32,7 +32,7 @@
     "on-click": "systemctl reboot"
   },
   "custom/poweroff": {
-    "format": "⏻",
+    "format": "",
     "on-click": "systemctl poweroff"
   }
 }
