@@ -14,10 +14,11 @@
     };
   };
 
-  # Install desktop utilities
+  # Install desktop packages
   environment.systemPackages = with pkgs; [
     dunst
     rofi-wayland
+    font-awesome
   ];
 
 }
