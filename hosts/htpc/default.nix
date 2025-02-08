@@ -50,7 +50,7 @@
     ../../pkgs/steam.nix
     ../../pkgs/kodi.nix
     ../../pkgs/bombsquad.nix
-    #../../pkgs/roon-server.nix
+    ../../pkgs/roon-server.nix
     ../../utils/apps.nix
     ../../utils/sessions.nix
   ];
@@ -63,7 +63,7 @@
     sessions = {
       enable = true;
       commands = [
-        "${pkgs.gamescope}/bin/gamescope -w 3840 -h 2160 -r 120 --adaptive-sync --hdr-enabled --hdr-itm-enable -- ${pkgs.pegasus-frontend}/bin/pegasus-fe"
+        "${pkgs.gamescope}/bin/gamescope -W 3840 -H 2160 -r 120 --adaptive-sync --hdr-enabled --hdr-itm-enable -- ${pkgs.pegasus-frontend}/bin/pegasus-fe"
       ];
     };
   };
