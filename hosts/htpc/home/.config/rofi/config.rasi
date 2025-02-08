@@ -25,7 +25,7 @@ inputbar {
     children: [ "prompt", "entry" ];
 }
 prompt {
-    font: "Font Awesome 6 Free Solid";
+    font: "Font Awesome 6 Free Solid 10";
     text-color: #c1c1c1;
 }
 entry {
