@@ -18,6 +18,10 @@
   environment.systemPackages = with pkgs; [
     dunst
     rofi-wayland
+  ];
+
+  # Install fonts for waybar
+  fonts.packages = with pkgs; [
     font-awesome_6
   ];
 
