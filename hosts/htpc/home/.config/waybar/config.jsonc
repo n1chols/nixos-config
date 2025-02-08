@@ -1,10 +1,9 @@
 {
-
   // GENERAL
   "layer": "top",
   "position": "top",
   "height": 32,
-  "spacing": 4
+  "spacing": 4,
 
   // LAYOUT
   "modules-left": [
@@ -30,14 +29,6 @@
   "clock": {
     "format": "{:%a %b %d  %I:%M %p}"
   },
-  "cpu": {
-    "interval": 5,
-    "format": " {usage}%"
-  },
-  "memory": {
-    "interval": 5,
-    "format": " {usage}%"
-  }
   "custom/reboot": {
     "format": "",
     "on-click": "systemctl reboot"
