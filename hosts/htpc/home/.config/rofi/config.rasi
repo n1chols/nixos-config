@@ -30,7 +30,7 @@ inputbar {
 }
 
 prompt {
-    str: "\uf002";
+    str: "";
     font: "Font Awesome 6 Free Solid";
 }
 
