@@ -13,6 +13,10 @@ window#waybar {
   color: #ffffff;
 }
 
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 #workspaces button.active {
   border-bottom: 2px solid #ffffff;
 }
@@ -20,4 +24,9 @@ window#waybar {
 #custom-poweroff,
 #custom-reboot {
   padding: 0 8px;
+}
+
+#custom-poweroff:hover,
+#custom-reboot:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
