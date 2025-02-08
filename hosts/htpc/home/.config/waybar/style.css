@@ -1,0 +1,47 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Cantarell", sans-serif;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    background: transparent;
+    color: #ffffff;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    min-width: 32px;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#workspaces button.active {
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid #ffffff;
+}
+
+#clock {
+    padding: 0 8px;
+    font-weight: 500;
+}
+
+#custom-poweroff,
+#custom-reboot {
+    padding: 0 12px;
+    color: #e06c75;
+}
+
+#custom-poweroff:hover,
+#custom-reboot:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
