@@ -24,6 +24,7 @@
     }
   },
   "clock": {
+    "interval": 1,
     "format": "{:%b %d  %H:%M:%S}"
   },
   "custom/reboot": {
