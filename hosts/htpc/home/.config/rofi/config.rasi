@@ -25,12 +25,12 @@ inputbar {
     children: [ "prompt", "entry" ];
 }
 prompt {
-    font: "Font Awesome 6 Free Solid 12";
+    font: "Font Awesome 6 Free Solid";
     text-color: #c1c1c1;
 }
 entry {
     placeholder: "Type to search";
-    placeholder-color: #8e8e8e;
+    placeholder-color: #c1c1c1;
     text-color: #ffffff;
 }
 listview {
@@ -55,7 +55,7 @@ element alternate.normal {
     text-color: #ffffff;
 }
 element selected.normal {
-    background-color: #3584e4;
+    background-color: #3c3c3c;
     text-color: #ffffff;
 }
 element-icon {
