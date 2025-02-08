@@ -19,7 +19,7 @@ window#waybar {
 #workspaces button:hover {
   box-shadow: none;
   border: none;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 #workspaces button.active {
@@ -35,5 +35,5 @@ window#waybar {
 
 #custom-poweroff:hover,
 #custom-reboot:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
 }
