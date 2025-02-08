@@ -20,15 +20,7 @@
   // MODULES
   "hyprland/workspaces": {
     "format": "{icon}",
-    "all-outputs": true,
-    "active-only": false,
-    "on-click": "activate",
-    "persistent_workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": []
-    }
+    "on-click": "activate"
   },
   "clock": {
     "format": "{:%a %b %d  %I:%M %p}"
