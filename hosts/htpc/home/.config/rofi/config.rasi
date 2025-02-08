@@ -32,8 +32,8 @@ entry {
     placeholder: "Type to search";
     placeholder-color: #939393;
     text-color: #f5f5f5;
-    horizontal-align: 0.1;
-    vertical-align: 0.6;
+    horizontal-align: 0.02;
+    vertical-align: 0.7;
 }
 listview {
     columns: 2;
