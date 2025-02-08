@@ -7,9 +7,7 @@
     fg1:    #FFFFFF;
     fg2:    #969696;
     fg3:    #3D3D3D;
-}
-
-* {
+    
     font:   "Roboto 12";
 
     background-color:   transparent;
