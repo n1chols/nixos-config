@@ -21,7 +21,13 @@
   "hyprland/workspaces": {
     "sort-by-number": true,
     "active-only": false,
-    "persistent_workspaces": {"1": [],"2": [],"3": [],"4": []},
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
   "clock": {
     "format": "{:%a %b %d  %I:%M %p}"
   },
