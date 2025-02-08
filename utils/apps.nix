@@ -30,6 +30,7 @@
       bottles
       ghex
       appimage-run
+      adwaita-icon-theme
     ] 
     ++ lib.optionals config.modules.apps.emulators [
       # Install emulators
