@@ -1,25 +1,21 @@
 configuration {
     modi: "drun";
     show-icons: true;
-    display-drun: "";
+    display-drun: "";
     drun-display-format: "{name}";
     font: "Cantarell 10";
-    icon-theme: "Font Awesome 6 Free Solid";
 }
-
 window {
     location: center;
     width: 700px;
     border-radius: 12px;
     background-color: #282828;
 }
-
 mainbox {
     spacing: 10px;
     padding: 20px;
     children: [ "inputbar", "listview" ];
 }
-
 inputbar {
     spacing: 10px;
     padding: 15px;
@@ -28,13 +24,15 @@ inputbar {
     text-color: #ffffff;
     children: [ "prompt", "entry" ];
 }
-
+prompt {
+    font: "Font Awesome 6 Free Solid 12";
+    text-color: #c1c1c1;
+}
 entry {
     placeholder: "Type to search";
     placeholder-color: #8e8e8e;
     text-color: #ffffff;
 }
-
 listview {
     columns: 2;
     lines: 8;
@@ -45,29 +43,24 @@ listview {
     fixed-height: true;
     fixed-columns: true;
 }
-
 element {
     spacing: 10px;
     padding: 5px;
     border-radius: 12px;
     cursor: pointer;
 }
-
 element normal.normal,
 element alternate.normal {
     background-color: #282828;
     text-color: #ffffff;
 }
-
 element selected.normal {
     background-color: #3584e4;
     text-color: #ffffff;
 }
-
 element-icon {
     size: 32px;
 }
-
 element-text {
     vertical-align: 0.5;
 }
