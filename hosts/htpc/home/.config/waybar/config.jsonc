@@ -32,10 +32,12 @@
     "format": "{:%a %b %d  %I:%M %p}"
   },
   "custom/reboot": {
+    "tooltip": false,
     "format": "",
     "on-click": "systemctl reboot"
   },
   "custom/poweroff": {
+    "tooltip": false,
     "format": "",
     "on-click": "systemctl poweroff"
   }
