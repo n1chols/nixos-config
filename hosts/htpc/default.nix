@@ -47,6 +47,7 @@
     ../../pkgs/update-command.nix
     ../../pkgs/hyprland.nix
     ../../pkgs/pegasus.nix
+    ../../pkgs/opengamepadui.nix
     ../../pkgs/steam.nix
     ../../pkgs/kodi.nix
     ../../pkgs/bombsquad.nix
@@ -65,6 +66,7 @@
       commands = [
         "${pkgs.dbus}/bin/dbus-run-session env XDG_SESSION_TYPE=wayland ${pkgs.hyprland}/bin/Hyprland"
         "${pkgs.gamescope}/bin/gamescope -W 3840 -H 2160 -r 120 --adaptive-sync --hdr-enabled --hdr-itm-enable -- sh -c '${pkgs.steam}/bin/steam -nochatui -nofriendsui -silent & ${pkgs.pegasus-frontend}/bin/pegasus-fe'"
+        "${opengamepadui-gamescope}/bin/opengamepadui-gamescope"
       ];
     };
   };
