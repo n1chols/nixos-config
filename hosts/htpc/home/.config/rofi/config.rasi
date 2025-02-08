@@ -4,6 +4,7 @@ configuration {
     display-drun: "";
     drun-display-format: "{name}";
     font: "Cantarell 10";
+    icon-theme: "Font Awesome 6 Free Solid";
 }
 
 window {
