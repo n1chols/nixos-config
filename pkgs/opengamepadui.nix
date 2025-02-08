@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }: {
 
   # Enable OpenGamepadUI
-  programs.opengampadui = {
+  programs.opengamepadui = {
     enable = true;
     gamescopeSession.Args = [
       "--backend drm"
