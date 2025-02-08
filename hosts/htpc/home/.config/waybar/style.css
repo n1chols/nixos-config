@@ -9,17 +9,21 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0 5px;
-  color: #ffffff;
   box-shadow: none;
   border: none;
+  padding: 0 8px;
+  color: #ffffff
 }
 
 #workspaces button:hover {
+  box-shadow: none;
+  border: none;
   background: rgba(255, 255, 255, 0.1);
 }
 
 #workspaces button.active {
+  box-shadow: none;
+  border: none;
   border-bottom: 2px solid #ffffff;
 }
 
