@@ -10,6 +10,9 @@ window {
     width: 700px;
     border-radius: 12px;
     background-color: #242424;
+    transparency: "real";
+    animation: false;
+    fade: false; 
 }
 
 mainbox {
