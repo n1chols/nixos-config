@@ -20,7 +20,7 @@
   // MODULES
   "hyprland/workspaces": {
     "persistent-workspaces": {
-      "*" : 2,
+      "*" : 2
     }
   },
   "clock": {
