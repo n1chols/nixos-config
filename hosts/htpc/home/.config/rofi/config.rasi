@@ -27,6 +27,7 @@ inputbar {
 }
 
 prompt {
+    font: "Font Awesome 6 Free Solid 12";
     text-color: #c4c4c4;
 }
 
