@@ -64,7 +64,7 @@
       enable = true;
       commands = [
         "${pkgs.dbus}/bin/dbus-run-session env XDG_SESSION_TYPE=wayland ${pkgs.hyprland}/bin/Hyprland"
-        "${pkgs.gamescope}/bin/gamescope -W 3840 -H 2160 -r 120 --adaptive-sync --hdr-enabled --hdr-itm-enable -- sh -c '${pkgs.steam}/bin/steam -silent & ${pkgs.pegasus-frontend}/bin/pegasus-fe'"
+        "env STEAM_GAMESCOPE_VRR_SUPPORTED=1 STEAM_GAMESCOPE_HDR_SUPPORTED=1 STEAM_GAMESCOPE_FANCY_SCALING_SUPPORT=1 ${pkgs.gamescope}/bin/gamescope -W 3840 -H 2160 -r 120 --adaptive-sync --hdr-enabled --hdr-itm-enable --steam -- ${pkgs.steam}/bin/steam -tenfoot"
       ];
     };
   };
