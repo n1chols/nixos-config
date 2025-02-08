@@ -1,6 +1,5 @@
 collection: Wii U
-launch: env WAYLAND_DISPLAY="" cemu -f -g "{file.path}"
+launch: env WAYLAND_DISPLAY="" cemu -f -g "{file.dir}"
 
 directory: /home/user/Games/Nintendo/Wii U
 regex: .*/([^/]+)/Game/code/project\.rpx
-game: ${1}
