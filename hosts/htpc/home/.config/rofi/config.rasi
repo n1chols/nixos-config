@@ -25,14 +25,14 @@ inputbar {
     children: [ "prompt", "entry" ];
 }
 prompt {
-    font: "Font Awesome 6 Free Solid 10";
+    font: "Font Awesome 6 Free Solid 12";
     text-color: #c1c1c1;
 }
 entry {
     placeholder: "Type to search";
     placeholder-color: #c1c1c1;
     text-color: #ffffff;
-    horizontal-align: 0.5;
+    vertical-align: 0.5;
 }
 listview {
     columns: 2;
