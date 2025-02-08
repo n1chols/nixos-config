@@ -18,6 +18,11 @@
   ],
 
   // MODULES
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "*" : 2,
+    }
+  },
   "clock": {
     "format": "{:%a %b %d  %I:%M %p}"
   },
