@@ -26,7 +26,7 @@
     }
   },
   "clock": {
-    "format": "{:%a %b %d  %I:%M %p}"
+    "format": "{:%a %b %d %I:%M %p}"
   },
   "custom/reboot": {
     "tooltip": false,
