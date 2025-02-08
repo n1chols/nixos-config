@@ -10,21 +10,18 @@ window#waybar {
 
 #workspaces button {
   border-radius: 0;
-  box-shadow: none;
   border: none;
+  box-shadow: none;
+  transition: none;
   padding: 0 10px;
   color: #ffffff;
 }
 
 #workspaces button:hover {
-  box-shadow: none;
-  border: none;
   background: rgba(255, 255, 255, 0.25);
 }
 
 #workspaces button.active {
-  box-shadow: none;
-  border: none;
   border-bottom: 2px solid #ffffff;
 }
 
