@@ -1,23 +1,23 @@
 * {
-    font-family: "Cantarell", sans-serif;
-    font-size: 14px;
+  font-family: "Cantarell", "Font Awesome 6 Free", sans-serif;
+  font-size: 14px;
 }
 
 window#waybar {
-    background: rgba(0, 0, 0, 0.75);
-    color: #ffffff;
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
 }
 
 #workspaces button {
-    padding: 0 5px;
-    color: #ffffff;
+  padding: 0 5px;
+  color: #ffffff;
 }
 
 #workspaces button.active {
-    border-bottom: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
 }
 
 #custom-poweroff,
 #custom-reboot {
-   padding: 0 8px;
+  padding: 0 8px;
 }
