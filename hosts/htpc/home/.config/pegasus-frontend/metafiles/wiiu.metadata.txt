@@ -2,4 +2,4 @@ collection: Wii U
 launch: env WAYLAND_DISPLAY="" cemu -f -g "|1|{file.dir}|2|{file.path}|3|{file.basename}|4|{file.name}|5|{file.dir.basename}|6|{regex}"
 
 directory: /home/user/Games/Nintendo/Wii U
-regex: [^/]+$
+regex: ^[^/]+/?$
