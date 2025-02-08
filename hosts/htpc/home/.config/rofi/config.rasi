@@ -1,52 +1,15 @@
 * {
-    background: rgba(0, 0, 0, 0.75);
-    background-alt: rgba(255, 255, 255, 0.25);
-    foreground: #ffffff;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    spacing: 0;
+    background-color: #242424;
+    text-color: #ffffff;
 }
 
 window {
-    width: 30%;
-    background-color: @background;
-}
-
-element {
-    padding: 8px;
-    background-color: transparent;
-    text-color: @foreground;
+    border: 1px solid #303030;
+    border-radius: 12px;
+    width: 600px;
+    padding: 12px;
 }
 
 element selected {
-    background-color: @background-alt;
-}
-
-element-text {
-    background-color: transparent;
-    text-color: inherit;
-    vertical-align: 0.5;
-}
-
-entry {
-    background-color: transparent;
-    padding: 12px;
-    text-color: @foreground;
-}
-
-inputbar {
-    children: [entry];
-    background-color: @background;
-}
-
-listview {
-    background-color: @background;
-    columns: 1;
-    lines: 8;
-}
-
-mainbox {
-    children: [inputbar, listview];
-    background-color: @background;
+    background-color: #78aeed;
 }
