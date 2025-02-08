@@ -19,7 +19,7 @@
   security.wrappers.gamescope = {
     owner = "root";
     group = "root";
-    capabilities = "cap_sys_nice+eip";
+    capabilities = "cap_sys_nice=eip";
     source = "${pkgs.gamescope}/bin/gamescope";
   };
 
