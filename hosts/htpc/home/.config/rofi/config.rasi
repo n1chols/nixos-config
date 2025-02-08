@@ -12,4 +12,5 @@ window {
 
 element selected {
     background-color: #78aeed;
+    text-color: #ffffff;
 }
