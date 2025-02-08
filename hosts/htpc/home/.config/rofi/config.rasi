@@ -1,10 +1,9 @@
 configuration {
     modi: "drun";
     show-icons: true;
-    display-drun: "";
+    display-drun: "";
     drun-display-format: "{name}";
-    font: "Cantarell 10";
-    icon-theme: "Font Awesome 6 Free Solid";
+    font: "Adwaita Sans";
 }
 
 window {
@@ -29,14 +28,9 @@ inputbar {
     children: [ "prompt", "entry" ];
 }
 
-prompt {
-    str: "";
-    font: "Font Awesome 6 Free Solid";
-}
-
 entry {
-    placeholder: "Search...";
-    placeholder-color: #b9b9b9;
+    placeholder: "Type to search";
+    placeholder-color: #8e8e8e;
     text-color: #ffffff;
 }
 
