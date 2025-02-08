@@ -21,7 +21,7 @@ inputbar {
     padding: 15px;
     border-radius: 999px;
     background-color: #464646;
-    text-color: #ffffff;
+    text-color: #f5f5f5;
     children: [ "prompt", "entry" ];
 }
 prompt {
@@ -30,9 +30,9 @@ prompt {
 }
 entry {
     placeholder: "Type to search";
-    placeholder-color: #c1c1c1;
-    text-color: #ffffff;
-    vertical-align: 0.5;
+    placeholder-color: #939393;
+    text-color: #f5f5f5;
+    vertical-align: 0.6;
 }
 listview {
     columns: 2;
@@ -53,11 +53,11 @@ element {
 element normal.normal,
 element alternate.normal {
     background-color: #282828;
-    text-color: #ffffff;
+    text-color: #f5f5f5;
 }
 element selected.normal {
     background-color: #3c3c3c;
-    text-color: #ffffff;
+    text-color: #f5f5f5;
 }
 element-icon {
     size: 32px;
