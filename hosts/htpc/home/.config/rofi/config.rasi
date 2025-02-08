@@ -89,9 +89,14 @@ element {
     padding: 5px;
     border: 0px solid;
     border-radius: 12px;
-    background-color: transparent;
+    background-color: #282828;
     text-color: #ffffff;
     cursor: pointer;
+}
+
+element alternate.normal {
+    background-color: #282828;
+    text-color: #ffffff;
 }
 
 element normal.normal {
