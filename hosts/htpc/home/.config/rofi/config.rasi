@@ -30,11 +30,12 @@ inputbar {
 }
 
 prompt {
-    str: "";
+    str: "\uf002";
+    font: "Font Awesome 6 Free Solid";
 }
 
 entry {
-    placeholder: " Search...";
+    placeholder: "Search...";
     placeholder-color: #b9b9b9;
     text-color: #ffffff;
 }
