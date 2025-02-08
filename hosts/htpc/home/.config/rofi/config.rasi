@@ -1,45 +1,96 @@
 * {
-    bg0:    #212121F2;
-    bg1:    #2A2A2A;
-    bg2:    #3D3D3D80;
-    bg3:    #616161F2;
-    fg0:    #E6E6E6;
-    
-    font: "Roboto 12";
-    background-color: transparent;
-    text-color: @fg0;
+    font:   "Montserrat 12";
+
+    bg0:    #242424E6;
+    bg1:    #7E7E7E80;
+    bg2:    #0860f2E6;
+
+    fg0:    #DEDEDE;
+    fg1:    #FFFFFF;
+    fg2:    #DEDEDE80;
+
+    background-color:   transparent;
+    text-color:         @fg0;
+
+    margin:     0;
+    padding:    0;
+    spacing:    0;
 }
 
 window {
-    location: north;
-    y-offset: calc(50% - 176px);
-    width: 480;
-    border-radius: 24px;
-    background-color: @bg0;
-}
+    background-color:   @bg0;
 
-mainbox {
-    padding: 12px;
+    location:       center;
+    width:          640;
+    border-radius:  8;
 }
 
 inputbar {
-    background-color: @bg1;
-    border: 2px solid @bg3;
-    border-radius: 16px;
-    padding: 8px 16px;
+    font:       "Montserrat 20";
+    padding:    12px;
+    spacing:    12px;
+    children:   [ icon-search, entry ];
+}
+
+icon-search {
+    expand:     false;
+    filename:   "search";
+    size: 28px;
+}
+
+icon-search, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+entry {
+    font:   inherit;
+
+    placeholder         : "Search";
+    placeholder-color   : @fg2;
+}
+
+message {
+    border:             2px 0 0;
+    border-color:       @bg1;
+    background-color:   @bg1;
+}
+
+textbox {
+    padding:    8px 24px;
 }
 
 listview {
-    margin: 12px 0 0;
-    lines: 8;
+    lines:      10;
+    columns:    1;
+
+    fixed-height:   false;
+    border:         1px 0 0;
+    border-color:   @bg1;
 }
 
 element {
-    border-radius: 16px;
-    padding: 8px 16px;
+    padding:            8px 16px;
+    spacing:            16px;
+    background-color:   transparent;
 }
 
-element selected {
-    background-color: @bg3;
+element normal active {
+    text-color: @bg2;
 }
 
+element alternate active {
+    text-color: @bg2;
+}
+
+element selected normal, element selected active {
+    background-color:   @bg2;
+    text-color:         @fg1;
+}
+
+element-icon {
+    size:   1em;
+}
+
+element-text {
+    text-color: inherit;
+}
