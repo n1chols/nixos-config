@@ -17,8 +17,14 @@
     xpadneo.enable = true;
   };
 
-  boot.initrd.kernelModules = [ "amdgpu" ];
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  boot = {
+    initrd.kernelModules = [ "amdgpu" ];
+    kernelPackages = pkgs.linuxPackages_xanmod;
+    kernelParams = [
+      "amd_pstate=active"
+      "mitigations=off"
+    ];
+  };
 
   # FILE SYSTEM
   fileSystems = {
