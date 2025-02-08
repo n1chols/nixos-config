@@ -8,10 +8,10 @@
     };
     args = [
       "--backend drm"
-      "--expose-wayland"
+    #  "--expose-wayland"
       "--fullscreen"
-      "--immediate-flips"
-      "--rt"
+    #  "--immediate-flips"
+    #  "--rt"
     ];
   };
 
