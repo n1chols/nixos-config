@@ -26,7 +26,6 @@ window#waybar {
 #custom-poweroff,
 #custom-reboot {
   padding: 0 8px;
-  cursor: pointer;
 }
 
 #custom-poweroff:hover,
