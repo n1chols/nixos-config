@@ -1,12 +1,10 @@
 {
 
-  // POSITION
+  // GENERAL
   "layer": "top",
   "position": "top",
   "height": 32,
-  "spacing": 4,
-  "margin-top": 0,
-  "margin-bottom": 0,
+  "spacing": 4
 
   // LAYOUT
   "modules-left": [
@@ -16,21 +14,36 @@
     "clock"
   ],
   "modules-right": [
-    
+    "custom/reboot",
+    "custom/poweroff"
   ],
 
   // MODULES
   "hyprland/workspaces": {
     "format": "{icon}",
-    "sort-by-number": true
     "on-click": "activate",
     "format-icons": {
       "1": "1",
       "2": "2"
-    },
+    }
   },
   "clock": {
-    "format": "{:%a %b %d  %I:%M %p}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%a %b %d  %I:%M %p}"
+  },
+  "cpu": {
+    "interval": 5,
+    "format": " {usage}%"
+  },
+  "memory": {
+    "interval": 5,
+    "format": " {usage}%"
+  }
+  "custom/reboot": {
+    "format": "",
+    "on-click": "systemctl reboot"
+  },
+  "custom/poweroff": {
+    "format": "",
+    "on-click": "systemctl shutdown"
   }
 }
