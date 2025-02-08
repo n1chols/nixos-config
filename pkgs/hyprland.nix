@@ -20,9 +20,10 @@
     rofi-wayland
   ];
 
-  # Install fonts for waybar
+  # Install fonts for theming
   fonts.packages = with pkgs; [
     font-awesome_6
+    cantarell-fonts
   ];
 
 }
