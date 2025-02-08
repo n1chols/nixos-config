@@ -19,8 +19,14 @@
 
   // MODULES
   "hyprland/workspaces": {
-    "format": "{icon}",
-    "on-click": "activate"
+    "sort-by-number": true,
+    "active-only": false,
+    "persistent_workspaces": {
+	    "1": [],
+	    "2": [],
+	    "3": [],
+	    "4": []
+		}
   },
   "clock": {
     "format": "{:%a %b %d  %I:%M %p}"
