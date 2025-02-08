@@ -28,11 +28,11 @@
     "format": "{:%a %b %d  %I:%M %p}"
   },
   "custom/reboot": {
-    "format": "",
+    "format": "↻",
     "on-click": "systemctl reboot"
   },
   "custom/poweroff": {
-    "format": "",
+    "format": "⏻",
     "on-click": "systemctl poweroff"
   }
 }
