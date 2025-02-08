@@ -16,6 +16,6 @@
       "--hdr-enabled"
       "--hdr-itm-enable"
     ];
-  }
+  };
 
 }
