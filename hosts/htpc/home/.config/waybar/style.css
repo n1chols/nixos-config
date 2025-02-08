@@ -11,12 +11,12 @@ window#waybar {
 #workspaces button {
   padding: 0 5px;
   color: #ffffff;
+  box-shadow: none;
+  border: none;
 }
 
 #workspaces button:hover {
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: none;
-  border: none;
 }
 
 #workspaces button.active {
