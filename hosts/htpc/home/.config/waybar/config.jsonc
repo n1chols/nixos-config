@@ -35,6 +35,6 @@
   },
   "custom/poweroff": {
     "format": "",
-    "on-click": "systemctl shutdown"
+    "on-click": "systemctl poweroff"
   }
 }
