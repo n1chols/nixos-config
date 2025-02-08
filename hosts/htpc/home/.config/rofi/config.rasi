@@ -46,6 +46,11 @@ listview {
     fixed-columns: true;
 }
 
+scrollbar {
+   handle-color: #505050;
+   background-color: transparent;
+}
+
 element {
     padding: 5px;
     spacing: 10px;
