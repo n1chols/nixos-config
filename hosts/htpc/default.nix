@@ -63,8 +63,8 @@
     sessions = {
       enable = true;
       commands = [
-        "${pkgs.dbus}/bin/dbus-run-session env XDG_SESSION_TYPE=wayland ${pkgs.hyprland}/bin/Hyprland"
         "${pkgs.gamescope}/bin/gamescope -W 3840 -H 2160 -r 120 --adaptive-sync --hdr-enabled --hdr-itm-enable -- ${pkgs.pegasus-frontend}/bin/pegasus-fe"
+        "${pkgs.dbus}/bin/dbus-run-session env XDG_SESSION_TYPE=wayland ${pkgs.hyprland}/bin/Hyprland"
       ];
     };
   };
