@@ -1,14 +1,18 @@
 collection: Steam Test
-launch: /run/current-system/sw/bin/steam {file.name}
+launch: steam
 
 game: -silent
-file: -silent steam://rungameid/293780
+file: 293780
+launch: /run/current-system/sw/bin/steam -silent steam://rungameid/{file.name}
 
 game: -tenfoot
-file: -tenfoot steam://rungameid/293780
+file: 293780
+launch: /run/current-system/sw/bin/steam -tenfoot steam://rungameid/293780
 
 game: /bigpicture
-file: steam://rungameid/293780/bigpicture
+file: 293780
+launch: /run/current-system/sw/bin/steam steam://rungameid/293780/bigpicture
 
 game: combo
-file: -silent steam://rungameid/293780/bigpicture
+file: 293780
+launch: /run/current-system/sw/bin/steam -silent steam://rungameid/293780/bigpicture
