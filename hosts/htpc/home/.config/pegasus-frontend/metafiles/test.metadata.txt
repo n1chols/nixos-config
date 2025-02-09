@@ -1,6 +1,6 @@
 collection: Steam Test
 launch: steam
 
-game: steamcmd
+game: shell script
 file: 293780
-launch: /run/current-system/sw/bin/steamcmd app_run {file.name}
+launch: /home/user/.config/pegasus-frontend/metafiles/steam-run.sh {file.name}
