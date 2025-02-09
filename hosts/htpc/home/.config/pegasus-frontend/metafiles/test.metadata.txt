@@ -7,12 +7,12 @@ launch: /run/current-system/sw/bin/steam -silent steam://rungameid/{file.name}
 
 game: -tenfoot
 file: 293780
-launch: /run/current-system/sw/bin/steam -tenfoot steam://rungameid/293780
+launch: /run/current-system/sw/bin/steam -tenfoot steam://rungameid/{file.name}
 
 game: /bigpicture
 file: 293780
-launch: /run/current-system/sw/bin/steam steam://rungameid/293780/bigpicture
+launch: /run/current-system/sw/bin/steam steam://rungameid/{file.name}/bigpicture
 
 game: combo
 file: 293780
-launch: /run/current-system/sw/bin/steam -silent steam://rungameid/293780/bigpicture
+launch: /run/current-system/sw/bin/steam -silent steam://rungameid/{file.name}/bigpicture
