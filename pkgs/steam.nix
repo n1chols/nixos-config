@@ -5,6 +5,7 @@
     enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
+    dedicatedServer.enable = true;
   };
 
   # Install Vulkan utilities
