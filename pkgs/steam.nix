@@ -5,7 +5,6 @@
     enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
-    dedicatedServer.enable = true;
   };
 
   # Install Vulkan utilities
@@ -13,6 +12,7 @@
     vulkan-tools
     vulkan-loader
     vulkan-validation-layers
+    steamPackages.steamcmd
   ];
 
 }
