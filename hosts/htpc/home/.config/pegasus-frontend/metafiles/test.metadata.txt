@@ -1,18 +1,6 @@
 collection: Steam Test
 launch: steam
 
-game: -silent
+game: steamcmd
 file: 293780
-launch: /run/current-system/sw/bin/steam -silent steam://rungameid/{file.name}
-
-game: -tenfoot
-file: 29378
-launch: /run/current-system/sw/bin/steam -tenfoot steam://rungameid/{file.name}0
-
-game: /bigpicture
-file: 2937
-launch: /run/current-system/sw/bin/steam steam://rungameid/{file.name}80/bigpicture
-
-game: combo
-file: 293
-launch: /run/current-system/sw/bin/steam -silent steam://rungameid/{file.name}780/bigpicture
+launch: /run/current-system/sw/bin/steamcmd app_run {file.name}
