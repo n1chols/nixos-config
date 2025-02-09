@@ -1,6 +1,0 @@
-collection: Steam Test
-launch: steam
-
-game: shell script
-file: 293780
-launch: /home/user/.config/pegasus-frontend/metafiles/steam-run.sh {file.name}
