@@ -1,5 +1,5 @@
 collection: Steam Test
-launch: steam {file.name}
+launch: /run/current-system/sw/bin/steam {file.name}
 
 game: -silent
 file: -silent steam://rungameid/293780
