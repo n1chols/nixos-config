@@ -6,13 +6,13 @@ file: 293780
 launch: /run/current-system/sw/bin/steam -silent steam://rungameid/{file.name}
 
 game: -tenfoot
-file: 293780
-launch: /run/current-system/sw/bin/steam -tenfoot steam://rungameid/{file.name}
+file: 29378
+launch: /run/current-system/sw/bin/steam -tenfoot steam://rungameid/{file.name}0
 
 game: /bigpicture
-file: 293780
-launch: /run/current-system/sw/bin/steam steam://rungameid/{file.name}/bigpicture
+file: 2937
+launch: /run/current-system/sw/bin/steam steam://rungameid/{file.name}80/bigpicture
 
 game: combo
-file: 293780
-launch: /run/current-system/sw/bin/steam -silent steam://rungameid/{file.name}/bigpicture
+file: 293
+launch: /run/current-system/sw/bin/steam -silent steam://rungameid/{file.name}780/bigpicture
