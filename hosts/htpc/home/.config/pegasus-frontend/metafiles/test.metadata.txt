@@ -1,13 +1,14 @@
 collection: Steam Test
+launch: steam {file.name}
 
 game: -silent
-launch: steam -silent steam://rungameid/293780
+file: -silent steam://rungameid/293780
 
 game: -tenfoot
-launch: steam -tenfoot steam://rungameid/293780
+file: -tenfoot steam://rungameid/293780
 
 game: /bigpicture
-launch: steam steam://rungameid/293780/bigpicture
+file: steam://rungameid/293780/bigpicture
 
 game: combo
-launch: steam -silent steam://rungameid/293780/bigpicture
+file: -silent steam://rungameid/293780/bigpicture
