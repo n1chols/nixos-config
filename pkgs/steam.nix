@@ -12,7 +12,6 @@
     vulkan-tools
     vulkan-loader
     vulkan-validation-layers
-    steamPackages.steamcmd
   ];
 
 }
