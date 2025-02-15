@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    simple-system.url = "github:tob4n/nixos-simple-system";
+    simple-system.url = "github:tob4n/nixos-simple-systm";
   };
 
   outputs = { simple-system, ... }: {
