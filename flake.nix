@@ -24,6 +24,7 @@
         ./modules/steam.nix
         ./modules/kodi.nix
         ./modules/roon-server.nix
+        ./modules/update-command.nix
         ({ pkgs, ... }: {
           environment.systemPackages = [ pkgs.pegasus-frontend ];
           services.greetd = {
