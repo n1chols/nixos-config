@@ -1,18 +1,27 @@
 {
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-  inputs.easy-pc.url = "github:tob4n/nixos-easy-pc";
+  inputs.simple-system.url = "github:tob4n/nixos-simple-system";
 
-  outputs = { easy-pc, ... }: {
-    nixosConfigurations.htpc = easy-pc.mkSystem {
+  outputs = { simple-system, ... }: {
+    nixosConfigurations.htpc = simple-system.mkSystem {
       hostName = "htpc";
       userName = "user";
+
       cpuVendor = "amd";
       gpuVendor = "amd";
+
       bootDevice = "/dev/nvme0n1p1";
       rootDevice = "/dev/nvme0n1p2";
       swapDevice = "/dev/nvme0n1p3";
+
       gamingTweaks = true;
       hiResAudio = true;
+
+      extraModules = [
+        pegasus-session.nix
+        roon-server.nix
+        kodi.nix
+      ];
     };
   };
 }
