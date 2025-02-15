@@ -1,18 +1,18 @@
 {
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-  };
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  inputs.easy-pc.url = "github:tob4n/nixos-easy-pc";
 
-  outputs = { self, nixpkgs }: {
-    nixosConfigurations = let
-      hosts = builtins.readDir ./hosts;
-      mkHost = name: nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit name; };
-        modules = [
-          ./pkgs/common.nix
-          ./hosts/${name}
-        ];
-      };
-    in builtins.mapAttrs (name: _: mkHost name) hosts;
+  outputs = { easy-pc, ... }: {
+    nixosConfigurations.htpc = easy-pc.mkSystem {
+      hostName = "htpc";
+      userName = "user";
+      cpuVendor = "amd";
+      gpuVendor = "amd";
+      bootDevice = "/dev/nvme0n1p1";
+      rootDevice = "/dev/nvme0n1p2";
+      swapDevice = "/dev/nvme0n1p3";
+      gamingTweaks = true;
+      hiResAudio = true;
+    };
   };
 }
