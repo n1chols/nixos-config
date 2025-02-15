@@ -26,17 +26,6 @@
         ./modules/roon-server.nix
         ./modules/update-command.nix
         ({ pkgs, ... }: {
-          boot.loader = {
-            systemd-boot = {
-              enable = true;
-              configurationLimit = 10;  # Keep last 10 generations
-            };
-            efi = {
-              canTouchEfiVariables = true;
-              efiSysMountPoint = "/boot";
-            };
-          };
-          
           environment.systemPackages = [ pkgs.pegasus-frontend ];
           services.greetd = {
             enable = true;
