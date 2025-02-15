@@ -20,9 +20,9 @@
       hiResAudio = true;
 
       extraModules = [
-        pegasus-session.nix
-        roon-server.nix
-        kodi.nix
+        ./modules/pegasus-session.nix
+        ./modules/roon-server.nix
+        ./modules/kodi.nix
       ];
     };
   };
