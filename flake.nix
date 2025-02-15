@@ -4,7 +4,7 @@
     simple-system.url = "github:tob4n/nixos-simple-system";
   };
 
-  outputs = { simple-system, ... }: {
+  outputs = { nixpkgs, simple-system, ... }: {
     nixosConfigurations.htpc = simple-system.mkSystem {
       hostName = "htpc";
       userName = "user";
