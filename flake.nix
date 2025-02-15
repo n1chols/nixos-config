@@ -3,6 +3,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     simple-system.url = "github:tob4n/nixos-simple-system";
   };
+
   outputs = { nixpkgs, simple-system, ... }: {
     nixosConfigurations.htpc = simple-system.mkSystem {
       hostName = "htpc";
