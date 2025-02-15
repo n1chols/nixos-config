@@ -20,21 +20,21 @@
       hiResAudio = true;
 
       extraModules = [
-        ./modules/gamescope.nix
-        ./modules/steam.nix
-        ./modules/kodi.nix
-        ./modules/roon-server.nix
-        ./modules/update-command.nix
-        ({ pkgs, ... }: {
-          environment.systemPackages = [ pkgs.pegasus-frontend ];
-          services.greetd = {
-            enable = true;
-            settings.default_session = {
-              user = "user";
-              command = "gamescope -W 3840 -H 2160 -r 120 --adaptive-sync --hdr-enabled --hdr-itm-enable -- sh -c 'steam -silent -nofriendsui & pegasus-fe'";
-            };
-          };
-        })
+        #./modules/gamescope.nix
+        #./modules/steam.nix
+        #./modules/kodi.nix
+        #./modules/roon-server.nix
+        #./modules/update-command.nix
+        #({ pkgs, ... }: {
+        #  environment.systemPackages = [ pkgs.pegasus-frontend ];
+        #  services.greetd = {
+        #    enable = true;
+        #    settings.default_session = {
+        #      user = "user";
+        #      command = "gamescope -W 3840 -H 2160 -r 120 --adaptive-sync --hdr-enabled --hdr-itm-enable -- sh -c 'steam -silent -nofriendsui & pegasus-fe'";
+        #    };
+        #  };
+        #})
       ];
     };
   };
