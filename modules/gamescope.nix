@@ -6,13 +6,13 @@
     #env = {
       #"ENABLE_GAMESCOPE_WSI" = "1";
     #};
-    args = [
-      "--backend drm"
+    #args = [
+      #"--backend drm"
       #"--expose-wayland"
       "--fullscreen"
-      "--immediate-flips"
-      "--rt"
-    ];
+      #"--immediate-flips"
+      #"--rt"
+    #];
   };
 
   # Set capabilities for gamescope
