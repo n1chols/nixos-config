@@ -3,6 +3,7 @@
   # Enable Gamescope
   programs.gamescope = {
     enable = true;
+  };
     #env = {
       #"ENABLE_GAMESCOPE_WSI" = "1";
     #};
@@ -13,7 +14,7 @@
       #"--immediate-flips"
       #"--rt"
     #];
-  };
+  #};
 
   # Set capabilities for gamescope
   security.wrappers.gamescope = {
