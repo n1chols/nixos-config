@@ -10,7 +10,7 @@
     #args = [
       #"--backend drm"
       #"--expose-wayland"
-      "--fullscreen"
+      #"--fullscreen"
       #"--immediate-flips"
       #"--rt"
     #];
