@@ -25,7 +25,6 @@
         ./modules/steam.nix
         ./modules/kodi.nix
         ./modules/bombsquad.nix
-        ./modules/waydroid.nix
         ./modules/roon-server.nix
         ./modules/update-command.nix
         ({ pkgs, ... }: {
