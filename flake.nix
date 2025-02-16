@@ -26,7 +26,7 @@
         ./modules/roon-server.nix
         ./modules/update-command.nix
         ({ pkgs, ... }: {
-          #hardware.xpadneo.enable = true;
+          hardware.xpadneo.enable = true;
           environment.systemPackages = [ pkgs.pegasus-frontend ];
           services.greetd = {
             enable = true;
