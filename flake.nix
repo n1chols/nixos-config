@@ -31,7 +31,7 @@
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "gamescope -W 3840 -H 2160 -r 120 --adaptive-sync --hdr-enabled --hdr-itm-enable -- sh -c 'steam -silent -nofriendsui & pegasus-fe'";
+              command = "gamescope -w 3840 -h 2160 -r 120 --adaptive-sync --hdr-enabled --hdr-itm-enable -- sh -c 'steam -silent -nofriendsui & pegasus-fe'";
             };
           };
         })
