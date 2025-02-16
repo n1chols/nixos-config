@@ -24,6 +24,7 @@
         ./modules/gamescope.nix
         ./modules/steam.nix
         ./modules/kodi.nix
+        ./modules/bombsquad.nix
         ./modules/roon-server.nix
         ./modules/update-command.nix
         ({ pkgs, ... }: {
