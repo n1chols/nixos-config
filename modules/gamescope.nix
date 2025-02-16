@@ -3,12 +3,12 @@
   # Enable Gamescope
   programs.gamescope = {
     enable = true;
-    env = {
-      "ENABLE_GAMESCOPE_WSI" = "1";
-    };
+    #env = {
+      #"ENABLE_GAMESCOPE_WSI" = "1";
+    #};
     args = [
       "--backend drm"
-      "--expose-wayland"
+      #"--expose-wayland"
       "--fullscreen"
       "--immediate-flips"
       "--rt"
