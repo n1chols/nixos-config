@@ -4,14 +4,14 @@
   programs.gamescope = {
     enable = true;
     env = {
-      #"ENABLE_GAMESCOPE_WSI" = "1";
+      "ENABLE_GAMESCOPE_WSI" = "1";
     };
     args = [
       "--backend drm"
-      #"--expose-wayland"
+      "--expose-wayland"
       "--fullscreen"
-      #"--immediate-flips"
-      #"--rt"
+      "--immediate-flips"
+      "--rt"
     ];
   };
 
