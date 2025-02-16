@@ -32,7 +32,7 @@
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "${pkgs.gamescope}/bin/gamescope -f -w 3840 -h 2160 -W 3840 -H 2160 -r 120 --immediate-flips --rt --adaptive-sync --hdr-enabled --hdr-itm-enable -- sh -c '${pkgs.steam}/bin/steam -silent & ${pkgs.pegasus-frontend}/bin/pegasus-fe'";
+              command = "${pkgs.gamescope}/bin/gamescope -f -w 3840 -h 2160 -W 3840 -H 2160 -r 120 --backend drm --immediate-flips --rt --adaptive-sync --hdr-enabled --hdr-itm-enable -- sh -c '${pkgs.steam}/bin/steam -silent & ${pkgs.pegasus-frontend}/bin/pegasus-fe'";
             };
           };
         })
