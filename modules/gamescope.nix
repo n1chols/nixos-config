@@ -3,18 +3,13 @@
   # Enable Gamescope
   programs.gamescope = {
     enable = true;
+    args = [
+      --fullscreen
+      --backend drm 
+      --immediate-flips
+      --rt
+    ];
   };
-    #env = {
-      #"ENABLE_GAMESCOPE_WSI" = "1";
-    #};
-    #args = [
-      #"--backend drm"
-      #"--expose-wayland"
-      #"--fullscreen"
-      #"--immediate-flips"
-      #"--rt"
-    #];
-  #};
 
   # Set capabilities for gamescope
   security.wrappers.gamescope = {
