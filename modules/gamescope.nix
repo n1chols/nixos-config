@@ -4,10 +4,13 @@
   programs.gamescope = {
     enable = true;
     args = [
-      "--fullscreen"
-      "--backend drm" 
-      "--immediate-flips"
       "--rt"
+      "--immediate-flips"
+      "--expose-wayland"
+      "--fullscreen"
+      "--force-windows-fullscreen"
+      "--scaler integer"
+      "--backend drm" 
     ];
   };
 
