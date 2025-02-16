@@ -26,7 +26,7 @@
         ./modules/kodi.nix
         ./modules/roon-server.nix
         ./modules/update-command.nix
-        ./gnome.nix
+        ./modules/gnome.nix
         ({ pkgs, ... }: {
           environment.systemPackages = with pkgs; [
             pegasus-frontend
