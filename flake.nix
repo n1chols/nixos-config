@@ -18,6 +18,7 @@
 
       gamingTweaks = true;
       hiResAudio = true;
+      gamepad = true;
 
       extraModules = [
         ./modules/gamescope.nix
@@ -26,8 +27,13 @@
         ./modules/roon-server.nix
         ./modules/update-command.nix
         ({ pkgs, ... }: {
-          hardware.xpadneo.enable = true;
-          environment.systemPackages = [ pkgs.pegasus-frontend ];
+          environment.systemPackages = with pkgs; [
+            pegasus-frontend
+            bottles
+            waydroid
+            cemu
+            ryujinx
+          ];
           services.greetd = {
             enable = true;
             settings.default_session = {
