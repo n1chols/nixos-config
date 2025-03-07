@@ -36,7 +36,7 @@
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "/run/wrappers/bin/gamescope -f -e --rt -- steam -gamepadui -pipewire-dmabuf";# > /dev/null 2>&1";
+              command = "/run/wrappers/bin/gamescope -f -e --rt -- ${pkgs.steam}/bin/steam -gamepadui -pipewire-dmabuf";# > /dev/null 2>&1";
             };
           };
         })
