@@ -29,11 +29,20 @@
           environment.systemPackages = [
             pkgs.gamescope
           ];
+          security.sudo.extraRules = [
+            {
+              users = [ "user" ];
+              commands = [
+                { command = "${pkgs.gamescope}/bin/gamescope"; options = [ "NOPASSWD" ]; }
+                { command = "gamescope"; options = [ "NOPASSWD" ]; }
+              ];
+            }
+          ];
           services.greetd = {
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "gamescope -f -e --backend drm --rt -- ${pkgs.steam}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
+              command = "exec sudo gamescope -f -e --backend drm --rt -- ${pkgs.steam}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
             };
           };
         })
