@@ -41,7 +41,7 @@
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "sudo env XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR ${pkgs.gamescope}/bin/gamescope -f -e --backend drm --rt -- ${pkgs.steam}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
+              command = "sudo XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR ${pkgs.gamescope}/bin/gamescope -f -e --backend drm --rt -- ${pkgs.steam}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
             };
           };
         })
