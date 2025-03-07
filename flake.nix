@@ -26,17 +26,14 @@
         ./modules/roon-server.nix
         ./modules/update-command.nix
         ({ pkgs, ... }: {
-          security.wrappers.gamescope = {
-            owner = "user";
-            group = "wheel";
-            source = "${pkgs.gamescope}/bin/gamescope";
-            capabilities = "cap_sys_nice+eip";
-          };
+          environment.systemPackages = [
+            pkgs.gamescope
+          ];
           services.greetd = {
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "/run/wrappers/bin/gamescope -f -e --backend drm --rt -- ${pkgs.steam}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
+              command = "gamescope -f -e --backend drm --rt -- ${pkgs.steam}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
             };
           };
         })
