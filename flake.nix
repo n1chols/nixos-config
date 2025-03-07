@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    simple-system.url = "github:tob4n/nixos-simple-system";
+    simple-system.url = "github:n1chols/nixos-simple-system";
   };
 
   outputs = { nixpkgs, simple-system, ... }: {
@@ -40,6 +40,13 @@
               capabilities = "cap_sys_nice+eip";
             };
           };
+          environment.systemPackages = [
+            (pkgs.steam.override {
+              buildFHSEnv = pkgs.buildFHSEnv.override {
+                bubblewrap = "${config.security.wrapperDir}/..";
+              };
+            })
+          ];
           services.greetd = {
             enable = true;
             settings.default_session = {
