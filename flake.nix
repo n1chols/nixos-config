@@ -34,7 +34,6 @@
               users = [ "user" ];
               commands = [
                 { command = "${pkgs.gamescope}/bin/gamescope"; options = [ "NOPASSWD" ]; }
-                { command = "gamescope"; options = [ "NOPASSWD" ]; }
               ];
             }
           ];
