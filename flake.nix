@@ -28,7 +28,7 @@
         ({ pkgs, ... }: {
           security.wrappers.gamescope = {
             owner = "user";
-            group = "user";
+            group = "wheel";
             source = "${pkgs.gamescope}/bin/gamescope";
             capabilities = "cap_sys_nice+eip";
           };
