@@ -29,19 +29,25 @@
           environment.systemPackages = [
             pkgs.gamescope
           ];
-          security.sudo.extraRules = [
+          security.pam.loginLimits = [
             {
-              users = [ "user" ];
-              commands = [
-                { command = "${pkgs.gamescope}/bin/gamescope"; options = [ "NOPASSWD" ]; }
-              ];
+              domain = "user";
+              type = "-";
+              item = "rtprio";
+              value = "95";
+            }
+            {
+              domain = "user";
+              type = "-";
+              item = "nice";
+              value = "-20";
             }
           ];
           services.greetd = {
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "sudo XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR ${pkgs.gamescope}/bin/gamescope -f -e --backend drm --rt -- ${pkgs.steam}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
+              command = "${pkgs.gamescope}/bin/gamescope -f -e --backend drm --rt -- ${pkgs.steam}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
             };
           };
         })
