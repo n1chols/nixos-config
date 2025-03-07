@@ -28,7 +28,7 @@
         ({ pkgs, ... }: {
           programs.gamescope = {
             enable = true;
-            #capSysNice = true;
+            capSysNice = true;
             args = [
               "--rt"
               "--fullscreen"
@@ -43,7 +43,7 @@
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "${pkgs.gamescope}/bin/gamescope -- steam -gamepadui -pipewire-dmabuf";# > /dev/null 2>&1";
+              command = "gamescope -- steam -gamepadui -pipewire-dmabuf";# > /dev/null 2>&1";
             };
           };
         })
