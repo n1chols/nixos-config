@@ -45,13 +45,17 @@
               buildFHSEnv = pkgs.buildFHSEnv.override {
                 bubblewrap = "${config.security.wrapperDir}/..";
               };
+              extraLibraries = pkgs: with pkgs; [ 
+                libva  # AMD GPU support
+                mesa  # OpenGL/Vulkan
+              ];
             })
           ];
           services.greetd = {
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "/run/wrappers/bin/gamescope -f -e --backend drm --rt -- ${pkgs.steam}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
+              command = "${config.security.wrapperDir}/gamescope -f -e --backend drm --rt -- ${(pkgs.steam.override { buildFHSEnv = pkgs.buildFHSEnv.override { bubblewrap = "${config.security.wrapperDir}/.."; }; })}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
             };
           };
         })
