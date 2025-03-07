@@ -43,7 +43,7 @@
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "/run/current-system/bin/gamescope -- steam -gamepadui -pipewire-dmabuf";# > /dev/null 2>&1";
+              command = "${pkgs.gamescope}/bin/gamescope -- steam -gamepadui -pipewire-dmabuf";# > /dev/null 2>&1";
             };
           };
         })
