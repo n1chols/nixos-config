@@ -31,7 +31,7 @@
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "gamescope -f -e --adaptive-sync --hdr-enabled --hdr-itm-enable -- ${pkgs.steam}/bin/steam -gamepadui -pipewire-dmabuf > /dev/null 2>&1";
+              command = "${pkgs.gamescope}/bin/gamescope -f -e --adaptive-sync --hdr-enabled --hdr-itm-enable -- ${pkgs.steam}/bin/steam -gamepadui -pipewire-dmabuf";# > /dev/null 2>&1";
             };
           };
         })
