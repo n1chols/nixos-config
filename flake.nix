@@ -26,28 +26,25 @@
         ./modules/roon-server.nix
         ./modules/update-command.nix
         ({ pkgs, ... }: {
-          environment.systemPackages = [
-            pkgs.gamescope
-          ];
-          security.pam.loginLimits = [
-            {
-              domain = "user";
-              type = "-";
-              item = "rtprio";
-              value = "95";
-            }
-            {
-              domain = "user";
-              type = "-";
-              item = "nice";
-              value = "-20";
-            }
-          ];
+          security.wrappers = {
+            bwrap = {
+              owner = "root";
+              group = "root";
+              source = "${pkgs.bubblewrap}/bin/bwrap";
+              setuid = true;
+            };
+            gamescope = {
+              owner = "root";
+              group = "root";
+              source = "${pkgs.gamescope}/bin/gamescope";
+              capabilities = "cap_sys_nice+eip";
+            };
+          };
           services.greetd = {
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "${pkgs.gamescope}/bin/gamescope -f -e --backend drm --rt -- ${pkgs.steam}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
+              command = "gamescope -f -e --backend drm --rt -- ${pkgs.steam}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
             };
           };
         })
