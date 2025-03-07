@@ -23,7 +23,6 @@
       extraModules = [
         ./modules/gamescope.nix
         ./modules/steam.nix
-        ./modules/sgdboop.nix
         ./modules/kodi.nix
         ./modules/bombsquad.nix
         ./modules/roon-server.nix
