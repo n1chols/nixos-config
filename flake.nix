@@ -29,12 +29,21 @@
           programs.gamescope = {
             enable = true;
             capSysNice = true;
+            args = [
+              "--rt"
+              "--fullscreen"
+              "--steam"
+              "--immediate-flips"
+              "--adaptive-sync"
+              "--hdr-enabled"
+              "--hdr-itm-enable"
+            ];
           };
           services.greetd = {
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "/run/wrappers/bin/gamescope -f -e --rt --adaptive-sync --hdr-enabled --hdr-itm-enable -- steam -gamepadui -pipewire-dmabuf";# > /dev/null 2>&1";
+              command = "/run/wrappers/bin/gamescope -- steam -gamepadui -pipewire-dmabuf";# > /dev/null 2>&1";
             };
           };
         })
