@@ -26,24 +26,17 @@
         ./modules/roon-server.nix
         ./modules/update-command.nix
         ({ pkgs, ... }: {
-          programs.gamescope = {
-            enable = true;
-            capSysNice = true;
-            args = [
-              "--rt"
-              "--fullscreen"
-              "--steam"
-              "--immediate-flips"
-              "--adaptive-sync"
-              "--hdr-enabled"
-              "--hdr-itm-enable"
-            ];
+          security.wrappers.gamescope = {
+            owner = "root";
+            group = "root";
+            source = "${pkgs.gamescope}/bin/gamescope";
+            capabilities = "cap_sys_nice+eip";
           };
           services.greetd = {
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "gamescope -- steam -gamepadui -pipewire-dmabuf";# > /dev/null 2>&1";
+              command = "/run/wrappers/bin/gamescope -f -e --rt -- steam -gamepadui -pipewire-dmabuf";# > /dev/null 2>&1";
             };
           };
         })
