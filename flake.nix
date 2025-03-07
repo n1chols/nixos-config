@@ -21,7 +21,7 @@
       gamepad = true;
 
       extraModules = [
-        ./modules/steam.nix
+        #./modules/steam.nix
         ./modules/kodi.nix
         ./modules/roon-server.nix
         ./modules/update-command.nix
@@ -51,7 +51,7 @@
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "gamescope -f -e --backend drm --rt -- ${pkgs.steam}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
+              command = "/run/wrappers/bin/gamescope -f -e --backend drm --rt -- ${pkgs.steam}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
             };
           };
         })
