@@ -1,21 +1,15 @@
-{ config, lib, pkgs, ... }: {
+{ pkgs }:
 
-  # Enable Gamescope
-  programs.gamescope = {
-    enable = true;
-    args = [
-      "--rt"
-      "--immediate-flips"
-      "--backend drm"
-    ];
-  };
-
-  # Set capabilities for gamescope
-  security.wrappers.gamescope = {
-    owner = "root";
-    group = "root";
-    capabilities = "cap_sys_nice=eip";
-    source = "${pkgs.gamescope}/bin/gamescope";
-  };
-
+let
+  gamescope-rt = pkgs.runCommand "gamescope-rt" {
+    nativeBuildInputs = [ pkgs.makeBinaryWrapper pkgs.libcap ];
+  } ''
+    mkdir -p $out/bin
+    cp ${pkgs.gamescope}/bin/gamescope $out/bin/gamescope-rt
+    wrapProgram $out/bin/gamescope-rt --add-flags "--rt --immediate-flips --backend drm"
+    setcap "cap_sys_nice+eip" $out/bin/gamescope-rt
+  '';
+in
+{
+  environment.systemPackages = [ gamescope-rt ];
 }
