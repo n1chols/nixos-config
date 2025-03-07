@@ -25,7 +25,7 @@
         ./modules/kodi.nix
         ./modules/roon-server.nix
         ./modules/update-command.nix
-        ({ pkgs, ... }: {
+        ({ pkgs, config, ... }: {
           security.wrappers = {
             bwrap = {
               owner = "root";
