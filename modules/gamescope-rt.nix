@@ -1,15 +1,14 @@
-{ pkgs }:
-
-let
-  gamescope-rt = pkgs.runCommand "gamescope-rt" {
-    nativeBuildInputs = [ pkgs.makeBinaryWrapper pkgs.libcap ];
-  } ''
-    mkdir -p $out/bin
-    cp ${pkgs.gamescope}/bin/gamescope $out/bin/gamescope-rt
-    wrapProgram $out/bin/gamescope-rt --add-flags "--rt --immediate-flips --backend drm"
-    setcap "cap_sys_nice+eip" $out/bin/gamescope-rt
-  '';
-in
-{
-  environment.systemPackages = [ gamescope-rt ];
+{ pkgs }: {
+  environment.systemPackages = with pkgs; [
+    (symlinkJoin {
+      name = "gamescope-rt";
+      paths = [ gamescope ];
+      nativeBuildInputs = [ makeBinaryWrapper libcap ];
+      postBuild = ''
+        wrapProgram $out/bin/gamescope --add-flags "--rt --immediate-flips --backend drm"
+        mv $out/bin/gamescope $out/bin/gamescope-rt
+        setcap cap_sys_nice+eip $out/bin/gamescope-rt
+      '';
+    })
+  ];
 }
