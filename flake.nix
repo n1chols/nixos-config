@@ -21,17 +21,20 @@
       gamepad = true;
 
       extraModules = [
-        ./modules/gamescope-rt.nix
         ./modules/steam.nix
         ./modules/kodi.nix
         ./modules/roon-server.nix
         ./modules/update-command.nix
         ({ pkgs, ... }: {
+          programs.gamescope = {
+            enable = true;
+            capSysNice = true;
+          };
           services.greetd = {
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "/run/wrappers/bin/gamescope-rt -f -e --adaptive-sync --hdr-enabled --hdr-itm-enable -- steam -gamepadui -pipewire-dmabuf";# > /dev/null 2>&1";
+              command = "/run/wrappers/bin/gamescope -f -e --rt --adaptive-sync --hdr-enabled --hdr-itm-enable -- steam -gamepadui -pipewire-dmabuf";# > /dev/null 2>&1";
             };
           };
         })
