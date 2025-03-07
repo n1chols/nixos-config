@@ -41,7 +41,7 @@
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "exec sudo gamescope -f -e --backend drm --rt -- ${pkgs.steam}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
+              command = "sudo gamescope -f -e --backend drm --rt -- ${pkgs.steam}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
             };
           };
         })
