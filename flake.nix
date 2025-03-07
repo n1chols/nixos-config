@@ -33,7 +33,7 @@
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "${pkgs.gamescope}/bin/gamescope -W 3840 -H 2160 --framerate-limit 120 --adaptive-sync --hdr-enabled --hdr-itm-enable -- sh -c '${pkgs.steam}/bin/steam -silent -nofriendsui & ${pkgs.pegasus-frontend}/bin/pegasus-fe' > /dev/null 2>&1";
+              command = "${pkgs.gamescope}/bin/gamescope -f -e --adaptive-sync --hdr-enabled --hdr-itm-enable -- ${pkgs.steam}/bin/steam -gamepadui > /dev/null 2>&1";
             };
           };
         })
