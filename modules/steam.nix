@@ -7,11 +7,4 @@
     dedicatedServer.openFirewall = true;
   };
 
-  # Install Vulkan utilities
-  environment.systemPackages = with pkgs; [
-    vulkan-tools
-    vulkan-loader
-    vulkan-validation-layers
-  ];
-
 }
