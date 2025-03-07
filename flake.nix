@@ -28,7 +28,6 @@
         ./modules/roon-server.nix
         ./modules/update-command.nix
         ({ pkgs, ... }: {
-          environment.systemPackages = [ pkgs.pegasus-frontend pkgs.wget ];
           services.greetd = {
             enable = true;
             settings.default_session = {
