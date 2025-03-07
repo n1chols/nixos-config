@@ -1,4 +1,4 @@
-{ pkgs }: {
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     (runCommand "gamescope-rt" {
       nativeBuildInputs = [ makeBinaryWrapper libcap ];
