@@ -27,8 +27,8 @@
         ./modules/update-command.nix
         ({ pkgs, ... }: {
           security.wrappers.gamescope = {
-            owner = "root";
-            group = "root";
+            owner = "user";
+            group = "user";
             source = "${pkgs.gamescope}/bin/gamescope";
             capabilities = "cap_sys_nice+eip";
           };
