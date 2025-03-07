@@ -5,7 +5,7 @@
   };
 
   outputs = { nixpkgs, simple-system, ... }: {
-    nixosConfigurations.htpc = simple-system {
+    nixosConfigurations.htpc = simple-system.mkSystem {
       hostName = "htpc";
       userName = "user";
 
