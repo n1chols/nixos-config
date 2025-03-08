@@ -30,7 +30,7 @@
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "steamscope --adaptive-sync --hdr-enabled --hdr-itm-enable";
+              command = "steamscope --rt --immediate-flips --adaptive-sync --hdr-enabled --hdr-itm-enable";
             };
           };
         })
