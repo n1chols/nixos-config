@@ -21,34 +21,16 @@
       gamepad = true;
 
       extraModules = [
+        ./modules/steamscope.nix
         ./modules/kodi.nix
         ./modules/roon-server.nix
         ./modules/update-command.nix
         ({ pkgs, config, ... }: {
-          security.wrappers = {
-            gamescope = {
-              owner = "root";
-              group = "root";
-              source = "${pkgs.gamescope}/bin/gamescope";
-              capabilities = "cap_sys_nice+eip";
-            };
-            bwrap = {
-              owner = "root";
-              group = "root";
-              source = "${pkgs.bubblewrap}/bin/bwrap";
-              setuid = true;
-            };
-          };
-          steamWithFHS = pkgs.steam.override {
-            buildFHSEnv = pkgs.buildFHSEnv.override {
-              bubblewrap = "${config.security.wrapperDir}/..";
-            };
-          };
           services.greetd = {
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "${config.security.wrapperDir}/gamescope -f -e --rt --immediate-flips --adaptive-sync --hdr-enabled --hdr-itm-enable -- ${config.steamWithFHS}/bin/steam -gamepadui -pipewire-dmabuf";# > /dev/null 2>&1";
+              command = "steamscope --adaptive-sync --hdr-enabled --hdr-itm-enable";
             };
           };
         })
