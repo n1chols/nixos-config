@@ -8,7 +8,7 @@
       set -e
       cd /etc/nixos
       sudo find . -mindepth 1 -delete
-      sudo git clone https://github.com/tob4n/nixos-config .
+      sudo git clone https://github.com/n1chols/nixos-config .
       if [ -n "$1" ]; then
         sudo nixos-rebuild switch --flake .#$1 --no-write-lock-file
       else
