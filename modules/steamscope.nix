@@ -1,5 +1,11 @@
 { config, pkgs, ... }: {
 
+  config.steamOverride = pkgs.steam.override {
+    buildFHSEnv = pkgs.buildFHSEnv.override {
+      bubblewrap = "${config.security.wrapperDir}/..";
+    };
+  };
+
   security.wrappers = {
     gamescope = {
       owner = "root";
@@ -15,16 +21,11 @@
     };
   };
 
-  steamOverride = pkgs.steam.override {
-    buildFHSEnv = pkgs.buildFHSEnv.override {
-      bubblewrap = "${config.security.wrapperDir}/..";
-    };
-  };
-
   environment.systemPackages = [
     (pkgs.writeShellScriptBin "steamscope" ''
       #!/bin/sh
       exec ${config.security.wrapperDir}/gamescope -f -e "$@" -- ${config.steamOverride}/bin/steam -gamepadui
     '')
   ];
+
 }
