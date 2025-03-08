@@ -21,7 +21,6 @@
       gamepad = true;
 
       extraModules = [
-        #./modules/steam.nix
         ./modules/kodi.nix
         ./modules/roon-server.nix
         ./modules/update-command.nix
