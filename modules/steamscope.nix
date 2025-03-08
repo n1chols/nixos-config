@@ -15,17 +15,10 @@
     };
   };
 
-  environment.systemPackages = let
-    steamOverride = pkgs.steam.override {
-      buildFHSEnv = pkgs.buildFHSEnv.override {
-        bubblewrap = "${config.security.wrapperDir}/..";
-      };
-    };
-  in [
-    steamOverride
+  environment.systemPackages = [
     (pkgs.writeShellScriptBin "steamscope" ''
       #!/bin/sh
-      exec ${config.security.wrapperDir}/gamescope -f -e "$@" -- ${steamOverride}/bin/steam -gamepadui
+      exec ${config.security.wrapperDir}/gamescope -f -e "$@" -- ${(pkgs.steam.override { buildFHSEnv = pkgs.buildFHSEnv.override { bubblewrap = "${config.security.wrapperDir}/.."; }; })}/bin/steam -gamepadui
     '')
   ];
 
