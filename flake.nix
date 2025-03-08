@@ -27,35 +27,29 @@
         ./modules/update-command.nix
         ({ pkgs, config, ... }: {
           security.wrappers = {
-            bwrap = {
-              owner = "root";
-              group = "root";
-              source = "${pkgs.bubblewrap}/bin/bwrap";
-              setuid = true;
-            };
             gamescope = {
               owner = "root";
               group = "root";
               source = "${pkgs.gamescope}/bin/gamescope";
               capabilities = "cap_sys_nice+eip";
             };
+            bwrap = {
+              owner = "root";
+              group = "root";
+              source = "${pkgs.bubblewrap}/bin/bwrap";
+              setuid = true;
+            };
           };
-          environment.systemPackages = [
-            (pkgs.steam.override {
-              buildFHSEnv = pkgs.buildFHSEnv.override {
-                bubblewrap = "${config.security.wrapperDir}/..";
-              };
-              extraLibraries = pkgs: with pkgs; [ 
-                libva  # AMD GPU support
-                mesa  # OpenGL/Vulkan
-              ];
-            })
-          ];
+          steamWithFHS = pkgs.steam.override {
+            buildFHSEnv = pkgs.buildFHSEnv.override {
+              bubblewrap = "${config.security.wrapperDir}/..";
+            };
+          };
           services.greetd = {
             enable = true;
             settings.default_session = {
               user = "user";
-              command = "${config.security.wrapperDir}/gamescope -f -e --backend drm --rt -- ${(pkgs.steam.override { buildFHSEnv = pkgs.buildFHSEnv.override { bubblewrap = "${config.security.wrapperDir}/.."; }; })}/bin/steam -gamepadui";# -pipewire-dmabuf";# > /dev/null 2>&1";
+              command = "${config.security.wrapperDir}/gamescope -f -e --rt --immediate-flips --adaptive-sync --hdr-enabled --hdr-itm-enable -- ${config.steamWithFHS}/bin/steam -gamepadui -pipewire-dmabuf";# > /dev/null 2>&1";
             };
           };
         })
