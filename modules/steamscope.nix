@@ -24,7 +24,7 @@
   environment.systemPackages = [
     (pkgs.writeShellScriptBin "steamscope" ''
       #!/bin/sh
-      exec ${config.security.wrapperDir}/gamescope -f -e --rt --immediate-flips "$@" -- ${config.steamOverride}/bin/steam -gamepadui -pipewire-dmabuf
+      exec ${config.security.wrapperDir}/gamescope -f -e "$@" -- ${config.steamOverride}/bin/steam -gamepadui -pipewire-dmabuf
     '')
   ];
 }
