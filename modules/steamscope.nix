@@ -18,7 +18,7 @@
   environment.systemPackages = [
     (pkgs.writeShellScriptBin "steamscope" ''
       #!/bin/sh
-      exec ${config.security.wrapperDir}/gamescope -f "$@" -- ${(pkgs.steam.override { buildFHSEnv = pkgs.buildFHSEnv.override { bubblewrap = "${config.security.wrapperDir}/.."; }; })}/bin/steam > /dev/null 2>&1
+      exec ${config.security.wrapperDir}/gamescope -f -e "$@" -- ${(pkgs.steam.override { buildFHSEnv = pkgs.buildFHSEnv.override { bubblewrap = "${config.security.wrapperDir}/.."; }; })}/bin/steam -tenfoot > /dev/null 2>&1
     '')
   ];
 
