@@ -5,7 +5,7 @@
     steam-console.url = "github:n1chols/nixos-steam-console";
   };
 
-  outputs = { nixpkgs, simple-system, ... }: {
+  outputs = { simple-system, ... }: {
     nixosConfigurations.htpc = simple-system {
       hostName = "htpc";
       userName = "user";
@@ -29,6 +29,7 @@
           steam-console = {
             enable = true;
             enableDecky = true;
+            user = "user"
             desktopSession = "dbus-run-session -- gnome-shell --display-server --wayland"
           }
         })
