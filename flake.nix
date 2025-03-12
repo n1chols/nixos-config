@@ -26,13 +26,14 @@
         ./modules/kodi.nix
         ./modules/roon-server.nix
         ./modules/update-command.nix
+        ./modules/bombsquad.nix
         steam-console.nixosModules.default
         ({ pkgs, ... }: {
           steam-console = {
             enable = true;
             enableDecky = true;
             user = "user";
-            desktopSession = "${pkgs.gamescope}/bin/gamescope -f -- ${(pkgs.steam.override { buildFHSEnv = pkgs.buildFHSEnv.override { bubblewrap = '${config.security.wrapperDir}/..'; }; })}/bin/steam";
+            desktopSession = "${pkgs.gamescope}/bin/gamescope -f -- ${pkgs.bombsquad}/bin/bombsquad";
           };
         })
       ];
