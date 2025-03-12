@@ -32,7 +32,7 @@
             enable = true;
             enableDecky = true;
             user = "user";
-            desktopSession = "dbus-run-session -- gnome-shell --display-server --wayland";
+            desktopSession = "XDG_SESSION_TYPE=wayland dbus-run-session gnome-session";
           };
         })
       ];
