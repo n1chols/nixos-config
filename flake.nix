@@ -32,7 +32,7 @@
             enable = true;
             enableDecky = true;
             user = "user";
-            desktopSession = "${pkgs.kodi}/bin/kodi";
+            desktopSession = "echo TEST TEST TEST";
           };
         })
       ];
