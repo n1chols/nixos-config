@@ -5,7 +5,7 @@
     steam-console.url = "github:n1chols/nixos-steam-console";
   };
 
-  outputs = { simple-system, ... }: {
+  outputs = { simple-system, steam-console, ... }: {
     nixosConfigurations.htpc = simple-system {
       hostName = "htpc";
       userName = "user";
