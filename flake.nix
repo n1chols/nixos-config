@@ -26,6 +26,7 @@
         ./modules/kodi.nix
         ./modules/roon-server.nix
         ./modules/update-command.nix
+        steam-console.nixosModules.default
         ({ ... }: {
           steam-console = {
             enable = true;
