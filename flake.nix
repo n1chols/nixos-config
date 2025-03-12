@@ -32,7 +32,7 @@
             enable = true;
             enableDecky = true;
             user = "user";
-            desktopSession = "XDG_SESSION_TYPE=wayland dbus-run-session gnome-session";
+            desktopSession = "${pkgs.kodi}/bin/kodi";
           };
         })
       ];
