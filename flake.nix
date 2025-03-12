@@ -31,6 +31,8 @@
         ({ pkgs, ... }: {
           steam-console = {
             enable = true;
+            enableHDR = true;
+            enableVRR = true;
             enableDecky = true;
             user = "user";
             desktopSession = "${pkgs.bombsquad}/bin/bombsquad";
