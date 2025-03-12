@@ -32,7 +32,7 @@
             enable = true;
             enableDecky = true;
             user = "user";
-            desktopSession = "${pkgs.gamescope}/bin/gamescope -f -- ${(pkgs.steam.override { buildFHSEnv = pkgs.buildFHSEnv.override { bubblewrap = "${config.security.wrapperDir}/.."; }; })}/bin/steam";
+            desktopSession = "${pkgs.gamescope}/bin/gamescope -f -- ${(pkgs.steam.override { buildFHSEnv = pkgs.buildFHSEnv.override { bubblewrap = '${config.security.wrapperDir}/..'; }; })}/bin/steam";
           };
         })
       ];
