@@ -33,7 +33,7 @@
             enable = true;
             enableDecky = true;
             user = "user";
-            desktopSession = "${pkgs.gamescope}/bin/gamescope -f -- ${pkgs.bombsquad}/bin/bombsquad";
+            desktopSession = "${pkgs.bombsquad}/bin/bombsquad";
           };
         })
       ];
