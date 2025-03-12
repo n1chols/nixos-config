@@ -2,6 +2,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     simple-system.url = "github:n1chols/nixos-simple-system";
+    steam-console.url = "github:n1chols/nixos-steam-console";
   };
 
   outputs = { nixpkgs, simple-system, ... }: {
@@ -20,19 +21,16 @@
       hiResAudio = true;
       gamepad = true;
 
-      extraModules = [
-        ./modules/steamscope.nix
+      modules = [
         ./modules/kodi.nix
         ./modules/roon-server.nix
         ./modules/update-command.nix
-        ({ pkgs, config, ... }: {
-          services.greetd = {
+        ({ ... }: {
+          steam-console = {
             enable = true;
-            settings.default_session = {
-              user = "user";
-              command = "steamscope --rt --immediate-flips --adaptive-sync --hdr-enabled --hdr-itm-enable";
-            };
-          };
+            enableDecky = true;
+            desktopSession = "dbus-run-session -- gnome-shell --display-server --wayland"
+          }
         })
       ];
     };
