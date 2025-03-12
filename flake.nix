@@ -29,7 +29,7 @@
           steam-console = {
             enable = true;
             enableDecky = true;
-            user = "user"
+            user = "user";
             desktopSession = "dbus-run-session -- gnome-shell --display-server --wayland"
           }
         })
