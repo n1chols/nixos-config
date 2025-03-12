@@ -27,7 +27,7 @@
         ./modules/roon-server.nix
         ./modules/update-command.nix
         steam-console.nixosModules.default
-        ({ ... }: {
+        ({ pkgs, ... }: {
           steam-console = {
             enable = true;
             enableDecky = true;
