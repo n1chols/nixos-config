@@ -35,7 +35,7 @@
             enableVRR = true;
             enableDecky = true;
             user = "user";
-            desktopSession = "${pkgs.bombsquad}/bin/bombsquad";
+            desktopSession = "XDG_SESSION_TYPE=wayland ${pkgs.dbus}/bin/dbus-run-session ${pkgs.gnome-session}/bin/gnome-session";
           };
         })
       ];
