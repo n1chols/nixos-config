@@ -22,6 +22,7 @@
       gamepad = true;
 
       modules = [
+        ./modules/gnome.nix
         ./modules/kodi.nix
         ./modules/roon-server.nix
         ./modules/update-command.nix
@@ -30,7 +31,7 @@
             enable = true;
             enableDecky = true;
             user = "user";
-            desktopSession = "dbus-run-session -- gnome-shell --display-server --wayland"
+            desktopSession = "dbus-run-session -- gnome-shell --display-server --wayland";
           }
         })
       ];
