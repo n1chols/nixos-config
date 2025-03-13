@@ -34,7 +34,7 @@
             enable = true;
             enableHDR = true;
             enableVRR = true;
-            enableDecky = false;
+            enableDecky = true;
             user = "user";
             desktopSession = "${pkgs.bombsquad}/bin/bombsquad";
           };
