@@ -18,7 +18,7 @@
     (pkgs.writeScriptBin "plasma-bigscreen" ''
       #!/bin/sh
       export QT_QPA_PLATFORM=wayland
-      startplasma-wayland
+      dbus-run-session startplasma-wayland
       # test
       #${pkgs.dbus}/bin/dbus-run-session \
       #${pkgs.kdePackages.kwin}/bin/kwin_wayland \
