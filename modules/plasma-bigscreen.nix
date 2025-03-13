@@ -1,6 +1,6 @@
 { pkgs, ... }: {
 
-  services.desktopManager.plasma6.enable
+  services.desktopManager.plasma6.enable;
 
   services.xserver.desktopManager.plasma5.bigscreen.enable = true;
 
