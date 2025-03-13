@@ -8,7 +8,7 @@
       export QT_QPA_PLATFORM=wayland
       ${pkgs.dbus}/bin/dbus-run-session \
       ${pkgs.kdePackages.kwin}/bin/kwin_wayland \
-      "${pkgs.kdePackages.plasma-workspace}/bin/plasmashell -p org.kde.plasma.bigscreen"
+      "${pkgs.kdePackages.plasma-workspace}/bin/plasmashell" #-p org.kde.plasma.bigscreen"
     '')
   ];
 
