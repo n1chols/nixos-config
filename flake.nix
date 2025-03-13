@@ -36,7 +36,7 @@
             enableVRR = true;
             enableDecky = true;
             user = "user";
-            desktopSession = "dbus-run-session -- gnome-shell --display-server --wayland";
+            desktopSession = "${pkgs.bombsquad}/bin/bombsquad";
           };
         })
       ];
