@@ -6,6 +6,8 @@
 
   services.desktopManager.plasma6.enable = true;
 
+  xdg.portal.enable = true;
+
   programs.dconf.enable = true;
   
   qt = {
