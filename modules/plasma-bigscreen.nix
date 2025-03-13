@@ -2,8 +2,6 @@
 
   services.desktopManager.plasma6.enable = true;
 
-  services.xserver.desktopManager.plasma5.bigscreen.enable = true;
-
   environment.systemPackages = with pkgs; [
     (pkgs.writeScriptBin "plasma-bigscreen" ''
       #!/bin/sh
