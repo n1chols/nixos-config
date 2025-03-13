@@ -8,9 +8,9 @@
   #  ]))
   #];
 
-  services.xserver.desktopManager.kodi.package = kodi.withPackages (pkgs: with pkgs; [
+  services.xserver.desktopManager.kodi.package = (pkgs.kodi.withPackages (kodiPkgs: with kodiPkgs; [
     joystick
     inputstream-adaptive
-  ]);
+  ]));
 
 }
