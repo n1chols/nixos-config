@@ -24,10 +24,9 @@
 
       modules = [
         ./modules/gnome.nix
-        ./modules/kodi.nix
+        ./modules/bombsquad.nix
         ./modules/roon-server.nix
         ./modules/update-command.nix
-        ./modules/bombsquad.nix
         steam-console.nixosModules.default
         ({ pkgs, ... }: {
           steam-console = {
@@ -36,7 +35,7 @@
             enableVRR = true;
             enableDecky = true;
             user = "user";
-            desktopSession = "${pkgs.kodi}/bin/kodi";
+            desktopSession = "${pkgs.dbus}/bin/dbus-run-session env XDG_SESSION_TYPE=wayland ${pkgs.gnome-session}/bin/gnome-session";
           };
         })
       ];
