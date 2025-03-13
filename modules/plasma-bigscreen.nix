@@ -6,7 +6,10 @@
 
   services.desktopManager.plasma6.enable = true;
 
-  xdg.portal.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-kde ];
+  };
 
   programs.dconf.enable = true;
   
