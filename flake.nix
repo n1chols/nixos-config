@@ -22,9 +22,9 @@
       gamepad = true;
 
       modules = [
-        ./modules/gnome.nix
-        ./modules/bombsquad.nix
+        ./modules/plasma-bigscreen.nix
         ./modules/roon-server.nix
+        ./modules/bombsquad.nix
         ./modules/update-command.nix
         steam-console.nixosModules.default
         ({ pkgs, ... }: {
