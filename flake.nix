@@ -17,9 +17,8 @@
       rootDevice = "/dev/nvme0n1p2";
       swapDevice = "/dev/nvme0n1p3";
 
-      animateStartup = false;
-      #gamingTweaks = true;
       hiResAudio = true;
+      gamingTweaks = true;
       gamepad = true;
 
       modules = [
@@ -35,7 +34,7 @@
             enableVRR = true;
             enableDecky = true;
             user = "user";
-            desktopSession = "${pkgs.dbus}/bin/dbus-run-session env XDG_SESSION_TYPE=wayland ${pkgs.gnome-session}/bin/gnome-session";
+            desktopSession = "plasma-bigscreen";
           };
         })
       ];
