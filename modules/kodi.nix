@@ -2,7 +2,7 @@
 
   # Install Kodi
   environment.systemPackages = with pkgs; [
-    cage
+    stremio
     (kodi.withPackages (pkgs: with pkgs; [
       joystick
       inputstream-adaptive
