@@ -8,7 +8,7 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ kdePackages.xdg-desktop-portal-kde ];
+    extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
   };
 
   programs.dconf.enable = true;
