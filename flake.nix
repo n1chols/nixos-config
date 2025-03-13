@@ -34,7 +34,7 @@
             enableVRR = true;
             enableDecky = true;
             user = "user";
-            desktopSession = "startplasma-wayland";
+            desktopSession = "plasma-bigscreen";
           };
         })
       ];
