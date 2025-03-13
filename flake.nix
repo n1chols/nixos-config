@@ -36,7 +36,7 @@
             enableVRR = true;
             enableDecky = true;
             user = "user";
-            desktopSession = "${pkgs.cage}/bin/cage -s ${pkgs.kodi}/bin/kodi";
+            desktopSession = "${pkgs.kodi}/bin/kodi";
           };
         })
       ];
