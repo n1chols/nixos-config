@@ -1,11 +1,11 @@
 { pkgs, ... }: {
 
-  boot.kernelPackages = pkgs.linuxPackages_5_11;
+  boot.kernelPackages = pkgs.linuxPackages_6_10;
   boot.kernelParams = [ "amdgpu.sg_display=0" ];
 
   services.xserver.enable = true;
 
-  services.xserver.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   services.desktopManager.plasma6.enable = true;
 
