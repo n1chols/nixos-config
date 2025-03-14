@@ -4,6 +4,8 @@
 
   services.xserver.enable = true;
 
+  services.xserver.displayManager.sddm.wayland.enable = true;
+
   services.desktopManager.plasma6.enable = true;
 
   xdg.portal = {
@@ -23,6 +25,9 @@
     pkgs.fuse3
     (pkgs.writeScriptBin "plasma-bigscreen" ''
       #!/bin/sh
+      export QT_QPA_PLATFORM=wayland
+      export GTK_USE_PORTAL=0
+      
       rm -rf /run/user/1000/doc
       dbus-run session startplasma-wayland
       #${pkgs.dbus}/bin/dbus-run-session \
