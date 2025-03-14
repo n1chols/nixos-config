@@ -27,9 +27,7 @@
       #!/bin/sh
       export QT_QPA_PLATFORM=wayland
       export GTK_USE_PORTAL=0
-      
-      rm -rf /run/user/1000/doc
-      dbus-run session startplasma-wayland
+      dbus-run-session startplasma-wayland
       #${pkgs.dbus}/bin/dbus-run-session \
       #${pkgs.kdePackages.kwin}/bin/kwin_wayland \
       #"${pkgs.kdePackages.plasma-workspace}/bin/plasmashell" #-p org.kde.plasma.bigscreen"
