@@ -35,7 +35,7 @@
             enableVRR = true;
             enableDecky = true;
             user = "user";
-            desktopSession = "env  startplasma-wayland";
+            desktopSession = "env QT_QPA_PLATFORM=wayland startplasma-wayland";
           };
         })
       ];
