@@ -22,9 +22,8 @@
   environment.systemPackages = with pkgs; [
     (pkgs.writeScriptBin "plasma-bigscreen" ''
       #!/bin/sh
-      export QT_QPA_PLATFORM=wayland
-      dbus-run-session startplasma-wayland
-      # test
+      rm -rf /run/user/1000/doc
+      dbus-run session startplasma-wayland
       #${pkgs.dbus}/bin/dbus-run-session \
       #${pkgs.kdePackages.kwin}/bin/kwin_wayland \
       #"${pkgs.kdePackages.plasma-workspace}/bin/plasmashell" #-p org.kde.plasma.bigscreen"
