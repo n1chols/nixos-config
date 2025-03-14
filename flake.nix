@@ -18,6 +18,7 @@
       swapDevice = "/dev/nvme0n1p3";
 
       hiResAudio = true;
+      disableNixApps = false
       #gamingTweaks = true;
       gamepad = true;
 
@@ -34,7 +35,7 @@
             enableVRR = true;
             enableDecky = true;
             user = "user";
-            desktopSession = "plasma-bigscreen";
+            desktopSession = "env  startplasma-wayland";
           };
         })
       ];
