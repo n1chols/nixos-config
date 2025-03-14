@@ -1,6 +1,6 @@
 { pkgs, ... }: {
 
-  boot.kernelPackages = pkgs.linuxPackages_6_10;
+  boot.kernelPackages = pkgs.linuxPackages_6_11;
   boot.kernelParams = [ "amdgpu.sg_display=0" ];
 
   services.xserver.enable = true;
