@@ -6,8 +6,6 @@
 
   services.desktopManager.plasma6.enable = true;
 
-  environment.systemPackages = [ pkgs.fuse3 ];
-
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
@@ -22,6 +20,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    pkgs.fuse3
     (pkgs.writeScriptBin "plasma-bigscreen" ''
       #!/bin/sh
       rm -rf /run/user/1000/doc
