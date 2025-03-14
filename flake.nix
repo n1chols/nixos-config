@@ -34,7 +34,7 @@
             enableVRR = true;
             enableDecky = true;
             user = "user";
-            desktopSession = "plasma-bigscreen";
+            desktopSession = "dbus-run-session env QT_QPA_PLATFORM=wayland kwin_wayland plasmashell";
           };
         })
       ];
