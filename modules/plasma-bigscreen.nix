@@ -27,8 +27,7 @@
     (pkgs.writeScriptBin "plasma-bigscreen" ''
       #!/bin/sh
       export QT_QPA_PLATFORM=wayland
-      export GTK_USE_PORTAL=0
-      dbus-run-session startplasma-wayland
+      startplasma-wayland
       #${pkgs.dbus}/bin/dbus-run-session \
       #${pkgs.kdePackages.kwin}/bin/kwin_wayland \
       #"${pkgs.kdePackages.plasma-workspace}/bin/plasmashell" #-p org.kde.plasma.bigscreen"
