@@ -18,7 +18,7 @@
       swapDevice = "/dev/nvme0n1p3";
 
       hiResAudio = true;
-      disableNixApps = false
+      disableNixApps = false;
       #gamingTweaks = true;
       gamepad = true;
 
