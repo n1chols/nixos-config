@@ -8,8 +8,7 @@
   openal,
   libgcc,
   makeWrapper,
-  autoPatchelfHook,
-  writeShellApplication
+  autoPatchelfHook
 }:
 
 stdenv.mkDerivation {
@@ -29,7 +28,6 @@ stdenv.mkDerivation {
     libgcc
     makeWrapper
     autoPatchelfHook
-    copyDesktopItems
   ];
 
   installPhase = ''
