@@ -11,7 +11,7 @@
   autoPatchelfHook
 }:
 
-stdenv.mkDerivation {
+stdenv.mkDerivation rec {
   pname = "bombsquad";
   version = "1.7.38";
 
