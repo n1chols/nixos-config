@@ -16,7 +16,7 @@ stdenv.mkDerivation {
   version = "1.7.38";
 
   src = fetchurl {
-    url = "https://files.ballistica.net/bombsquad/builds/BombSquad_Linux_x86_64_$version.tar.gz";
+    url = "https://files.ballistica.net/bombsquad/builds/BombSquad_Linux_x86_64_${version}.tar.gz";
     hash = "sha256-aujLYzFcKaW0ff7sRdyJ6SvSQowafWVbmwycQfDQUYY=";
   };
 
@@ -33,7 +33,7 @@ stdenv.mkDerivation {
   installPhase = ''
     runHook preInstall
 
-    base="BombSquad_Linux_x86_64_$version"
+    base="BombSquad_Linux_x86_64_${version}"
 
     install -m755 -D $base/bombsquad $out/bin/bombsquad
     install -dm755 $base/ba_data $out/usr/share/bombsquad/ba_data
