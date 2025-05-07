@@ -1,10 +1,13 @@
 {
-  inputs.shaved-ice.url = "github:n1chols/shaved-ice";
+  inputs = {
+    shaved-ice.url = "github:n1chols/shaved-ice";
+    steam-dex.url = "github:n1chols/steam-dex";
+  };
 
-  outputs = { shaved-ice }: {
+  outputs = { shaved-ice, steam-dex }: {
     nixosConfigurations.htpc = shaved-ice.system {
-      version = "24.11";
       arch = "x86_64";
+      version = "24.11";
       
       hostname = "HTPC";
       timezone = "America/Los_Angeles";
@@ -16,8 +19,34 @@
       };
       
       modules = [
+        shaved-ice.modules.grub
         shaved-ice.modules.networkmanager
         shaved-ice.modules.pipewire
+        shaved-ice.modules.bluetooth
+        steam-dex.modules.default
+        { ... }: {
+          users.users.user = {
+            isNormalUser = true;
+            extraGroups = [ "networkmanager" "wheel" ];
+          };
+          
+          services = {
+            roon-server = {
+              enable = true;
+              openFirewall = true;
+            };
+            desktopManager.plasma6.enable = true;
+          };
+
+          steam-dex = {
+            enable = true;
+            enableHDR = true;
+            enableVRR = true;
+            enableDecky = true;
+            user = "user";
+            desktopSession = "startplasma-wayland";
+          }
+        }
       ];
     };
   };
