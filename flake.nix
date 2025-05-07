@@ -25,7 +25,10 @@
         shaved-ice.modules.bluetooth
         steam-dex.modules.default
         { ... }: {
-          boot.kernelModules = [ "amdgpu" ];
+          boot = {
+            kernelPackages = pkgs.linuxPackages_zen;
+            initrd.kernelModules = [ "amdgpu" ];
+          };
 
           hardware = {
             cpu.amd.updateMicrocode = true;
