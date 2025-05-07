@@ -1,10 +1,10 @@
 {
   inputs = {
     shaved-ice.url = "github:n1chols/shaved-ice";
-    steam-dex.url = "github:n1chols/steam-dex";
+    cold-steamos.url = "github:n1chols/cold-steamos";
   };
 
-  outputs = { shaved-ice, steam-dex }: {
+  outputs = { shaved-ice, cold-steamos }: {
     nixosConfigurations.htpc = shaved-ice.system {
       arch = "x86_64";
       version = "24.11";
@@ -23,7 +23,7 @@
         shaved-ice.modules.networkmanager
         shaved-ice.modules.pipewire
         shaved-ice.modules.bluetooth
-        steam-dex.modules.default
+        cold-steamos.modules.default
         { ... }: {
           boot = {
             kernelPackages = pkgs.linuxPackages_zen;
@@ -48,7 +48,7 @@
             desktopManager.plasma6.enable = true;
           };
 
-          steam-dex = {
+          cold-steamos = {
             enable = true;
             enableHDR = true;
             enableVRR = true;
