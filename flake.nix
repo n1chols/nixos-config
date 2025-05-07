@@ -25,11 +25,18 @@
         shaved-ice.modules.bluetooth
         steam-dex.modules.default
         { ... }: {
+          boot.kernelModules = [ "amdgpu" ];
+
+          hardware = {
+            cpu.amd.updateMicrocode = true;
+            xpadneo.enable = true;
+          };
+
           users.users.user = {
             isNormalUser = true;
             extraGroups = [ "networkmanager" "wheel" ];
           };
-          
+
           services = {
             roon-server = {
               enable = true;
