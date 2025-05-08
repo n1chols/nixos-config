@@ -1,7 +1,7 @@
 {
   inputs = {
     flex-system.url = "github:n1chols/nixos-flex-system";
-    cold-steamos.url = "github:n1chols/cold-steamos";
+    steam-console.url = "github:n1chols/nixos-steam-console";
   };
 
   outputs = { shaved-ice, cold-steamos }: {
