@@ -1,30 +1,23 @@
 {
   inputs = {
-    shaved-ice.url = "github:n1chols/shaved-ice";
+    flex-system.url = "github:n1chols/nixos-flex-system";
     cold-steamos.url = "github:n1chols/cold-steamos";
   };
 
   outputs = { shaved-ice, cold-steamos }: {
-    nixosConfigurations.htpc = shaved-ice.system {
+    nixosConfigurations.htpc = flex-system {
       arch = "x86_64";
       version = "24.11";
       
-      hostname = "HTPC";
-      timezone = "America/Los_Angeles";
-      
-      filesystem = {
-        boot.device = "/dev/nvme0n1p1";
-        root.device = "/dev/nvme0n1p2";
-        swap = [{ device = "/dev/nvme0n1p3"; }]
-      };
-      
       modules = [
-        shaved-ice.modules.grub
-        shaved-ice.modules.networkmanager
-        shaved-ice.modules.pipewire
-        shaved-ice.modules.bluetooth
         cold-steamos.modules.default
         { ... }: {
+          fileSystem = {
+            "/boot".device = "/dev/nvme0n1p1";
+            "/".device = "/dev/nvme0n1p2";
+            swapDevices = [{ device = "/dev/nvme0n1p3"; }]
+          };
+
           boot = {
             kernelPackages = pkgs.linuxPackages_zen;
             initrd.kernelModules = [ "amdgpu" ];
