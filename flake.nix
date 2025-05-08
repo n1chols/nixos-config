@@ -4,7 +4,7 @@
     steam-console.url = "github:n1chols/nixos-steam-console";
   };
 
-  outputs = { shaved-ice, cold-steamos }: {
+  outputs = { shaved-ice, steam-console }: {
     nixosConfigurations.htpc = flex-system {
       arch = "x86_64";
       version = "24.11";
@@ -41,7 +41,7 @@
             desktopManager.plasma6.enable = true;
           };
 
-          cold-steamos = {
+          steam-console = {
             enable = true;
             enableHDR = true;
             enableVRR = true;
