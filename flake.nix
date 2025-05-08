@@ -4,13 +4,13 @@
     steam-console.url = "github:n1chols/nixos-steam-console";
   };
 
-  outputs = { shaved-ice, steam-console }: {
+  outputs = { flex-system, steam-console }: {
     nixosConfigurations.htpc = flex-system {
       arch = "x86_64";
       version = "24.11";
       
       modules = [
-        cold-steamos.modules.default
+        steam-console.modules.default
         { ... }: {
           fileSystem = {
             "/boot".device = "/dev/nvme0n1p1";
