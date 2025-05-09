@@ -3,7 +3,7 @@
 
   time.timeZone = "America/Los_Angeles";
 
-  fileSystem = {
+  fileSystems = {
     "/boot".device = "/dev/nvme0n1p1";
     "/".device = "/dev/nvme0n1p2";
     swapDevices = [{ device = "/dev/nvme0n1p3"; }];
