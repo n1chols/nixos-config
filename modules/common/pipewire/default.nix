@@ -1,4 +1,4 @@
-{
+{ ... }: {
   # Enable RTKit
   security.rtkit.enable = true;
 
