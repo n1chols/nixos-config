@@ -34,8 +34,8 @@
           }
         ];
       };
-      thinkpad = lib.nixosSystem {
-        system = "x86_64-linux";
+      thinkpad = flex-system {
+        system = "x86_64";
         modules = [
           ./modules/common/basic
           ./modules/common/networkmanager
