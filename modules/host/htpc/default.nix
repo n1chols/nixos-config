@@ -8,6 +8,10 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;
     initrd.kernelModules = [ "amdgpu" ];
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
   };
 
   hardware = {
