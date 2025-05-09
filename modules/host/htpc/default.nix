@@ -6,8 +6,9 @@
   fileSystems = {
     "/boot".device = "/dev/nvme0n1p1";
     "/".device = "/dev/nvme0n1p2";
-    swapDevices = [{ device = "/dev/nvme0n1p3"; }];
   };
+
+  swapDevices = [{ device = "/dev/nvme0n1p3"; }];
 
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;
