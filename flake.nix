@@ -9,7 +9,6 @@
       htpc = flex-system {
         arch = "x86_64";
         version = "24.11";
-        
         modules = [
           ./modules/common/networkmanager
           ./modules/common/pipewire
@@ -40,7 +39,6 @@
       thinkpad = flex-system {
         arch = "x86_64";
         version = "24.11";
-        
         modules = [
           ./modules/common/networkmanager
           ./modules/common/pipewire
