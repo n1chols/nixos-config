@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   networking.hostName = "HTPC";
 
   time.timeZone = "America/Los_Angeles";
