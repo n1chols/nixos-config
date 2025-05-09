@@ -39,6 +39,7 @@
         arch = "x86_64";
         version = "24.11";
         modules = [
+          ./modules/common/basic
           ./modules/common/networkmanager
           ./modules/common/pipewire
           ./modules/common/bluetooth
