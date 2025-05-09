@@ -8,7 +8,7 @@
   outputs = { self, flex-system, steam-console }: {
     nixosConfigurations = {
       htpc = flex-system {
-        system = "x86_64";
+        arch = "x86_64";
         modules = [
           ./modules/common/basic
           ./modules/common/networkmanager
@@ -35,7 +35,7 @@
         ];
       };
       thinkpad = flex-system {
-        system = "x86_64";
+        arch = "x86_64";
         modules = [
           ./modules/common/basic
           ./modules/common/networkmanager
