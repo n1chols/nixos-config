@@ -1,14 +1,15 @@
 {
   inputs = {
-    flex-system.url = "github:n1chols/nixos-flex-system";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     steam-console.url = "github:n1chols/nixos-steam-console";
   };
 
-  outputs = { self, flex-system, steam-console }: {
+  outputs = { self, nixpkgs, steam-console }: let
+    lib = nixpkgs.lib;
+  in {
     nixosConfigurations = {
-      htpc = flex-system {
-        arch = "x86_64";
-        version = "24.11";
+      htpc = lib.nixosSystem {
+        system = "x86_64-linux";
         modules = [
           ./modules/common/basic
           ./modules/common/networkmanager
@@ -23,7 +24,6 @@
               enable = true;
               openFirewall = true;
             };
-  
             steam-console = {
               enable = true;
               enableHDR = true;
@@ -35,9 +35,8 @@
           }
         ];
       };
-      thinkpad = flex-system {
-        arch = "x86_64";
-        version = "24.11";
+      thinkpad = lib.nixosSystem {
+        system = "x86_64-linux";
         modules = [
           ./modules/common/basic
           ./modules/common/networkmanager
