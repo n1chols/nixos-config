@@ -46,7 +46,7 @@
           ./modules/common/printing
           ./modules/host/thinkpad
           ./modules/user/user
-        ]
+        ];
       };
     };
   };
