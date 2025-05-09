@@ -33,7 +33,7 @@
               enableDecky = true;
               user = "user";
               desktopSession = "startplasma-wayland";
-            }
+            };
           }
         ];
       };
