@@ -1,15 +1,14 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    flex-system.url = "github:n1chols/nixos-flex-system";
     steam-console.url = "github:n1chols/nixos-steam-console";
   };
 
-  outputs = { self, nixpkgs, steam-console }: let
-    lib = nixpkgs.lib;
-  in {
+  outputs = { self, flex-system, steam-console }: {
     nixosConfigurations = {
-      htpc = lib.nixosSystem {
-        system = "x86_64-linux";
+      htpc = flex-system {
+        system = "x86_64";
         modules = [
           ./modules/common/basic
           ./modules/common/networkmanager
