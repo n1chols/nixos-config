@@ -1,4 +1,8 @@
-{ 
+{
+  networking.hostName = "HTPC";
+
+  time.timeZone = "America/Los_Angeles";
+
   fileSystem = {
     "/boot".device = "/dev/nvme0n1p1";
     "/".device = "/dev/nvme0n1p2";
