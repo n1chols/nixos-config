@@ -13,6 +13,7 @@
           ./modules/common/networkmanager
           ./modules/common/pipewire
           ./modules/common/bluetooth
+          ./modules/common/plasma
           ./modules/host/htpc
           ./modules/user/user
           steam-console.modules.default
