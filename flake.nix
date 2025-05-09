@@ -42,6 +42,7 @@
           ./modules/common/pipewire
           ./modules/common/bluetooth
           ./modules/common/printing
+          ./modules/common/plasma
           ./modules/host/thinkpad
           ./modules/user/user
         ];
