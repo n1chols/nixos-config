@@ -17,12 +17,9 @@
           ./modules/user/user
           steam-console.modules.default
           { ... }: {
-            services = {
-              roon-server = {
-                enable = true;
-                openFirewall = true;
-              };
-              desktopManager.plasma6.enable = true;
+            services.roon-server = {
+              enable = true;
+              openFirewall = true;
             };
   
             steam-console = {
