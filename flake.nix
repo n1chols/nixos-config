@@ -4,7 +4,7 @@
     steam-console.url = "github:n1chols/nixos-steam-console";
   };
 
-  outputs = { flex-system, steam-console }: {
+  outputs = { self, flex-system, steam-console }: {
     nixosConfigurations = {
       htpc = flex-system {
         arch = "x86_64";
@@ -18,7 +18,7 @@
           ./modules/host/htpc
           ./modules/user/user
           steam-console.modules.default
-          { ... }: {
+          {
             services.roon-server = {
               enable = true;
               openFirewall = true;
